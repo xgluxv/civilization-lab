@@ -1,0 +1,14 @@
+{
+  "name": "civilization-lab",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A deterministic, offline civilization sandbox.",
+  "scripts": {
+    "test": "node --test tests/engine.test.cjs tests/expansion.test.cjs",
+    "test:ui": "node tests/ui-smoke.cjs",
+    "test:playthrough": "node tests/playthrough.cjs",
+    "build": "node build.cjs"
+  },
+  "engines": { "node": ">=18" },
+  "devDependencies": { "jsdom": "24.1.3" }
+}

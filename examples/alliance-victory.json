@@ -1,0 +1,404 @@
+{
+  "format": "civilization-lab",
+  "version": 2,
+  "seed": "远方来信",
+  "scenario": "frontier",
+  "year": 126,
+  "origin": null,
+  "commands": [
+    {
+      "year": 0,
+      "action": {
+        "type": "reign",
+        "civId": 0,
+        "goal": "alliance"
+      }
+    },
+    {
+      "year": 0,
+      "action": {
+        "type": "policy",
+        "civId": 0,
+        "policy": "merchant"
+      }
+    },
+    {
+      "year": 0,
+      "action": {
+        "type": "choice",
+        "civId": 0,
+        "decisionId": 1,
+        "choice": "build"
+      }
+    },
+    {
+      "year": 0,
+      "action": {
+        "type": "research",
+        "civId": 0,
+        "research": "agronomy"
+      }
+    },
+    {
+      "year": 0,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "granary"
+      }
+    },
+    {
+      "year": 0,
+      "action": {
+        "type": "diplomacy",
+        "civId": 0,
+        "targetId": 1,
+        "action": "envoy"
+      }
+    },
+    {
+      "year": 3,
+      "action": {
+        "type": "diplomacy",
+        "civId": 0,
+        "targetId": 2,
+        "action": "envoy"
+      }
+    },
+    {
+      "year": 9,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "lumbermill"
+      }
+    },
+    {
+      "year": 15,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "granary"
+      }
+    },
+    {
+      "year": 17,
+      "action": {
+        "type": "research",
+        "civId": 0,
+        "research": "tools"
+      }
+    },
+    {
+      "year": 18,
+      "action": {
+        "type": "choice",
+        "civId": 0,
+        "decisionId": 7,
+        "choice": "build"
+      }
+    },
+    {
+      "year": 21,
+      "action": {
+        "type": "diplomacy",
+        "civId": 0,
+        "targetId": 2,
+        "action": "envoy"
+      }
+    },
+    {
+      "year": 27,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "farm"
+      }
+    },
+    {
+      "year": 33,
+      "action": {
+        "type": "diplomacy",
+        "civId": 0,
+        "targetId": 3,
+        "action": "envoy"
+      }
+    },
+    {
+      "year": 36,
+      "action": {
+        "type": "research",
+        "civId": 0,
+        "research": "coinage"
+      }
+    },
+    {
+      "year": 36,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "market"
+      }
+    },
+    {
+      "year": 40,
+      "action": {
+        "type": "choice",
+        "civId": 0,
+        "decisionId": 13,
+        "choice": "welcome"
+      }
+    },
+    {
+      "year": 42,
+      "action": {
+        "type": "diplomacy",
+        "civId": 0,
+        "targetId": 4,
+        "action": "envoy"
+      }
+    },
+    {
+      "year": 42,
+      "action": {
+        "type": "diplomacy",
+        "civId": 0,
+        "targetId": 5,
+        "action": "envoy"
+      }
+    },
+    {
+      "year": 45,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "lumbermill"
+      }
+    },
+    {
+      "year": 52,
+      "action": {
+        "type": "research",
+        "civId": 0,
+        "research": "writing"
+      }
+    },
+    {
+      "year": 54,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "granary"
+      }
+    },
+    {
+      "year": 54,
+      "action": {
+        "type": "diplomacy",
+        "civId": 0,
+        "targetId": 5,
+        "action": "envoy"
+      }
+    },
+    {
+      "year": 62,
+      "action": {
+        "type": "choice",
+        "civId": 0,
+        "decisionId": 19,
+        "choice": "welcome"
+      }
+    },
+    {
+      "year": 66,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "lumbermill"
+      }
+    },
+    {
+      "year": 66,
+      "action": {
+        "type": "settle",
+        "civId": 0,
+        "tile": 977
+      }
+    },
+    {
+      "year": 69,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 7,
+        "building": "granary"
+      }
+    },
+    {
+      "year": 76,
+      "action": {
+        "type": "research",
+        "civId": 0,
+        "research": "sailing"
+      }
+    },
+    {
+      "year": 78,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "farm"
+      }
+    },
+    {
+      "year": 78,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 7,
+        "building": "granary"
+      }
+    },
+    {
+      "year": 84,
+      "action": {
+        "type": "choice",
+        "civId": 0,
+        "decisionId": 25,
+        "choice": "build"
+      }
+    },
+    {
+      "year": 87,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 7,
+        "building": "granary"
+      }
+    },
+    {
+      "year": 90,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "farm"
+      }
+    },
+    {
+      "year": 95,
+      "action": {
+        "type": "research",
+        "civId": 0,
+        "research": "medicine"
+      }
+    },
+    {
+      "year": 96,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 7,
+        "building": "lumbermill"
+      }
+    },
+    {
+      "year": 102,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 7,
+        "building": "lumbermill"
+      }
+    },
+    {
+      "year": 105,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "market"
+      }
+    },
+    {
+      "year": 106,
+      "action": {
+        "type": "choice",
+        "civId": 0,
+        "decisionId": 31,
+        "choice": "rush"
+      }
+    },
+    {
+      "year": 108,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 7,
+        "building": "lumbermill"
+      }
+    },
+    {
+      "year": 110,
+      "action": {
+        "type": "research",
+        "civId": 0,
+        "research": "masonry"
+      }
+    },
+    {
+      "year": 111,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "market"
+      }
+    },
+    {
+      "year": 114,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 7,
+        "building": "farm"
+      }
+    },
+    {
+      "year": 120,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 1,
+        "building": "library"
+      }
+    },
+    {
+      "year": 120,
+      "action": {
+        "type": "build",
+        "civId": 0,
+        "cityId": 7,
+        "building": "farm"
+      }
+    },
+    {
+      "year": 123,
+      "action": {
+        "type": "research",
+        "civId": 0,
+        "research": "astronomy"
+      }
+    }
+  ]
+}

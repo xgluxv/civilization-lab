@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111a1c">
+  <title>文明实验室 II · 执政者</title>
+  <style>/*__STYLES__*/</style>
+</head>
+<body>
+  <div class="app">
+    <header class="masthead">
+      <a class="brand" href="#" aria-label="文明实验室首页"><span class="brand-mark" aria-hidden="true">◈</span><span>CIVILIZATION <b>LAB</b></span></a>
+      <div class="header-meta"><span class="status-dot"></span> 执政者版本 <span class="separator">/</span> BUILD · DISCOVER · DECIDE</div>
+      <button class="text-button" id="help-button">玩法与规则 <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <div><div class="eyebrow">CHAPTER II / THE AGE OF CHOICE</div><h1 id="page-title">文明实验室<span>Ⅱ</span></h1><p>建一座城，选一条路，改变一个时代。</p></div>
+      <div class="year-box"><span class="eyebrow">世界历</span><div><strong id="year">0000</strong><span>年</span></div><span id="era-label">定居时代</span></div>
+    </section>
+
+    <section class="world-bar" aria-label="创建与保存世界">
+      <div class="world-fields"><label for="scenario">世界类型<select id="scenario"><option value="balanced">新世界</option><option value="islands">群岛纪元</option><option value="frontier">丰饶大陆</option><option value="scarcity">漫长旱季</option></select></label><label for="seed">世界种子<input id="seed" maxlength="100" value="远方来信" autocomplete="off" spellcheck="false"></label><button id="generate" class="button secondary">生成世界 <span aria-hidden="true">↗</span></button></div>
+      <div class="save-actions"><button class="text-button" id="save">保存</button><button class="text-button" id="load">读取</button><button class="text-button" id="recover" title="恢复上一次生成或回退前的世界">恢复</button><button class="text-button" id="export">导出</button><button class="text-button" id="import">导入</button><input type="file" id="import-file" accept=".json,application/json" hidden></div>
+    </section>
+
+    <main>
+      <section class="reign-bar" aria-label="执政目标"><div class="reign-identity"><span class="eyebrow">YOUR CIVILIZATION</span><strong id="reign-name">晨曦联邦</strong><span id="reign-goal">繁荣之路</span></div><div class="goal-track" id="goal-track"></div><button id="campaign-settings" class="text-button">选择文明与目标 ↗</button></section>
+      <div id="decision-banner" class="decision-banner" hidden aria-live="polite"></div>
+      <div id="victory-banner" class="victory-banner" hidden aria-live="polite"></div>
+      <div class="main-grid">
+        <section class="atlas-panel" aria-label="世界地图">
+          <div class="panel-heading"><div><span class="eyebrow">WORLD ATLAS</span><h2>世界正在生长</h2></div><div class="segmented" role="group" aria-label="地图视图"><button data-layer="territory" aria-pressed="true">疆域</button><button data-layer="terrain" aria-pressed="false">地形</button><button data-layer="resources" aria-pressed="false">资源</button></div></div>
+          <div class="map-wrap"><canvas id="world-map" tabindex="0" aria-label="文明世界地图。方向键移动观察位置，回车选中文明。">地图需要浏览器支持 Canvas。文明数据也可通过地图下方的按钮和文明面板读取。</canvas><div class="map-label"><span id="weather">风调雨顺</span><span id="world-name">新世界</span></div><div class="compass" aria-hidden="true">N<br>↑</div><div id="map-tooltip" class="map-tooltip" hidden></div></div>
+          <div class="map-footer"><span id="tile-info">点击城市管理建设，点击菱形遗迹派出远征</span><div class="map-tools"><button id="zoom-out" aria-label="缩小地图">−</button><button id="zoom-reset" aria-label="重置地图视野">全图</button><button id="zoom-in" aria-label="放大地图">＋</button></div></div>
+          <div class="civ-legend" id="civ-legend" aria-label="选择文明"></div>
+          <div class="transport"><div class="transport-main"><button id="play" class="button primary"><span id="play-icon" aria-hidden="true">▶</span> <span id="play-label">开始演化</span></button><button id="step" class="button secondary" aria-label="推进一年">+ 1 年</button><button id="advance" class="button secondary">+ 10 年</button></div><label class="speed-label" for="speed">流速<select id="speed"><option value="1">1 年 / 秒</option><option value="5" selected>5 年 / 秒</option><option value="20">20 年 / 秒</option></select></label><span id="run-status" class="run-status">时间已暂停</span></div>
+          <section class="command-center" aria-label="执政大厅"><div class="command-heading"><div><span class="eyebrow">THE COUNCIL CHAMBER</span><h2>执政大厅</h2></div><span id="command-resources" class="command-resources"></span></div><div class="command-tabs" role="tablist" aria-label="执政事务"><button role="tab" id="tab-cities" data-panel="cities" aria-selected="true" aria-controls="command-body">城市建设</button><button role="tab" id="tab-research" data-panel="research" aria-selected="false" aria-controls="command-body">研究路线</button><button role="tab" id="tab-explore" data-panel="explore" aria-selected="false" aria-controls="command-body">远征探索</button><button role="tab" id="tab-diplomacy" data-panel="diplomacy" aria-selected="false" aria-controls="command-body">外交关系</button><button role="tab" id="tab-goals" data-panel="goals" aria-selected="false" aria-controls="command-body">胜利目标</button></div><div id="command-body" role="tabpanel" aria-labelledby="tab-cities"></div></section>
+        </section>
+
+        <aside class="inspector" aria-label="文明观察与干预">
+          <div class="panel-heading"><div><span class="eyebrow">CIVILIZATION PROFILE</span><h2>文明观察</h2></div><span id="civ-number" class="muted">01 / 06</span></div>
+          <div id="profile"></div>
+          <div class="policy-control"><label for="policy">发展方向</label><select id="policy"></select><p id="policy-description"></p></div>
+          <div id="advisor" class="advisor-box"></div>
+          <button id="return-player" class="button secondary full-width">返回我的文明 <span aria-hidden="true">↗</span></button>
+          <details class="sandbox-controls"><summary>沙盒干预 <span>使用后标记辅助通关</span></summary>
+          <button id="aid" class="button secondary full-width">给予资源援助 <span aria-hidden="true">＋</span></button>
+          <div class="inspector-divider"></div>
+          <div class="settings-title"><h3>世界参数</h3><span class="eyebrow">YOUR INFLUENCE</span></div>
+          <div class="slider-field"><label for="fertility">土地丰饶度 <output id="fertility-value">1.00×</output></label><input id="fertility" type="range" min="0.4" max="1.8" step="0.05" value="1"></div>
+          <div class="slider-field"><label for="aggression">冲突倾向 <output id="aggression-value">45%</output></label><input id="aggression" type="range" min="0" max="1" step="0.05" value="0.45"></div>
+          <div class="slider-field"><label for="disasters">灾害频率 <output id="disasters-value">35%</output></label><input id="disasters" type="range" min="0" max="1" step="0.05" value="0.35"></div>
+          <div class="interventions"><button id="rain" class="button secondary">降下甘霖</button><button id="peace" class="button secondary">调停战争</button></div>
+          </details>
+        </aside>
+      </div>
+
+      <section class="world-stats" aria-label="世界概况"><div><span>总人口</span><strong id="total-pop">0</strong><small>人</small></div><div><span>城市</span><strong id="total-cities">6</strong><small>座</small></div><div><span>文明</span><strong id="total-civs">6</strong><small>个</small></div><div><span>通商条约</span><strong id="total-treaties">0</strong><small>份</small></div><div><span>进行中战争</span><strong id="total-wars">0</strong><small>场</small></div><div><span>已开发土地</span><strong id="total-land">0</strong><small>%</small></div></section>
+
+      <div class="bottom-grid">
+        <section class="history-panel"><div class="panel-heading"><div><span class="eyebrow">THE LONG VIEW</span><h2>时间留下的曲线</h2></div><label class="sr-only" for="chart-metric">图表指标</label><select id="chart-metric"><option value="population">人口 / 人</option><option value="territory">领土 / 格</option><option value="tech">科技 / 级</option><option value="wealth">财富 / 单位</option></select></div><div class="chart-wrap"><canvas id="history-chart" role="img" aria-label="六个文明的人口历史折线图"></canvas></div><div class="replay-bar"><div><label for="replay-year">回到历史</label><input type="number" id="replay-year" min="0" max="0" value="0" aria-label="回放目标年份"><span>年</span></div><button id="replay" class="text-button">重建并从这里继续 ↗</button></div><p class="subtle-note">保留该年份及以前的干预。后续历史将被改写，建议先保存。</p></section>
+        <section class="chronicle-panel"><div class="panel-heading"><div><span class="eyebrow">CHRONICLE</span><h2>世界编年史</h2></div><label class="sr-only" for="event-filter">事件筛选</label><select id="event-filter"><option value="all">全部事件</option><option value="selected">当前文明</option><option value="war">战争与和平</option><option value="tech">科技突破</option><option value="climate">气候与灾害</option></select></div><ol id="events" class="events"></ol><div id="empty-events" class="empty-state" hidden>这一页历史还在等待被书写。</div></section>
+      </div>
+    </main>
+    <footer class="page-footer"><span>文明实验室 Ⅱ <span class="muted">/</span> 执政者 · 一个关于选择与时间的微型世界</span><span>完全离线 · 可复现历史 · <a href="classic.html">经典版</a></span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <div id="busy" class="busy-overlay" hidden><div class="busy-card"><span class="eyebrow">RECONSTRUCTING HISTORY</span><h2>正在重建历史</h2><p id="busy-text">从第一簇炉火重新开始……</p><button class="button secondary" id="cancel-work">取消</button></div></div>
+  <dialog id="help-dialog"><button id="close-help" class="close-button" aria-label="关闭说明">×</button><div class="eyebrow">THE RULER'S HANDBOOK</div><h2>建城、求知，然后写下你的历史。</h2><p>你执政一个文明，其他五个文明自主发展。开局可以选择文明与胜利路线；切换观察对象不会改变执政文明。所有目标达成后，仍可继续游玩。</p><div class="help-grid"><section><h3>01 / 开始执政</h3><p>先处理顶部议事，再选择一项专项研究和城市工程。点“开始演化”或“+10年”推进时间；新议事到来时自动暂停。人口与时代科技会自动发展。</p></section><section><h3>02 / 建城与研究</h3><p>建筑消耗资源、逐年完工，每城可排3项工程。普通建筑加成取各城平均。研究解锁新建筑。点地图上的本国土地或邻接陆地，查看开拓条件并建城；城市间至少相隔4格。</p></section><section><h3>03 / 探索与外交</h3><p>菱形标记是遗迹。派遣需要30粮食、25财富；有失败风险，且每文明同时只能派一支远征队。使节改善关系，停战协议限制宣战；宣战必须接壤。鼠标可拖动放大的地图。</p></section><section><h3>04 / 保留你的选择</h3><p>保存使用独立的新版槽位，旧存档可自动升级。回放精确重建干预顺序；升级存档可回到升级起点。“恢复”找回上一次生成、读取或回退前的世界。重要存档请导出。</p></section></div><p class="help-note">地图内可用方向键移动、回车选择。沙盒援助、天气和参数调整会标记辅助通关。曲线显示最近600年；50,000年与10,000次干预为单世界上限。虚构的简化模拟，不用于现实预测。</p></dialog>
+  <dialog id="campaign-dialog"><button id="close-campaign" class="close-button" aria-label="关闭文明选择">×</button><div class="eyebrow">WRITE YOUR OWN CHAPTER</div><h2>这一次，由你执政。</h2><p>选定一个文明与目标。其他五个文明会自主发展，与你争夺土地、遗迹和世界奇观。</p><label class="dialog-label" for="player-choice">执政文明</label><select id="player-choice"></select><label class="dialog-label" for="goal-choice">胜利路线</label><select id="goal-choice"></select><p id="goal-description" class="goal-description"></p><button id="begin-reign" class="button primary full-width">开始执政 →</button><p class="help-note">只能在开始时更改。切换观察对象不会改变执政文明。新世界可以重新选择。</p></dialog>
+  <script id="content-source">/*__CONTENT__*/</script>
+  <script id="legacy-source">/*__LEGACY__*/</script>
+  <script id="engine-source">/*__ENGINE__*/</script>
+  <script>/*__APP__*/</script>
+</body>
+</html>

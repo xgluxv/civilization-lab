@@ -1,0 +1,1808 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111a1c">
+  <title>文明实验室 II · 执政者</title>
+  <style>:root{color-scheme:dark;--bg:#101819;--panel:#162123;--panel-2:#1b292b;--line:#2a3b3d;--text:#e8e9df;--muted:#91a3a1;--accent:#e3bc75;--green:#91c9aa;--danger:#ed9690;font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;font-size:14px;font-weight:400;line-height:1.6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,canvas:focus-visible{outline:2px solid var(--accent);outline-offset:4px}a{color:inherit;text-decoration:none}button{color:var(--text)}[hidden]{display:none!important}h1,h2,h3,p{margin:0}h2{font-size:19px;font-weight:500;letter-spacing:.02em}h3{font-size:14px;font-weight:500}select,input:not([type=range]){background:#1b282a;border:1px solid var(--line);border-radius:6px;color:var(--text);min-height:38px;padding:6px 10px;max-width:100%}select{cursor:pointer}input[type=range]{accent-color:var(--accent);width:100%;height:20px;cursor:pointer}button{border:0;background:transparent}.app{max-width:1500px;margin:auto;padding:0 48px}.masthead{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);min-height:88px}.brand{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.16em;white-space:nowrap}.brand b{font-weight:500;color:var(--accent)}.brand-mark{font-size:34px;color:var(--accent);line-height:1}.header-meta{font-size:12px;letter-spacing:.04em;color:var(--muted)}.status-dot{display:inline-block;width:5px;height:5px;background:var(--green);border-radius:50%;vertical-align:middle;margin-right:7px}.separator{margin:0 12px;color:#506462}.text-button{padding:7px 0;color:var(--muted);font-size:13px;white-space:nowrap}.text-button:hover{color:var(--accent)}.intro{display:flex;justify-content:space-between;align-items:center;padding:38px 0 32px;gap:20px}.eyebrow{font-size:10px;letter-spacing:.18em;color:var(--muted);font-weight:500}.intro h1{font-family:Georgia,"Songti SC","SimSun",serif;font-size:42px;line-height:1.45;font-weight:400;letter-spacing:.08em;margin:7px 0}.intro h1 span{color:var(--accent)}.intro p{color:var(--muted);font-size:13px;letter-spacing:.04em}.year-box{text-align:right;min-width:170px}.year-box>div{display:flex;align-items:baseline;justify-content:flex-end;gap:10px}.year-box strong{font-size:48px;line-height:1.25;letter-spacing:-.03em;font-weight:400;font-variant-numeric:tabular-nums;color:var(--accent)}.year-box>span:last-child{font-size:12px;color:var(--muted)}.world-bar{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:18px 0 22px;border-top:1px solid var(--line)}.world-fields{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}.world-fields label{display:flex;flex-direction:column;gap:5px;color:var(--muted);font-size:11px;letter-spacing:.04em}.world-fields select{width:145px;font-size:13px}.world-fields input{width:190px;font-size:13px}.button{display:inline-flex;justify-content:center;align-items:center;gap:10px;border-radius:6px;padding:9px 15px;min-height:40px;font-size:12px;white-space:nowrap;font-weight:500;transition:background .15s,color .15s}.button.primary{color:#272a21;background:var(--accent)}.button.primary:hover{background:#f0d094}.button.secondary{background:var(--panel-2);border:1px solid var(--line)}.button.secondary:hover{background:#273a3c}.save-actions{display:flex;gap:20px;align-items:center;padding-bottom:4px}.main-grid{display:grid;grid-template-columns:minmax(0,1fr) 296px;gap:24px}.atlas-panel,.inspector,.history-panel,.chronicle-panel{min-width:0}.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0}.panel-heading .eyebrow{display:block;margin-bottom:3px}.panel-heading h2{font-size:17px}.atlas-panel .panel-heading{padding-top:4px;padding-bottom:16px}.segmented{display:flex;gap:3px;border:1px solid var(--line);border-radius:6px;padding:3px}.segmented button{padding:5px 10px;border-radius:3px;color:var(--muted);font-size:12px;white-space:nowrap}.segmented button[aria-pressed=true]{color:var(--text);background:#2b3d3e}.map-wrap{position:relative;background:#172d33;border:1px solid #354746;border-radius:9px;overflow:hidden;isolation:isolate}.map-wrap canvas{display:block;width:100%;aspect-ratio:1.6;cursor:crosshair;touch-action:pan-y}.map-label{position:absolute;left:16px;top:14px;display:flex;gap:8px;pointer-events:none;font-size:11px;color:#d9dfd3}.map-label span{background:rgba(15,29,32,.83);padding:3px 9px;border-radius:3px}.compass{position:absolute;top:14px;right:16px;color:#a4b9b7;font-size:10px;line-height:1.3;text-align:center;pointer-events:none}.map-tooltip{position:absolute;pointer-events:none;z-index:2;background:#152223f2;border:1px solid #52655f;padding:7px 11px;border-radius:5px;max-width:230px;font-size:12px;box-shadow:0 8px 24px #0003}.map-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:11px;padding:11px 2px}.map-scale{white-space:nowrap;letter-spacing:-.02em}.map-scale span{margin-left:6px;letter-spacing:0}.civ-legend{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 17px}.civ-chip{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);padding:5px 7px;border:1px solid transparent;border-radius:4px;white-space:nowrap}.civ-chip[aria-pressed=true]{background:var(--panel-2);border-color:var(--line);color:var(--text)}.swatch{width:7px;height:7px;border-radius:50%;flex:none}.civ-chip.is-gone{text-decoration:line-through;opacity:.55}.transport{display:flex;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line);padding:15px 0}.transport-main{display:flex;gap:7px}.transport .button{padding:8px 12px;min-height:37px}.speed-label{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted)}.speed-label select{min-height:34px;font-size:11px;padding:5px 7px}.run-status{font-size:11px;color:var(--muted);margin-left:auto}.run-status.running{color:var(--green)}.inspector{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:0 20px 18px}.inspector .panel-heading{border-bottom:1px solid var(--line);margin-bottom:15px}.inspector .panel-heading h2{font-size:16px}.inspector .eyebrow{font-size:9px}.muted{color:var(--muted);font-size:11px}.profile-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:3px}.profile-name{display:flex;align-items:center;gap:9px;font-size:21px;font-family:Georgia,"SimSun",serif;letter-spacing:.04em}.profile-name .swatch{width:9px;height:9px}.profile-tag{font-size:10px;color:var(--green)}.profile-caption{font-size:11px;color:var(--muted);margin-bottom:17px}.resource-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin-bottom:16px}.resource-cell>span{font-size:10px;color:var(--muted);display:block}.resource-value{font-size:21px;font-variant-numeric:tabular-nums;line-height:1.5;letter-spacing:-.02em}.resource-value small{font-size:10px;color:var(--muted);margin-left:4px}.positive{color:var(--green)!important}.negative{color:var(--danger)!important}.resource-detail{font-size:10px;color:var(--muted)}.tech-line{display:flex;justify-content:space-between;gap:10px;font-size:10px;color:var(--muted)}.tech-track{background:#304243;border-radius:3px;height:4px;margin:7px 0 5px;overflow:hidden}.tech-fill{height:100%;background:var(--accent);transition:width .2s}.tech-caption{font-size:10px;color:var(--muted);margin-bottom:15px}.policy-control{margin:14px 0 12px}.policy-control label{font-size:11px;color:var(--muted);display:block;margin-bottom:6px}.policy-control select{width:100%;font-size:12px;min-height:34px}.policy-control p{font-size:10px;color:var(--muted);margin-top:6px;min-height:16px}.full-width{width:100%;justify-content:space-between}.inspector-divider{height:1px;background:var(--line);margin:19px 0 15px}.settings-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.settings-title h3{font-size:13px}.slider-field{margin:8px 0}.slider-field label{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.slider-field output{color:var(--text);font-variant-numeric:tabular-nums}.interventions{display:flex;gap:8px;margin-top:12px}.interventions button{flex:1;font-size:11px;padding:7px 10px;min-height:34px}.world-stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:21px 0;margin-top:17px}.world-stats>div{padding:0 20px;border-right:1px solid var(--line)}.world-stats>div:first-child{padding-left:0}.world-stats>div:last-child{border:0}.world-stats span{display:block;font-size:11px;color:var(--muted);margin-bottom:3px}.world-stats strong{font-size:28px;font-weight:400;line-height:1.4;font-variant-numeric:tabular-nums;letter-spacing:-.03em}.world-stats small{color:var(--muted);font-size:10px;margin-left:6px}.bottom-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;padding:10px 0 26px}.bottom-grid select{font-size:11px;min-height:33px;max-width:130px;padding:5px 7px}.chart-wrap{height:230px;position:relative;margin-top:3px}.chart-wrap canvas{display:block;width:100%;height:100%}.replay-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);padding-top:15px}.replay-bar>div{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted)}.replay-bar input{width:80px;min-height:31px;font-size:12px;padding:4px 7px}.replay-bar .text-button{font-size:11px}.subtle-note{font-size:10px;color:var(--muted);margin-top:6px}.events{list-style:none;padding:0;margin:0;max-height:310px;overflow:auto;scrollbar-width:thin;scrollbar-color:#3f5354 transparent}.event{display:grid;grid-template-columns:43px 15px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #233436;font-size:12px}.event:last-child{border:0}.event-year{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}.event-mark{font-size:12px;color:var(--accent);padding-top:1px}.event-text{color:#cbd5cd;line-height:1.65}.event.war .event-mark{color:var(--danger)}.event.tech .event-mark{color:var(--green)}.empty-state{padding:40px 10px;text-align:center;color:var(--muted);font-size:12px}.page-footer{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:20px 0 32px;border-top:1px solid var(--line);font-size:10px;color:#6f8784;letter-spacing:.02em}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);padding:12px 20px;background:#e4c68d;color:#202822;border-radius:7px;box-shadow:0 12px 40px #0006;z-index:20;max-width:calc(100% - 32px);font-size:12px}.toast.error{background:#e3a19b}.busy-overlay{position:fixed;inset:0;background:#0b1415cc;backdrop-filter:blur(5px);display:grid;place-items:center;z-index:30;padding:20px}.busy-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;max-width:400px;padding:30px;text-align:center}.busy-card h2{margin:12px 0}.busy-card p{color:var(--muted);font-size:12px;margin-bottom:20px}dialog{background:var(--panel);color:var(--text);border:1px solid #49605b;border-radius:12px;width:min(720px,calc(100% - 32px));max-height:85vh;padding:34px;box-shadow:0 24px 100px #0007}dialog::backdrop{background:#091416b8;backdrop-filter:blur(4px)}dialog>h2{font-family:Georgia,"SimSun",serif;font-size:26px;margin:12px 0}dialog>p{font-size:13px;color:var(--muted);line-height:1.9}.close-button{position:absolute;top:12px;right:14px;font-size:24px;color:var(--muted);min-width:36px;min-height:36px}.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0}.help-grid h3{color:var(--accent);font-size:13px;margin-bottom:7px}.help-grid p{font-size:12px;color:var(--muted);line-height:1.8}.help-note{padding-top:16px;border-top:1px solid var(--line);font-size:11px!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1600px){.app{max-width:1600px;padding:0 60px}.main-grid{grid-template-columns:minmax(0,1fr) 320px;gap:32px}.inspector{padding-left:24px;padding-right:24px}.map-wrap canvas{aspect-ratio:1.7}}
+@media(max-width:1100px){.app{padding:0 28px}.main-grid{grid-template-columns:minmax(0,1fr) 270px;gap:18px}.inspector{padding-left:16px;padding-right:16px}.header-meta{display:none}.run-status{display:none}.world-stats>div{padding:0 14px}.world-stats strong{font-size:24px}.save-actions{gap:14px}.world-fields input{width:150px}.transport{gap:8px}.civ-legend{gap:3px}.civ-chip{font-size:10px;padding:4px 5px}.map-wrap canvas{aspect-ratio:1.35}.chart-wrap{height:220px}}
+@media(max-width:850px){.main-grid{grid-template-columns:1fr}.map-wrap canvas{aspect-ratio:1.6}.inspector{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;padding-bottom:20px}.inspector .panel-heading{grid-column:1/-1}.inspector #profile{grid-row:2/8}.policy-control{margin-top:0}.inspector-divider{margin:12px 0}.settings-title{margin-bottom:5px}.slider-field{margin:5px 0}.inspector .full-width{min-height:34px}.bottom-grid{gap:24px}.world-bar{flex-wrap:wrap}.save-actions{padding:0}.world-fields input{width:190px}.run-status{display:block}.civ-legend{gap:7px}.civ-chip{font-size:11px;padding:5px 7px}.intro{padding:30px 0}.intro h1{font-size:36px}.year-box strong{font-size:40px}}
+@media(max-width:620px){.app{padding:0 18px}.masthead{min-height:70px;gap:8px}.brand{font-size:10px;letter-spacing:.1em}.brand-mark{font-size:28px}.masthead .text-button{font-size:11px}.intro{align-items:flex-end;padding:25px 0}.intro h1{font-size:30px;letter-spacing:.05em}.intro p{font-size:11px;max-width:205px}.intro .eyebrow{font-size:8px}.year-box{min-width:96px}.year-box strong{font-size:34px}.year-box>div{gap:5px}.year-box>span:last-child{font-size:10px}.world-bar{padding:14px 0 20px;gap:12px}.world-fields{width:100%;gap:8px}.world-fields label{flex:1;min-width:100px}.world-fields select,.world-fields input{width:100%;font-size:12px}.world-fields #generate{width:100%;min-height:34px}.save-actions{width:100%;justify-content:space-between;padding:0 2px}.panel-heading h2{font-size:16px}.panel-heading .eyebrow{font-size:8px}.segmented{gap:1px;padding:2px}.segmented button{padding:5px 8px;font-size:10px}.map-wrap canvas{aspect-ratio:1.25}.map-label{left:10px;top:10px;font-size:9px;gap:4px}.map-label span{padding:2px 6px}.compass{right:10px;top:10px}.map-scale{display:none}.map-footer{font-size:10px;min-height:35px}.civ-legend{gap:3px;justify-content:space-between}.civ-chip{font-size:10px;padding:4px 5px}.transport{gap:8px}.transport-main{width:100%}.transport-main button{flex:1}.transport .button{font-size:11px;padding:8px 9px}.run-status{font-size:10px}.speed-label{font-size:10px}.inspector{display:block;padding:0 16px 18px}.resource-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 10px}.profile-name{font-size:23px}.resource-value{font-size:22px}.policy-control{margin-top:16px}.inspector .eyebrow{font-size:9px}.interventions{margin-top:14px}.interventions button{min-height:38px}.world-stats{grid-template-columns:repeat(3,1fr);gap:18px 0;margin-top:24px;padding:19px 0}.world-stats>div{padding:0 12px}.world-stats>div:nth-child(3n){border:0}.world-stats>div:nth-child(3n+1){padding-left:0}.world-stats span{font-size:10px}.world-stats strong{font-size:25px}.bottom-grid{grid-template-columns:1fr;gap:15px;padding-top:5px}.chart-wrap{height:210px}.history-panel .panel-heading{gap:6px}.bottom-grid select{max-width:105px;font-size:10px}.events{max-height:300px}.chronicle-panel{border-top:1px solid var(--line)}.replay-bar{gap:4px}.replay-bar .text-button{font-size:10px}.subtle-note{font-size:9px}.page-footer{font-size:9px;padding-bottom:24px;gap:6px}.help-grid{grid-template-columns:1fr;gap:16px;margin:20px 0}dialog{padding:26px 22px}dialog>h2{font-size:21px}.toast{bottom:15px;font-size:11px}.eyebrow{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+
+/* The ruler expansion adds playable systems to the existing atlas. */
+.intro h1 span{font-size:.65em;margin-left:.28em;letter-spacing:0}.main-grid{align-items:start}.inspector{position:sticky;top:18px}.reign-bar{display:flex;align-items:center;gap:26px;padding:17px 20px;margin-bottom:18px;border:1px solid var(--line);background:linear-gradient(100deg,#24342c66,transparent);border-radius:8px}.reign-identity{display:flex;flex-direction:column;min-width:155px}.reign-identity strong{font-size:18px;font-weight:500;margin:3px 0}.reign-identity>span:last-child{font-size:11px;color:var(--muted)}.goal-track{display:flex;gap:14px;flex:1;max-width:350px}.goal-pip{flex:1;text-align:right;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums}.goal-pip.complete{color:var(--green)}.reign-bar>.text-button{margin-left:auto}.mini-track{height:4px;background:#304242;border-radius:3px;overflow:hidden;margin-top:6px}.mini-track>span{display:block;height:100%;background:var(--accent);transition:width .2s}.complete .mini-track>span{background:var(--green)}.decision-banner{padding:24px;margin:0 0 24px;border:1px solid #6f6040;background:linear-gradient(120deg,#302b20,#1b2624 65%);border-radius:10px}.decision-intro{display:flex;align-items:center;gap:20px}.decision-symbol{font-size:42px;line-height:1;color:var(--accent);padding:4px}.decision-intro h2{font-family:Georgia,"SimSun",serif;font-size:23px;margin:5px 0}.decision-intro p{font-size:12px;color:#bac4b4;max-width:780px;line-height:1.85}.decision-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}.decision-choice{text-align:left;border:1px solid #4b5040;border-radius:7px;padding:14px 16px;background:#182524;min-width:0;transition:border-color .15s,background .15s}.decision-choice:hover:not(:disabled){border-color:var(--accent);background:#25352b}.decision-choice strong{font-size:13px;font-weight:500;color:#ebd4a3;display:flex;justify-content:space-between;margin-bottom:6px;gap:8px}.decision-choice>span{font-size:11px;color:#b4c1b4;line-height:1.65;display:block}.decision-choice small{display:block;margin-top:4px;color:var(--danger)}.victory-banner{display:flex;gap:25px;align-items:center;padding:25px;margin-bottom:22px;border:1px solid #9b8447;border-radius:10px;background:linear-gradient(100deg,#453a23,#1d302b)}.victory-star{font-size:48px;color:#f1cf86}.victory-banner h2{font-family:Georgia,"SimSun",serif;font-size:23px;margin:6px 0}.victory-banner p{font-size:12px;color:var(--muted)}.command-center{margin:13px 0 20px;border-top:1px solid var(--line)}.command-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0 15px}.command-heading h2{margin-top:4px}.command-resources{max-width:350px;text-align:right;color:var(--muted);font-size:11px;line-height:1.9;font-variant-numeric:tabular-nums}.command-tabs{display:flex;gap:5px;border-bottom:1px solid var(--line);margin-bottom:20px;flex-wrap:wrap}.command-tabs button{padding:10px 11px 12px;font-size:12px;color:var(--muted);border-bottom:2px solid transparent;border-radius:4px 4px 0 0}.command-tabs button[aria-selected=true]{color:var(--accent);border-bottom-color:var(--accent);background:#20302b66}.command-tabs button:hover{color:var(--text)}#command-body{min-height:260px}.city-picker{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px}.city-picker label{color:var(--muted);font-size:11px}.city-picker select{min-height:34px;font-size:12px;min-width:145px}.city-picker>span{margin-left:auto;color:var(--muted);font-size:11px}.queue-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.queue-heading h3{font-size:12px}.queue-heading h3 span{color:var(--muted);font-size:10px;margin-left:6px}.queue-heading>span{font-size:10px;color:var(--muted)}.build-queue{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.queue-empty{width:100%;border:1px dashed #344b47;border-radius:6px;padding:15px;color:var(--muted);font-size:12px;text-align:center}.queue-item{display:flex;gap:12px;align-items:center;padding:12px;background:#20332d;border:1px solid #3c5145;border-radius:6px;flex:1;min-width:170px}.queue-item>div{flex:1;min-width:0}.queue-item strong{font-size:12px;font-weight:500;display:block}.queue-item span{font-size:10px;color:var(--muted)}.queue-cancel{padding:6px;min-width:28px;color:var(--muted);font-size:18px}.building-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.building-card{border:1px solid var(--line);background:#182627;border-radius:7px;padding:15px;display:flex;flex-direction:column;min-width:0}.building-top{display:flex;gap:10px;align-items:center;margin-bottom:10px}.building-mark{font-size:17px;color:var(--accent);background:#313a2c;width:34px;height:34px;display:grid;place-items:center;border-radius:6px;flex:none;font-family:"SimSun",serif}.building-top h3{font-size:13px}.building-top div>span{font-size:10px;color:var(--muted)}.building-card p{font-size:11px;color:#a8b9ad;line-height:1.7;min-height:39px;margin-bottom:12px}.cost-label{font-size:10px;color:#91a79d;margin-bottom:10px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.building-card .cost-label{margin-top:auto}.building-card .button,.site-card .button,.research-node .button{font-size:11px;min-height:34px;padding:7px 9px;white-space:normal;line-height:1.5}.building-card .button:disabled,.research-node .button:disabled,.site-card .button:disabled{opacity:.6}.wonder-card{border-color:#766240;background:linear-gradient(145deg,#312d21,#192627)}.wonder-card .building-mark{background:#4c4229}.panel-note{color:var(--muted);font-size:11px;line-height:1.85;margin:15px 0}.research-summary{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:22px}.research-summary strong{font-size:27px;font-weight:400;color:var(--accent);font-variant-numeric:tabular-nums}.research-summary strong span{font-size:12px;color:var(--muted);margin-left:3px}.research-summary>span{font-size:11px;color:var(--muted)}.research-branches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.research-branch{min-width:0}.research-branch>h3{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:13px}.research-branch>h3>span{font-family:"SimSun",serif;font-size:18px}.research-node{padding:13px 11px;background:#172426;border:1px solid var(--line);border-radius:6px;position:relative;min-height:196px;margin-bottom:16px;display:flex;flex-direction:column}.research-node:not(:last-child)::after{content:"";position:absolute;bottom:-17px;left:50%;height:16px;width:1px;background:var(--line)}.research-node.complete{border-color:#48664e;background:#1e3026}.research-tier{font-size:10px;color:var(--accent)}.research-node.complete .research-tier{color:var(--green)}.research-node h4{font-size:13px;font-weight:500;margin:6px 0 8px}.research-node p{font-size:11px;line-height:1.7;color:#a8b9ad;margin-bottom:12px}.research-node .button{margin-top:auto}.site-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.site-card{border:1px solid var(--line);background:#182627;border-radius:7px;padding:16px;min-width:0}.site-card.claimed{opacity:.6}.site-card.selected-site{border-color:var(--accent)}.site-card-heading{display:flex;align-items:center;gap:12px;margin-bottom:12px}.site-mark{font-size:27px;color:var(--accent);line-height:1}.site-card-heading>div{flex:1}.site-card-heading h3{font-size:13px}.site-card-heading h3 small{font-size:10px;color:var(--muted);font-weight:400}.site-card-heading div>span{display:block;font-size:10px;color:var(--muted);margin-top:3px}.site-card p{font-size:11px;color:#a8b9ad;margin-bottom:10px}.site-card .button{width:100%}.explore-heading{display:flex;justify-content:space-between;gap:14px;margin-bottom:16px}.explore-heading p,.explore-heading>span{font-size:11px;color:var(--muted);line-height:1.8}.explore-heading>span{white-space:nowrap}.expedition-status{padding:16px;background:#263d36;border:1px solid #486b56;border-radius:7px;margin-bottom:20px;display:flex;gap:7px;flex-wrap:wrap;justify-content:space-between}.expedition-status strong{font-size:12px;font-weight:500}.expedition-status>span{font-size:11px;color:var(--green)}.expedition-status>.mini-track{width:100%}.diplomacy-list{display:grid;gap:13px}.diplomacy-row{padding:17px;background:#182627;border:1px solid var(--line);border-radius:7px}.diplomacy-identity{display:flex;align-items:center;gap:8px}.diplomacy-identity strong{font-size:14px;font-weight:500}.diplomacy-identity>span:last-child{margin-left:auto;font-size:11px}.relation-details{display:flex;flex-wrap:wrap;gap:25px;font-size:11px;color:var(--muted);margin:11px 0}.relation-actions{display:flex;gap:12px;flex-wrap:wrap}.relation-actions>div{flex:1;min-width:180px}.relation-actions .button{width:100%;min-height:35px;font-size:11px}.relation-actions small{font-size:10px;color:var(--muted);display:block;margin-top:4px}.goal-intro{padding:5px 0 15px}.goal-intro h3{font-size:25px;font-family:Georgia,"SimSun",serif;color:var(--accent);margin:6px 0}.goal-intro p{font-size:12px;color:var(--muted)}.objective-grid{display:grid;gap:17px}.objective{padding:18px;border:1px solid var(--line);border-radius:7px;background:#182627}.objective>div:first-child{display:flex;justify-content:space-between;gap:12px;font-size:12px}.objective strong{font-size:12px;color:var(--muted);font-weight:400;white-space:nowrap}.objective .mini-track{margin-top:12px;height:5px}.objective.complete{border-color:#46654e}.objective.complete>div>span{color:var(--green)}.advisor-box{padding:15px 0;border-top:1px solid var(--line);margin-top:18px}.advisor-box p{font-size:11px;color:#a8b9ad;line-height:1.9;margin-top:6px}.sandbox-controls{border-top:1px solid var(--line);margin-top:14px;padding-top:15px}.sandbox-controls>summary{cursor:pointer;color:var(--muted);font-size:12px;list-style-position:inside}.sandbox-controls>summary>span{display:block;font-size:10px;color:#7f918a;padding-left:16px;margin-top:3px}.sandbox-controls[open]>summary{margin-bottom:16px}.map-tools{display:flex;gap:4px}.map-tools button{font-size:12px;padding:3px 8px;border:1px solid var(--line);border-radius:4px;min-height:29px;background:#1b2e2e;white-space:nowrap}.map-tools button:hover{color:var(--accent)}.settle-strip{padding:13px 15px;background:#2d3629;border:1px solid #596443;border-radius:7px;display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:17px}.settle-strip strong{font-size:12px;font-weight:500}.settle-strip p{font-size:11px;color:var(--muted);margin-top:4px}.settle-strip .button{font-size:11px;min-height:34px}.dialog-label{display:block;margin:22px 0 7px;color:var(--muted);font-size:12px}#campaign-dialog select{width:100%}#campaign-dialog .goal-description{margin:14px 0 20px;font-size:12px}#campaign-dialog .help-note{margin-top:23px}.world-stats{margin-top:0}.page-footer a:hover{color:var(--accent)}
+@media(max-width:1100px){.building-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.research-branches{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.command-heading{align-items:flex-start;flex-direction:column;gap:8px}.command-resources{text-align:left;max-width:none}.site-grid{grid-template-columns:1fr}.reign-bar{gap:18px}.reign-identity{min-width:130px}.goal-track{gap:9px}.decision-banner{padding:20px}.decision-options{gap:9px}.decision-choice{padding:13px}}
+@media(max-width:850px){.inspector{position:static;display:block}.inspector #profile{display:block}.inspector .resource-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.site-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.command-heading{flex-direction:row;align-items:center}.building-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.research-branches{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.decision-options{grid-template-columns:1fr}.decision-choice>span{font-size:12px}.reign-bar{flex-wrap:wrap}.reign-bar>.text-button{width:100%;text-align:left;margin:0;padding:0}.goal-track{margin-left:auto}.decision-intro h2{font-size:21px}.decision-symbol{font-size:33px}}
+@media(max-width:620px){.reign-bar{padding:15px;gap:14px}.goal-track{gap:8px}.reign-identity{min-width:120px}.reign-identity strong{font-size:16px}.reign-identity>span:last-child{font-size:10px}.goal-pip{font-size:9px}.decision-banner{padding:17px;margin-bottom:20px}.decision-intro{gap:12px;align-items:flex-start}.decision-symbol{font-size:28px;padding:7px 0}.decision-intro h2{font-size:20px}.decision-intro p{font-size:12px}.decision-options{margin-top:16px}.decision-choice strong{font-size:13px}.decision-choice>span{font-size:11px}.command-heading{flex-direction:column;align-items:flex-start;gap:8px}.command-heading h2{font-size:18px}.command-resources{font-size:10px}.command-tabs{gap:0}.command-tabs button{font-size:11px;padding:9px 7px}.city-picker{gap:8px}.city-picker>span{width:100%;margin:0}.queue-heading{align-items:flex-start;flex-direction:column;gap:3px}.building-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.building-card{padding:12px 10px}.building-top{gap:7px}.building-mark{width:27px;height:29px;font-size:15px}.building-top h3{font-size:12px}.building-top div>span{font-size:9px}.building-card p{font-size:11px;min-height:55px}.building-card .cost-label{font-size:10px;min-height:31px}.building-card .button{font-size:10px;min-height:43px;padding:6px}.research-branches{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 9px}.research-node{padding:12px 10px;min-height:195px}.research-summary{gap:8px;align-items:flex-start}.research-summary strong{font-size:24px}.research-summary>span{font-size:10px;max-width:125px;text-align:right}.site-grid{grid-template-columns:1fr}.explore-heading{flex-direction:column;gap:5px}.site-card{padding:14px}.objective{padding:14px}.objective>div:first-child{font-size:11px}.objective strong{font-size:10px}.relation-actions>div{min-width:140px}.diplomacy-row{padding:14px}.relation-details{gap:15px}.diplomacy-identity strong{font-size:13px}.diplomacy-identity>span:last-child{font-size:10px}.settle-strip{align-items:flex-start;flex-direction:column;gap:9px}.victory-banner{padding:20px;gap:15px}.victory-star{font-size:32px}.victory-banner h2{font-size:20px}.map-footer{align-items:flex-start;gap:6px}.map-footer>span{flex:1}.map-tools{gap:3px}.map-tools button{padding:3px 6px;font-size:11px}.panel-note{font-size:11px}.queue-item{min-width:100%}.transport-main .button{min-height:40px}.command-center{margin-bottom:10px}}
+</style>
+</head>
+<body>
+  <div class="app">
+    <header class="masthead">
+      <a class="brand" href="#" aria-label="文明实验室首页"><span class="brand-mark" aria-hidden="true">◈</span><span>CIVILIZATION <b>LAB</b></span></a>
+      <div class="header-meta"><span class="status-dot"></span> 执政者版本 <span class="separator">/</span> BUILD · DISCOVER · DECIDE</div>
+      <button class="text-button" id="help-button">玩法与规则 <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <div><div class="eyebrow">CHAPTER II / THE AGE OF CHOICE</div><h1 id="page-title">文明实验室<span>Ⅱ</span></h1><p>建一座城，选一条路，改变一个时代。</p></div>
+      <div class="year-box"><span class="eyebrow">世界历</span><div><strong id="year">0000</strong><span>年</span></div><span id="era-label">定居时代</span></div>
+    </section>
+
+    <section class="world-bar" aria-label="创建与保存世界">
+      <div class="world-fields"><label for="scenario">世界类型<select id="scenario"><option value="balanced">新世界</option><option value="islands">群岛纪元</option><option value="frontier">丰饶大陆</option><option value="scarcity">漫长旱季</option></select></label><label for="seed">世界种子<input id="seed" maxlength="100" value="远方来信" autocomplete="off" spellcheck="false"></label><button id="generate" class="button secondary">生成世界 <span aria-hidden="true">↗</span></button></div>
+      <div class="save-actions"><button class="text-button" id="save">保存</button><button class="text-button" id="load">读取</button><button class="text-button" id="recover" title="恢复上一次生成或回退前的世界">恢复</button><button class="text-button" id="export">导出</button><button class="text-button" id="import">导入</button><input type="file" id="import-file" accept=".json,application/json" hidden></div>
+    </section>
+
+    <main>
+      <section class="reign-bar" aria-label="执政目标"><div class="reign-identity"><span class="eyebrow">YOUR CIVILIZATION</span><strong id="reign-name">晨曦联邦</strong><span id="reign-goal">繁荣之路</span></div><div class="goal-track" id="goal-track"></div><button id="campaign-settings" class="text-button">选择文明与目标 ↗</button></section>
+      <div id="decision-banner" class="decision-banner" hidden aria-live="polite"></div>
+      <div id="victory-banner" class="victory-banner" hidden aria-live="polite"></div>
+      <div class="main-grid">
+        <section class="atlas-panel" aria-label="世界地图">
+          <div class="panel-heading"><div><span class="eyebrow">WORLD ATLAS</span><h2>世界正在生长</h2></div><div class="segmented" role="group" aria-label="地图视图"><button data-layer="territory" aria-pressed="true">疆域</button><button data-layer="terrain" aria-pressed="false">地形</button><button data-layer="resources" aria-pressed="false">资源</button></div></div>
+          <div class="map-wrap"><canvas id="world-map" tabindex="0" aria-label="文明世界地图。方向键移动观察位置，回车选中文明。">地图需要浏览器支持 Canvas。文明数据也可通过地图下方的按钮和文明面板读取。</canvas><div class="map-label"><span id="weather">风调雨顺</span><span id="world-name">新世界</span></div><div class="compass" aria-hidden="true">N<br>↑</div><div id="map-tooltip" class="map-tooltip" hidden></div></div>
+          <div class="map-footer"><span id="tile-info">点击城市管理建设，点击菱形遗迹派出远征</span><div class="map-tools"><button id="zoom-out" aria-label="缩小地图">−</button><button id="zoom-reset" aria-label="重置地图视野">全图</button><button id="zoom-in" aria-label="放大地图">＋</button></div></div>
+          <div class="civ-legend" id="civ-legend" aria-label="选择文明"></div>
+          <div class="transport"><div class="transport-main"><button id="play" class="button primary"><span id="play-icon" aria-hidden="true">▶</span> <span id="play-label">开始演化</span></button><button id="step" class="button secondary" aria-label="推进一年">+ 1 年</button><button id="advance" class="button secondary">+ 10 年</button></div><label class="speed-label" for="speed">流速<select id="speed"><option value="1">1 年 / 秒</option><option value="5" selected>5 年 / 秒</option><option value="20">20 年 / 秒</option></select></label><span id="run-status" class="run-status">时间已暂停</span></div>
+          <section class="command-center" aria-label="执政大厅"><div class="command-heading"><div><span class="eyebrow">THE COUNCIL CHAMBER</span><h2>执政大厅</h2></div><span id="command-resources" class="command-resources"></span></div><div class="command-tabs" role="tablist" aria-label="执政事务"><button role="tab" id="tab-cities" data-panel="cities" aria-selected="true" aria-controls="command-body">城市建设</button><button role="tab" id="tab-research" data-panel="research" aria-selected="false" aria-controls="command-body">研究路线</button><button role="tab" id="tab-explore" data-panel="explore" aria-selected="false" aria-controls="command-body">远征探索</button><button role="tab" id="tab-diplomacy" data-panel="diplomacy" aria-selected="false" aria-controls="command-body">外交关系</button><button role="tab" id="tab-goals" data-panel="goals" aria-selected="false" aria-controls="command-body">胜利目标</button></div><div id="command-body" role="tabpanel" aria-labelledby="tab-cities"></div></section>
+        </section>
+
+        <aside class="inspector" aria-label="文明观察与干预">
+          <div class="panel-heading"><div><span class="eyebrow">CIVILIZATION PROFILE</span><h2>文明观察</h2></div><span id="civ-number" class="muted">01 / 06</span></div>
+          <div id="profile"></div>
+          <div class="policy-control"><label for="policy">发展方向</label><select id="policy"></select><p id="policy-description"></p></div>
+          <div id="advisor" class="advisor-box"></div>
+          <button id="return-player" class="button secondary full-width">返回我的文明 <span aria-hidden="true">↗</span></button>
+          <details class="sandbox-controls"><summary>沙盒干预 <span>使用后标记辅助通关</span></summary>
+          <button id="aid" class="button secondary full-width">给予资源援助 <span aria-hidden="true">＋</span></button>
+          <div class="inspector-divider"></div>
+          <div class="settings-title"><h3>世界参数</h3><span class="eyebrow">YOUR INFLUENCE</span></div>
+          <div class="slider-field"><label for="fertility">土地丰饶度 <output id="fertility-value">1.00×</output></label><input id="fertility" type="range" min="0.4" max="1.8" step="0.05" value="1"></div>
+          <div class="slider-field"><label for="aggression">冲突倾向 <output id="aggression-value">45%</output></label><input id="aggression" type="range" min="0" max="1" step="0.05" value="0.45"></div>
+          <div class="slider-field"><label for="disasters">灾害频率 <output id="disasters-value">35%</output></label><input id="disasters" type="range" min="0" max="1" step="0.05" value="0.35"></div>
+          <div class="interventions"><button id="rain" class="button secondary">降下甘霖</button><button id="peace" class="button secondary">调停战争</button></div>
+          </details>
+        </aside>
+      </div>
+
+      <section class="world-stats" aria-label="世界概况"><div><span>总人口</span><strong id="total-pop">0</strong><small>人</small></div><div><span>城市</span><strong id="total-cities">6</strong><small>座</small></div><div><span>文明</span><strong id="total-civs">6</strong><small>个</small></div><div><span>通商条约</span><strong id="total-treaties">0</strong><small>份</small></div><div><span>进行中战争</span><strong id="total-wars">0</strong><small>场</small></div><div><span>已开发土地</span><strong id="total-land">0</strong><small>%</small></div></section>
+
+      <div class="bottom-grid">
+        <section class="history-panel"><div class="panel-heading"><div><span class="eyebrow">THE LONG VIEW</span><h2>时间留下的曲线</h2></div><label class="sr-only" for="chart-metric">图表指标</label><select id="chart-metric"><option value="population">人口 / 人</option><option value="territory">领土 / 格</option><option value="tech">科技 / 级</option><option value="wealth">财富 / 单位</option></select></div><div class="chart-wrap"><canvas id="history-chart" role="img" aria-label="六个文明的人口历史折线图"></canvas></div><div class="replay-bar"><div><label for="replay-year">回到历史</label><input type="number" id="replay-year" min="0" max="0" value="0" aria-label="回放目标年份"><span>年</span></div><button id="replay" class="text-button">重建并从这里继续 ↗</button></div><p class="subtle-note">保留该年份及以前的干预。后续历史将被改写，建议先保存。</p></section>
+        <section class="chronicle-panel"><div class="panel-heading"><div><span class="eyebrow">CHRONICLE</span><h2>世界编年史</h2></div><label class="sr-only" for="event-filter">事件筛选</label><select id="event-filter"><option value="all">全部事件</option><option value="selected">当前文明</option><option value="war">战争与和平</option><option value="tech">科技突破</option><option value="climate">气候与灾害</option></select></div><ol id="events" class="events"></ol><div id="empty-events" class="empty-state" hidden>这一页历史还在等待被书写。</div></section>
+      </div>
+    </main>
+    <footer class="page-footer"><span>文明实验室 Ⅱ <span class="muted">/</span> 执政者 · 一个关于选择与时间的微型世界</span><span>完全离线 · 可复现历史 · <a href="classic.html">经典版</a></span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <div id="busy" class="busy-overlay" hidden><div class="busy-card"><span class="eyebrow">RECONSTRUCTING HISTORY</span><h2>正在重建历史</h2><p id="busy-text">从第一簇炉火重新开始……</p><button class="button secondary" id="cancel-work">取消</button></div></div>
+  <dialog id="help-dialog"><button id="close-help" class="close-button" aria-label="关闭说明">×</button><div class="eyebrow">THE RULER'S HANDBOOK</div><h2>建城、求知，然后写下你的历史。</h2><p>你执政一个文明，其他五个文明自主发展。开局可以选择文明与胜利路线；切换观察对象不会改变执政文明。所有目标达成后，仍可继续游玩。</p><div class="help-grid"><section><h3>01 / 开始执政</h3><p>先处理顶部议事，再选择一项专项研究和城市工程。点“开始演化”或“+10年”推进时间；新议事到来时自动暂停。人口与时代科技会自动发展。</p></section><section><h3>02 / 建城与研究</h3><p>建筑消耗资源、逐年完工，每城可排3项工程。普通建筑加成取各城平均。研究解锁新建筑。点地图上的本国土地或邻接陆地，查看开拓条件并建城；城市间至少相隔4格。</p></section><section><h3>03 / 探索与外交</h3><p>菱形标记是遗迹。派遣需要30粮食、25财富；有失败风险，且每文明同时只能派一支远征队。使节改善关系，停战协议限制宣战；宣战必须接壤。鼠标可拖动放大的地图。</p></section><section><h3>04 / 保留你的选择</h3><p>保存使用独立的新版槽位，旧存档可自动升级。回放精确重建干预顺序；升级存档可回到升级起点。“恢复”找回上一次生成、读取或回退前的世界。重要存档请导出。</p></section></div><p class="help-note">地图内可用方向键移动、回车选择。沙盒援助、天气和参数调整会标记辅助通关。曲线显示最近600年；50,000年与10,000次干预为单世界上限。虚构的简化模拟，不用于现实预测。</p></dialog>
+  <dialog id="campaign-dialog"><button id="close-campaign" class="close-button" aria-label="关闭文明选择">×</button><div class="eyebrow">WRITE YOUR OWN CHAPTER</div><h2>这一次，由你执政。</h2><p>选定一个文明与目标。其他五个文明会自主发展，与你争夺土地、遗迹和世界奇观。</p><label class="dialog-label" for="player-choice">执政文明</label><select id="player-choice"></select><label class="dialog-label" for="goal-choice">胜利路线</label><select id="goal-choice"></select><p id="goal-description" class="goal-description"></p><button id="begin-reign" class="button primary full-width">开始执政 →</button><p class="help-note">只能在开始时更改。切换观察对象不会改变执政文明。新世界可以重新选择。</p></dialog>
+  <script id="content-source">(function (root, factory) {
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.CivContent = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+  const BRANCHES = {
+    land: { name: '民生', mark: '穗', color: '#94c699' },
+    industry: { name: '工程', mark: '铸', color: '#dfad7b' },
+    knowledge: { name: '学术', mark: '书', color: '#b6a1e0' },
+    diplomacy: { name: '商贸', mark: '帆', color: '#7bbce0' }
+  };
+  const RESEARCH = {
+    agronomy: { name: '轮作农法', branch: 'land', cost: 32, requires: [], era: 0, description: '粮食产量 +15%；解锁农庄。', effects: { food: .15 } },
+    medicine: { name: '草药医学', branch: 'land', cost: 95, requires: ['agronomy'], era: 1, description: '疫病损失 −35%；解锁医馆。', effects: { health: .35 } },
+    governance: { name: '公共治理', branch: 'land', cost: 250, requires: ['medicine'], era: 3, description: '土地人口容量 +20%，幸福度 +6。', effects: { capacity: .2, happiness: 6 } },
+    tools: { name: '精良工具', branch: 'industry', cost: 30, requires: [], era: 0, description: '木材与矿石产量 +15%；解锁工坊。', effects: { wood: .15, ore: .15 } },
+    masonry: { name: '石工技艺', branch: 'industry', cost: 100, requires: ['tools'], era: 1, description: '建设速度 +20%；解锁城墙。', effects: { construction: .2 } },
+    engineering: { name: '机械工程', branch: 'industry', cost: 270, requires: ['masonry'], era: 3, description: '建设速度 +30%，木材与矿石产量 +20%。', effects: { construction: .3, wood: .2, ore: .2 } },
+    writing: { name: '文字典籍', branch: 'knowledge', cost: 35, requires: [], era: 0, description: '研究产出 +15%；解锁图书馆。', effects: { research: .15 } },
+    astronomy: { name: '天文观测', branch: 'knowledge', cost: 110, requires: ['writing'], era: 1, description: '研究产出 +20%；探索范围 +5格；解锁观星台奇观。', effects: { research: .2, exploration: 5 } },
+    printing: { name: '知识传播', branch: 'knowledge', cost: 290, requires: ['astronomy'], era: 3, description: '研究产出 +30%；解锁学院。', effects: { research: .3 } },
+    coinage: { name: '统一货币', branch: 'diplomacy', cost: 30, requires: [], era: 0, description: '贸易收益 +20%；解锁集市。', effects: { trade: .2 } },
+    sailing: { name: '远洋航行', branch: 'diplomacy', cost: 90, requires: ['coinage'], era: 1, description: '探索范围 +7格，远征时间 −25%。', effects: { exploration: 7, travel: .25 } },
+    charter: { name: '商贸宪章', branch: 'diplomacy', cost: 260, requires: ['sailing'], era: 3, description: '贸易收益 +35%，改善关系更有效。', effects: { trade: .35, diplomacy: 10 } }
+  };
+  const BUILDINGS = {
+    granary: { name: '粮仓', mark: '仓', category: '民生', cost: { wood: 24, wealth: 18 }, work: 7, max: 3, requires: null, description: '每级粮食产出 +6%，储粮上限 +20%。', effects: { food: .06, storage: .2 } },
+    farm: { name: '农庄', mark: '田', category: '民生', cost: { wood: 32, wealth: 25 }, work: 9, max: 3, requires: 'agronomy', description: '每级粮食产出 +10%，土地容量 +6%。', effects: { food: .1, capacity: .06 } },
+    lumbermill: { name: '伐木场', mark: '林', category: '工程', cost: { wood: 18, wealth: 22 }, work: 6, max: 3, requires: null, description: '每级木材产出 +15%，矿石产出 +5%。', effects: { wood: .15, ore: .05 } },
+    workshop: { name: '工坊', mark: '工', category: '工程', cost: { wood: 45, ore: 15, wealth: 35 }, work: 10, max: 3, requires: 'tools', description: '每级建设速度 +15%，矿石产出 +15%。', effects: { construction: .15, ore: .15 } },
+    library: { name: '图书馆', mark: '书', category: '学术', cost: { wood: 35, wealth: 40 }, work: 9, max: 3, requires: 'writing', description: '每级研究产出 +18%。', effects: { research: .18 } },
+    market: { name: '集市', mark: '市', category: '商贸', cost: { wood: 30, wealth: 35 }, work: 8, max: 3, requires: 'coinage', description: '每级贸易收益 +15%，税收 +8%。', effects: { trade: .15, revenue: .08 } },
+    walls: { name: '城墙', mark: '卫', category: '工程', cost: { wood: 30, ore: 40, wealth: 50 }, work: 14, max: 3, requires: 'masonry', description: '此城每级攻城防御 +35%。', effects: {} },
+    hospital: { name: '医馆', mark: '医', category: '民生', cost: { wood: 50, wealth: 75 }, work: 12, max: 2, requires: 'medicine', description: '每级幸福度 +3，疫病损失 −15%。', effects: { happiness: 3, health: .15 } },
+    academy: { name: '学院', mark: '学', category: '学术', cost: { wood: 90, ore: 40, wealth: 140 }, work: 20, max: 2, requires: 'printing', description: '每级研究产出 +35%，土地容量 +8%。', effects: { research: .35, capacity: .08 } },
+    observatory: { name: '穹顶观星台', mark: '✧', category: '世界奇观', cost: { wood: 180, ore: 110, wealth: 350 }, work: 45, max: 1, requires: 'astronomy', unique: true, description: '全球仅一座。研究产出 +35%，完成任意胜利目标的奇观条件。', effects: { research: .35 } }
+  };
+  const SITES = {
+    archive: { name: '失落书库', mark: '▤', description: '残存的典籍可能改变知识的方向。', reward: { insight: 65, science: 100 }, risk: .08 },
+    grove: { name: '古老圣林', mark: '♧', description: '古树下埋藏着种子与药草。', reward: { food: 100, wood: 65, happiness: 5 }, risk: .08 },
+    vault: { name: '沉眠宝库', mark: '◇', description: '旧时代的矿藏，仍守着最后的财富。', reward: { wealth: 170, ore: 70 }, risk: .18 },
+    tower: { name: '远古高塔', mark: '△', description: '石壁上的航图指向更远的世界。', reward: { insight: 50, wealth: 100, science: 60 }, risk: .12 }
+  };
+  const DECISIONS = {
+    harvest: { title: '第一场丰收之后', text: '议事厅里，农人希望储备粮食，工匠希望扩建街区。有限的余粮，该为谁铺路？', options: [
+      { id: 'store', name: '储粮过冬', detail: '获得60粮食与3幸福度。', effect: { food: 60, happiness: 3 } },
+      { id: 'build', name: '修建公共工程', detail: '消耗25粮食，获得30木材；12年内建设速度 +35%。', cost: { food: 25 }, effect: { wood: 30 }, buff: { key: 'construction', value: .35, duration: 12 } },
+      { id: 'study', name: '资助田野学者', detail: '消耗20财富，获得35研究点。', cost: { wealth: 20 }, effect: { insight: 35 } }
+    ] },
+    travelers: { title: '远方的旅人', text: '一支商队带着陌生的口音来到城门。有人想留下，有人愿意交换见闻。', options: [
+      { id: 'welcome', name: '接纳定居', detail: '消耗35粮食，增加18人口。', cost: { food: 35 }, effect: { population: 18 } },
+      { id: 'trade', name: '交换货物', detail: '获得60财富；邻国关系 +5。', effect: { wealth: 60, relations: 5 } },
+      { id: 'learn', name: '记录旅途见闻', detail: '获得25研究点与30时代研究。', effect: { insight: 25, science: 30 } }
+    ] },
+    labor: { title: '工坊的灯火', text: '工匠提出赶工计划。更长的工作时间能加快建设，也会带来怨言。', options: [
+      { id: 'rush', name: '批准赶工', detail: '幸福度 −8；10年内建设速度 +70%。', effect: { happiness: -8 }, buff: { key: 'construction', value: .7, duration: 10 } },
+      { id: 'rest', name: '安排休息', detail: '消耗30财富，幸福度 +10。', cost: { wealth: 30 }, effect: { happiness: 10 } },
+      { id: 'tools', name: '采购新工具', detail: '消耗40财富，获得35木材与20矿石。', cost: { wealth: 40 }, effect: { wood: 35, ore: 20 } }
+    ] },
+    festival: { title: '星空下的庆典', text: '新一年的节庆将至。人们可以为共同的生活举杯，也可以把资源留给下一次出发。', options: [
+      { id: 'celebrate', name: '举办庆典', detail: '消耗50粮食与30财富；15年内幸福度 +10。', cost: { food: 50, wealth: 30 }, effect: {}, buff: { key: 'happiness', value: 10, duration: 15 } },
+      { id: 'scholars', name: '举办学术集会', detail: '消耗60财富，获得80研究点。', cost: { wealth: 60 }, effect: { insight: 80 } },
+      { id: 'reserve', name: '保留储备', detail: '获得25粮食与25财富。', effect: { food: 25, wealth: 25 } }
+    ] }
+  };
+  const GOALS = {
+    prosperity: { name: '繁荣之路', description: '让城镇成为安居之地。', targets: [ ['population', '人口达到1,200人', 1200], ['cities', '拥有4座城市', 4], ['buildings', '建成12级建筑', 12], ['happiness', '幸福度达到85%', 85] ] },
+    knowledge: { name: '知识之光', description: '用发现点亮一个时代。', targets: [ ['research', '完成9项专项研究', 9], ['tech', '时代科技达到6级', 6], ['relics', '成功探索3处遗迹', 3], ['wonder', '拥有穹顶观星台', 1] ] },
+    alliance: { name: '四海同盟', description: '把陌生的城邦连成盟友。', targets: [ ['treaties', '维持4份通商条约', 4], ['wealth', '拥有3,000财富', 3000], ['buildings', '建成10级建筑', 10], ['peaceYears', '连续和平40年', 40] ] }
+  };
+  const RESOURCE_NAMES = { food: '粮食', wood: '木材', ore: '矿石', wealth: '财富', insight: '研究点', science: '时代研究', population: '人口', happiness: '幸福度', relations: '邻国关系' };
+  return { BRANCHES, RESEARCH, BUILDINGS, SITES, DECISIONS, GOALS, RESOURCE_NAMES };
+});
+</script>
+  <script id="legacy-source">(function (root, factory) {
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.CivLabV1 = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+
+  const VERSION = 1;
+  const WIDTH = 64, HEIGHT = 40;
+  const TERRAIN = {
+    ocean: { name: '海洋', food: 0, wood: 0, ore: 0, capacity: 0 },
+    coast: { name: '浅海', food: 0, wood: 0, ore: 0, capacity: 0 },
+    plain: { name: '草原', food: 1.65, wood: 0.14, ore: 0.10, capacity: 34 },
+    forest: { name: '森林', food: 0.9, wood: 1.2, ore: 0.12, capacity: 22 },
+    hill: { name: '丘陵', food: 0.8, wood: 0.25, ore: 0.7, capacity: 24 },
+    mountain: { name: '山地', food: 0.28, wood: 0.12, ore: 1.5, capacity: 10 },
+    desert: { name: '荒漠', food: 0.36, wood: 0.06, ore: 0.45, capacity: 12 }
+  };
+  const CIVS = [
+    { name: '晨曦联邦', short: '晨曦', color: '#e4b760', policy: 'balanced', capital: '曙光城', names: ['金穗港', '望日台', '新原', '长明', '日落湾'] },
+    { name: '苍林议会', short: '苍林', color: '#66c5a1', policy: 'scholar', capital: '常青城', names: ['橡木谷', '雨歌', '青石', '森语', '溪岸'] },
+    { name: '潮汐同盟', short: '潮汐', color: '#66b3e8', policy: 'merchant', capital: '海镜城', names: ['白帆港', '风鸣', '远汐', '银沙', '海岬'] },
+    { name: '赤岩王国', short: '赤岩', color: '#e58279', policy: 'conquest', capital: '赤堡', names: ['铁门', '烽火台', '玄石', '红河', '铜山'] },
+    { name: '星辉学邦', short: '星辉', color: '#b49bdf', policy: 'scholar', capital: '观星城', names: ['月井', '长夜', '银环', '星原', '天穹'] },
+    { name: '琥珀公社', short: '琥珀', color: '#d6a27c', policy: 'expansion', capital: '麦田城', names: ['暖丘', '秋原', '蜜河', '丰谷', '琥珀湾'] }
+  ];
+  const POLICIES = {
+    balanced: { name: '均衡发展', description: '兼顾粮食、贸易与科技。', farm: 0.43, craft: 0.27, research: 0.14, military: 0.16, trade: 1, expansion: 1 },
+    scholar: { name: '学术优先', description: '增加研究投入，较少征兵。', farm: 0.39, craft: 0.23, research: 0.28, military: 0.10, trade: 1, expansion: 0.85 },
+    merchant: { name: '通商优先', description: '贸易收益提高，工商业更活跃。', farm: 0.39, craft: 0.34, research: 0.16, military: 0.11, trade: 1.65, expansion: 0.9 },
+    expansion: { name: '开拓优先', description: '重视粮食与新城建设。', farm: 0.49, craft: 0.26, research: 0.12, military: 0.13, trade: 0.95, expansion: 1.7 },
+    conquest: { name: '军事优先', description: '增加兵员与军备，战争倾向提高。', farm: 0.40, craft: 0.23, research: 0.09, military: 0.28, trade: 0.75, expansion: 1.1 }
+  };
+  const TECHS = [
+    { name: '定居时代', cost: 180 },
+    { name: '灌溉技术', cost: 430 },
+    { name: '青铜冶炼', cost: 760 },
+    { name: '文字与学校', cost: 1200 },
+    { name: '商路网络', cost: 1750 },
+    { name: '机械工坊', cost: 2500 },
+    { name: '科学方法', cost: 3400 },
+    { name: '启蒙时代', cost: 4700 },
+    { name: '工业时代', cost: 6400 },
+    { name: '电气时代', cost: 8600 },
+    { name: '信息时代', cost: 11500 },
+    { name: '星际前夜', cost: Infinity }
+  ];
+  const SCENARIOS = {
+    balanced: { name: '新世界', description: '六个文明从不同的河谷出发。', land: 0.51, fertility: 1, disasters: 0.35, aggression: 0.45 },
+    islands: { name: '群岛纪元', description: '海洋分隔大陆，贸易连接彼此。', land: 0.58, fertility: 1.1, disasters: 0.25, aggression: 0.25 },
+    frontier: { name: '丰饶大陆', description: '广阔陆地，适合观察城市扩张。', land: 0.44, fertility: 1.4, disasters: 0.15, aggression: 0.3 },
+    scarcity: { name: '漫长旱季', description: '资源紧张，合作与冲突更加重要。', land: 0.49, fertility: 0.72, disasters: 0.7, aggression: 0.7 }
+  };
+
+  const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
+  const round = n => Math.round(n * 1000) / 1000;
+  const pairKey = (a, b) => a < b ? `${a}:${b}` : `${b}:${a}`;
+  const hash = s => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };
+  const rand = state => { state.rng = (state.rng + 0x6D2B79F5) >>> 0; let t = state.rng; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const coordNoise = (x, y, seed) => { let h = Math.imul(x, 374761393) ^ Math.imul(y, 668265263) ^ seed; h = Math.imul(h ^ (h >>> 13), 1274126177); return ((h ^ (h >>> 16)) >>> 0) / 4294967295; };
+  const smooth = t => t * t * (3 - 2 * t);
+  function noise(x, y, seed) {
+    const ix = Math.floor(x), iy = Math.floor(y), fx = smooth(x - ix), fy = smooth(y - iy);
+    const a = coordNoise(ix, iy, seed), b = coordNoise(ix + 1, iy, seed), c = coordNoise(ix, iy + 1, seed), d = coordNoise(ix + 1, iy + 1, seed);
+    return (a + (b - a) * fx) * (1 - fy) + (c + (d - c) * fx) * fy;
+  }
+  function neighbors(state, index) {
+    const x = index % state.width, y = Math.floor(index / state.width), result = [];
+    if (x > 0) result.push(index - 1);
+    if (x + 1 < state.width) result.push(index + 1);
+    if (y > 0) result.push(index - state.width);
+    if (y + 1 < state.height) result.push(index + state.width);
+    return result;
+  }
+  const isLand = tile => TERRAIN[tile.type].capacity > 0;
+  const distance = (state, a, b) => Math.hypot(a % state.width - b % state.width, Math.floor(a / state.width) - Math.floor(b / state.width));
+  const activeCivs = state => state.civs.filter(c => c.alive);
+  const owned = (state, id) => state.tiles.filter(t => t.owner === id);
+  function log(state, kind, text, civId = null) {
+    state.events.push({ id: state.nextEvent++, year: state.year, kind, text, civId });
+    if (state.events.length > 260) state.events.shift();
+  }
+  function cityName(civ) { const def = CIVS[civ.id]; return civ.founded === 0 ? def.capital : def.names[(civ.founded - 1) % def.names.length] + (civ.founded > def.names.length ? String(Math.floor((civ.founded - 1) / def.names.length) + 1) : ''); }
+  function foundCity(state, civ, tileIndex, initial = false) {
+    const city = { id: state.nextCity++, name: cityName(civ), civId: civ.id, tile: tileIndex, founded: state.year, capital: initial };
+    civ.founded++;
+    state.cities.push(city);
+    state.tiles[tileIndex].owner = civ.id;
+    for (const n of neighbors(state, tileIndex)) if (isLand(state.tiles[n]) && state.tiles[n].owner === -1) state.tiles[n].owner = civ.id;
+    if (!initial) { civ.wood -= 38; civ.wealth -= 45; civ.food -= 26; log(state, 'city', `${civ.name}建立了${city.name}。`, civ.id); }
+    return city;
+  }
+
+  function createWorld(options = {}) {
+    const scenario = Object.hasOwn(SCENARIOS, options.scenario) ? options.scenario : 'balanced';
+    const settings = SCENARIOS[scenario];
+    const seed = String(options.seed ?? '远方来信').slice(0, 100);
+    const seedHash = hash(seed);
+    const state = {
+      version: VERSION, seed, scenario, width: WIDTH, height: HEIGHT, year: 0, rng: seedHash,
+      config: { fertility: settings.fertility, disasters: settings.disasters, aggression: settings.aggression },
+      tiles: [], civs: [], cities: [], relations: {}, events: [], history: [],
+      nextCity: 1, nextEvent: 1, commands: [], climate: { drought: 0, bumper: 0 },
+      stats: { battles: 0, trades: 0, disasters: 0 }
+    };
+    for (let y = 0; y < HEIGHT; y++) for (let x = 0; x < WIDTH; x++) {
+      const edge = Math.min(x, WIDTH - 1 - x, y, HEIGHT - 1 - y);
+      const elevation = noise(x / 13, y / 11, seedHash) * 0.58 + noise(x / 5, y / 5, seedHash ^ 8913) * 0.27 + noise(x / 2, y / 2, seedHash ^ 333) * 0.15 - Math.max(0, 4 - edge) * 0.105;
+      const moisture = noise(x / 8, y / 8, seedHash ^ 938294);
+      let type = elevation < settings.land - 0.09 ? 'ocean' : elevation < settings.land ? 'coast' : elevation > 0.77 ? 'mountain' : elevation > 0.67 ? 'hill' : moisture < 0.25 ? 'desert' : moisture > 0.56 ? 'forest' : 'plain';
+      state.tiles.push({ index: y * WIDTH + x, type, elevation: round(elevation), moisture: round(moisture), owner: -1 });
+    }
+    // Stable fallback guarantees six viable starting positions even on extreme seeds.
+    const anchors = [[10, 10], [30, 8], [51, 10], [12, 29], [33, 28], [53, 29]];
+    const starts = [];
+    for (let id = 0; id < CIVS.length; id++) {
+      let best = -1, bestScore = -Infinity;
+      for (const t of state.tiles) {
+        if (!isLand(t) || t.type === 'mountain' || t.type === 'desert') continue;
+        const nearest = starts.length ? Math.min(...starts.map(s => distance(state, s, t.index))) : 30;
+        if (nearest < 12) continue;
+        const fertile = neighbors(state, t.index).reduce((sum, n) => sum + TERRAIN[state.tiles[n].type].food, 0);
+        const anchorDist = Math.hypot(t.index % WIDTH - anchors[id][0], Math.floor(t.index / WIDTH) - anchors[id][1]);
+        const score = fertile + nearest * 0.06 - anchorDist * 0.16 + coordNoise(t.index, id, seedHash) * 0.3;
+        if (score > bestScore) { best = t.index; bestScore = score; }
+      }
+      if (best < 0) {
+        const candidates = state.tiles.filter(t => t.owner === -1 && t.index % WIDTH > 3 && t.index % WIDTH < WIDTH - 4 && Math.floor(t.index / WIDTH) > 3 && Math.floor(t.index / WIDTH) < HEIGHT - 4);
+        candidates.sort((a, b) => Math.min(...starts.map(s => distance(state, s, b.index))) - Math.min(...starts.map(s => distance(state, s, a.index))));
+        best = candidates[0].index;
+        state.tiles[best].type = 'plain';
+        for (const n of neighbors(state, best)) if (state.tiles[n].owner === -1) state.tiles[n].type = 'plain';
+      }
+      starts.push(best);
+      const civ = { id, name: CIVS[id].name, policy: CIVS[id].policy, alive: true, population: 88 + Math.floor(rand(state) * 16), food: 105, wood: 52, ore: 18, wealth: 80, science: 0, tech: 0, military: 10, happiness: 72, founded: 0, lastCity: 0, lastExpansion: 0, foodDelta: 0, populationDelta: 0, tradeIncome: 0, shortage: false, territory: 0 };
+      state.civs.push(civ);
+      foundCity(state, civ, best, true);
+      log(state, 'city', `${civ.name}在${CIVS[id].capital}点燃第一簇炉火。`, id);
+    }
+    for (let a = 0; a < CIVS.length; a++) for (let b = a + 1; b < CIVS.length; b++) state.relations[pairKey(a, b)] = { a, b, value: 10 + Math.floor(rand(state) * 26), war: false, treaty: false, since: 0, cooldown: 0, trade: 0 };
+    updateCounts(state);
+    recordHistory(state);
+    return state;
+  }
+
+  function updateCounts(state) { for (const c of state.civs) c.territory = state.tiles.reduce((s, t) => s + (t.owner === c.id ? 1 : 0), 0); }
+  function capacities(state, civ) {
+    const tiles = owned(state, civ.id);
+    const sums = tiles.reduce((s, t) => { const r = TERRAIN[t.type]; s.food += r.food; s.wood += r.wood; s.ore += r.ore; s.capacity += r.capacity; return s; }, { food: 0, wood: 0, ore: 0, capacity: 0 });
+    const count = Math.max(1, tiles.length);
+    return { food: sums.food / count, wood: sums.wood / count, ore: sums.ore / count, capacity: sums.capacity * (1 + civ.tech * 0.11) };
+  }
+  function produce(state, civ) {
+    const p = POLICIES[civ.policy], cap = capacities(state, civ), oldPopulation = civ.population, oldFood = civ.food;
+    const productivity = (1 + civ.tech * 0.115) * (0.72 + civ.happiness / 250);
+    const weather = (state.climate.drought ? 0.58 : 1) * (state.climate.bumper ? 1.25 : 1);
+    const harvest = civ.population * p.farm * cap.food * 0.73 * productivity * state.config.fertility * weather;
+    const consumption = civ.population * 0.33 + civ.military * 0.05;
+    civ.food += harvest - consumption;
+    civ.shortage = civ.food < 0;
+    const starvation = civ.shortage ? Math.min(0.075, (-civ.food / Math.max(consumption, 1)) * 0.08) : 0;
+    civ.food = clamp(civ.food, 0, Math.max(140, civ.population * 4));
+    civ.wood = clamp(civ.wood + civ.population * p.craft * (0.05 + cap.wood * 0.24) * productivity - civ.population * 0.007, 0, 1e7);
+    civ.ore = clamp(civ.ore + civ.population * p.craft * cap.ore * 0.18 * productivity, 0, 1e7);
+    const revenue = civ.population * 0.035 * (1 + civ.tech * 0.04);
+    civ.wealth = clamp(civ.wealth + revenue - civ.military * 0.13, 0, 1e7);
+    const desiredMilitary = civ.population * p.military * 0.6;
+    const recruitment = Math.min(Math.max(0, desiredMilitary - civ.military) * 0.2, civ.ore / 1.3, civ.wealth / 1.8);
+    civ.military = Math.max(0, civ.military * (civ.shortage ? 0.96 : 0.985) + recruitment);
+    civ.ore -= recruitment * 1.3; civ.wealth -= recruitment * 1.8;
+    civ.science += civ.population * p.research * 0.19 * productivity * (civ.shortage ? 0.65 : 1);
+    if (civ.tech < TECHS.length - 1 && civ.science >= TECHS[civ.tech].cost) {
+      civ.science -= TECHS[civ.tech].cost; civ.tech++;
+      log(state, 'tech', `${civ.name}掌握了「${TECHS[civ.tech].name}」。`, civ.id);
+    }
+    const crowding = civ.population / Math.max(1, cap.capacity);
+    const growth = 0.021 * (1 - crowding) * (civ.happiness / 80) - starvation;
+    civ.population = Math.max(8, civ.population * (1 + clamp(growth, -0.1, 0.025)));
+    const wars = Object.values(state.relations).filter(r => r.war && (r.a === civ.id || r.b === civ.id)).length;
+    const targetHappiness = clamp(75 + Math.min(12, civ.food / civ.population * 4) + civ.tech * 1.3 - (civ.shortage ? 35 : 0) - wars * 10 - Math.max(0, crowding - 0.85) * 22, 15, 98);
+    civ.happiness += (targetHappiness - civ.happiness) * 0.13;
+    civ.populationDelta = civ.population - oldPopulation;
+    civ.foodDelta = civ.food - oldFood;
+    civ.tradeIncome = 0;
+  }
+
+  function expand(state, civ) {
+    const p = POLICIES[civ.policy];
+    if (state.year - civ.lastExpansion < Math.max(2, 7 / p.expansion) || civ.wood < 4 || civ.food < 8) return;
+    const cities = state.cities.filter(c => c.civId === civ.id);
+    if (!cities.length) return;
+    const candidates = new Set();
+    for (const t of owned(state, civ.id)) for (const n of neighbors(state, t.index)) {
+      if (state.tiles[n].owner !== -1 || !isLand(state.tiles[n])) continue;
+      if (Math.min(...cities.map(c => distance(state, c.tile, n))) <= 4.5 + civ.tech * 0.5) candidates.add(n);
+    }
+    // A mature civilization can establish a coastal bridgehead across water.
+    if (!candidates.size && civ.tech >= 2 && civ.wood >= 28 && state.year % 6 === 0) {
+      for (const t of state.tiles) if (t.owner === -1 && isLand(t) && neighbors(state, t.index).some(n => !isLand(state.tiles[n]))) {
+        if (Math.min(...cities.map(c => distance(state, c.tile, t.index))) < 11 + civ.tech) candidates.add(t.index);
+      }
+    }
+    if (!candidates.size) return;
+    const ranked = [...candidates].map(n => {
+      const terrain = TERRAIN[state.tiles[n].type];
+      return { n, score: terrain.food * (civ.food < civ.population ? 2 : 1) + terrain.wood * (civ.wood < 40 ? 1.8 : 0.4) + terrain.ore * 0.6 - Math.min(...cities.map(c => distance(state, c.tile, n))) * 0.12 + rand(state) * 0.8 };
+    }).sort((a, b) => b.score - a.score);
+    state.tiles[ranked[0].n].owner = civ.id;
+    civ.wood -= 4; civ.food -= 6; civ.lastExpansion = state.year;
+  }
+
+  function developCities(state, civ) {
+    const cities = state.cities.filter(c => c.civId === civ.id);
+    const p = POLICIES[civ.policy];
+    if (cities.length >= 12 || civ.population < cities.length * 100 || civ.wood < 38 || civ.wealth < 45 || civ.food < 40 || state.year - civ.lastCity < 22 / p.expansion) return;
+    const candidates = owned(state, civ.id).filter(t => t.type !== 'mountain' && Math.min(...cities.map(c => distance(state, c.tile, t.index))) >= 3.8);
+    if (!candidates.length) return;
+    const scored = candidates.map(t => ({ tile: t.index, score: TERRAIN[t.type].food + neighbors(state, t.index).filter(n => state.tiles[n].owner === -1 && isLand(state.tiles[n])).length * 0.8 + rand(state) }));
+    scored.sort((a, b) => b.score - a.score);
+    foundCity(state, civ, scored[0].tile); civ.lastCity = state.year;
+  }
+
+  function borders(state) {
+    const result = new Map();
+    for (const t of state.tiles) if (t.owner >= 0) for (const n of neighbors(state, t.index)) {
+      const other = state.tiles[n];
+      if (other.owner < 0 || other.owner === t.owner) continue;
+      const key = pairKey(t.owner, other.owner);
+      if (!result.has(key)) result.set(key, []);
+      result.get(key).push({ from: t.index, to: n, attacker: t.owner });
+    }
+    return result;
+  }
+  function eliminate(state, civ, victor) {
+    civ.alive = false; civ.military = 0;
+    victor.population += civ.population * 0.65;
+    victor.food += civ.food * 0.5; victor.wood += civ.wood * 0.5; victor.wealth += civ.wealth * 0.5;
+    civ.population = 0;
+    for (const t of state.tiles) if (t.owner === civ.id) t.owner = victor.id;
+    for (const r of Object.values(state.relations)) if (r.a === civ.id || r.b === civ.id) { r.war = false; r.treaty = false; r.trade = 0; }
+    log(state, 'war', `${civ.name}失去最后一座城市，余民加入${victor.name}。`, victor.id);
+  }
+  function battle(state, relation, borderTiles) {
+    if (!borderTiles.length || state.year % 3 !== 0) return;
+    const a = state.civs[relation.a], b = state.civs[relation.b];
+    const powerA = Math.max(0.1, a.military) * (1 + a.tech * 0.13) * (0.8 + rand(state) * 0.4);
+    const powerB = Math.max(0.1, b.military) * (1 + b.tech * 0.13) * (0.8 + rand(state) * 0.4);
+    const winner = powerA > powerB ? a : b, loser = winner === a ? b : a;
+    const targets = borderTiles.filter(t => t.attacker === winner.id && state.tiles[t.to].owner === loser.id);
+    if (!targets.length) return;
+    const target = targets[Math.floor(rand(state) * targets.length)].to;
+    const defenderCity = state.cities.find(c => c.tile === target);
+    const defense = state.tiles[target].type === 'mountain' ? 1.5 : 1;
+    if (defenderCity && Math.max(powerA, powerB) < Math.min(powerA, powerB) * 1.18 * defense) {
+      a.military *= 0.96; b.military *= 0.96; return;
+    }
+    state.tiles[target].owner = winner.id;
+    winner.military *= 0.95; loser.military *= 0.91;
+    winner.happiness = clamp(winner.happiness - 1, 0, 100); loser.happiness = clamp(loser.happiness - 2, 0, 100);
+    winner.population *= 0.997; loser.population *= 0.993;
+    state.stats.battles++;
+    if (defenderCity) {
+      defenderCity.civId = winner.id; defenderCity.capital = false;
+      const transfer = Math.min(loser.population * 0.2, 80);
+      loser.population -= transfer; winner.population += transfer;
+      log(state, 'war', `${winner.name}占领了${defenderCity.name}。`, winner.id);
+      if (!state.cities.some(c => c.civId === loser.id)) eliminate(state, loser, winner);
+    } else if (state.year % 12 === 0) log(state, 'war', `${winner.name}在与${loser.name}的边境冲突中推进了一格。`, winner.id);
+  }
+  function diplomacy(state) {
+    const borderMap = borders(state);
+    for (const r of Object.values(state.relations)) {
+      const a = state.civs[r.a], b = state.civs[r.b];
+      r.trade = 0;
+      if (!a.alive || !b.alive) continue;
+      const border = borderMap.get(pairKey(a.id, b.id)) || [];
+      const aCities = state.cities.filter(c => c.civId === a.id), bCities = state.cities.filter(c => c.civId === b.id);
+      const cityDistance = Math.min(...aCities.flatMap(ac => bCities.map(bc => distance(state, ac.tile, bc.tile))));
+      const contact = border.length > 0 || cityDistance < 14 + Math.min(a.tech, b.tech) * 2.5;
+      if (!contact) continue;
+      const tension = border.length ? (state.config.aggression * 0.55 + (a.policy === 'conquest' || b.policy === 'conquest' ? 0.42 : 0) + (a.shortage || b.shortage ? 0.22 : 0)) : 0;
+      if (!r.war) {
+        r.value = clamp(r.value + 0.24 + (r.treaty ? 0.18 : 0) - tension + (rand(state) - 0.5) * 0.7, -100, 100);
+        if (r.value > 38 && !r.treaty) { r.treaty = true; log(state, 'trade', `${a.name}与${b.name}签署通商条约。`); }
+        if (r.value < 5) r.treaty = false;
+        if (r.value > -15) {
+          const income = Math.min(a.population, b.population) * 0.016 * (r.treaty ? 1.6 : 0.65) * (1 + (a.tech + b.tech) * 0.06);
+          const aIncome = income * POLICIES[a.policy].trade, bIncome = income * POLICIES[b.policy].trade;
+          a.wealth = Math.min(1e7, a.wealth + aIncome); b.wealth = Math.min(1e7, b.wealth + bIncome); a.tradeIncome += aIncome; b.tradeIncome += bIncome;
+          r.trade = income; state.stats.trades++;
+          // Conservative food exchange: purchased food is deducted from the seller.
+          for (const [buyer, seller] of [[a, b], [b, a]]) if (buyer.food < buyer.population * 0.55 && seller.food > seller.population * 1.15) {
+            const amount = Math.min(seller.food - seller.population * 1.15, buyer.population * 0.08, buyer.wealth / 0.6);
+            buyer.food += amount; seller.food -= amount; buyer.wealth -= amount * 0.6; seller.wealth += amount * 0.6;
+          }
+        }
+        if (border.length && state.year >= r.cooldown && r.value < -8 && rand(state) < state.config.aggression * 0.045) {
+          r.war = true; r.treaty = false; r.since = state.year;
+          log(state, 'war', `${a.name}与${b.name}爆发战争。`);
+        }
+      } else {
+        battle(state, r, border);
+        if (!a.alive || !b.alive) continue;
+        if (state.year - r.since > 32 || (state.year - r.since > 10 && (a.military < 2 || b.military < 2 || !border.length || rand(state) < 0.025))) {
+          r.war = false; r.value = 8; r.cooldown = state.year + 25;
+          log(state, 'peace', `${a.name}与${b.name}停战，边境进入休整期。`);
+        }
+      }
+    }
+  }
+  function naturalEvents(state) {
+    if (state.climate.drought > 0 && --state.climate.drought === 0) log(state, 'climate', '旱季结束，雨水重新浸润大地。');
+    if (state.climate.bumper > 0) state.climate.bumper--;
+    if (state.year % 5 !== 0 || rand(state) >= state.config.disasters * 0.13) return;
+    const alive = activeCivs(state); if (!alive.length) return;
+    const civ = alive[Math.floor(rand(state) * alive.length)];
+    const roll = rand(state);
+    if (roll < 0.38 && !state.climate.drought) {
+      state.climate.drought = 4 + Math.floor(rand(state) * 4); state.stats.disasters++;
+      log(state, 'climate', `大地进入持续${state.climate.drought}年的旱季。`);
+    } else if (roll < 0.7) {
+      const loss = civ.population * (0.025 + rand(state) * 0.025) / (1 + civ.tech * 0.12);
+      civ.population -= loss; civ.happiness = Math.max(10, civ.happiness - 6); state.stats.disasters++;
+      log(state, 'climate', `${civ.name}遭遇疫病，约${Math.round(loss)}人逝去。`, civ.id);
+    } else { state.climate.bumper = 4; log(state, 'climate', '温和的风雨带来丰收，粮食产出暂时提高。'); }
+  }
+  function recordHistory(state) {
+    const living = activeCivs(state);
+    state.history.push({ year: state.year, population: round(living.reduce((s, c) => s + c.population, 0)), wars: Object.values(state.relations).filter(r => r.war).length, civs: state.civs.map(c => ({ population: round(c.population), territory: c.territory, tech: c.tech, wealth: round(c.wealth) })) });
+    if (state.history.length > 601) state.history.shift();
+  }
+  function tick(state, years = 1) {
+    if (!Number.isSafeInteger(years) || years < 0 || years > 10000) throw new Error('推进年数必须是 0 到 10000 的整数。');
+    for (let i = 0; i < years; i++) {
+      state.year++;
+      naturalEvents(state);
+      for (const c of state.civs) if (c.alive) { produce(state, c); expand(state, c); developCities(state, c); }
+      diplomacy(state); updateCounts(state); recordHistory(state);
+    }
+    return state;
+  }
+
+  function command(state, action, record = true) {
+    if (!action || typeof action !== 'object' || Array.isArray(action)) throw new Error('无效的干预指令。');
+    if (record && state.commands.length >= 10000) throw new Error('单个世界最多记录10,000次干预。请生成新世界继续实验。');
+    const civ = state.civs[action.civId];
+    let normalized;
+    if (action.type === 'policy') {
+      if (!civ?.alive || !Object.hasOwn(POLICIES, action.policy)) throw new Error('无法改变该文明的政策。');
+      civ.policy = action.policy;
+      log(state, 'intervention', `${civ.name}转向「${POLICIES[action.policy].name}」。`, civ.id);
+      normalized = { type: 'policy', civId: civ.id, policy: action.policy };
+    } else if (action.type === 'aid') {
+      if (!civ?.alive) throw new Error('该文明已经退出历史。');
+      civ.food += 80; civ.wood += 35; civ.wealth += 50;
+      log(state, 'intervention', `${civ.name}获得援助：粮食 +80，木材 +35，财富 +50。`, civ.id);
+      normalized = { type: 'aid', civId: civ.id };
+    } else if (action.type === 'peace') {
+      let count = 0;
+      for (const r of Object.values(state.relations)) if (r.war) { r.war = false; r.value = 20; r.cooldown = state.year + 35; count++; }
+      log(state, 'intervention', count ? `调停生效，${count}场战争结束，停战保护持续35年。` : '和平倡议发布，各文明维持当前关系。');
+      normalized = { type: 'peace' };
+    } else if (action.type === 'rain') {
+      state.climate.drought = 0; state.climate.bumper = 5;
+      log(state, 'intervention', '降雨干预生效，接下来5年进入丰收期。'); normalized = { type: 'rain' };
+    } else if (action.type === 'config') {
+      const config = {};
+      for (const key of ['fertility', 'disasters', 'aggression']) if (Object.hasOwn(action, key)) {
+        const value = action[key], min = key === 'fertility' ? 0.4 : 0, max = key === 'fertility' ? 1.8 : 1;
+        if (typeof value !== 'number' || !Number.isFinite(value) || value < min || value > max) throw new Error('环境参数超出允许范围。');
+        config[key] = value;
+      }
+      if (!Object.keys(config).length) throw new Error('缺少环境参数。');
+      Object.assign(state.config, config); normalized = { type: 'config', ...config };
+      log(state, 'intervention', '世界环境参数已调整。');
+    } else throw new Error('未知的干预指令。');
+    if (record) state.commands.push({ year: state.year, action: normalized });
+    return state;
+  }
+  function replay(state, targetYear = state.year) {
+    if (!Number.isSafeInteger(targetYear) || targetYear < 0 || targetYear > 50000) throw new Error('回放年份超出范围。');
+    const result = createWorld({ seed: state.seed, scenario: state.scenario });
+    let cursor = 0;
+    for (let year = 0; year <= targetYear; year++) {
+      while (cursor < state.commands.length && state.commands[cursor].year === year) command(result, state.commands[cursor++].action);
+      if (year < targetYear) tick(result);
+    }
+    return result;
+  }
+  // Store the seed and ordered actions. Rebuilding validates all imported data;
+  // no imported object is merged into live state or trusted as engine state.
+  function serialize(state) { return JSON.stringify({ format: 'civilization-lab', version: VERSION, seed: state.seed, scenario: state.scenario, year: state.year, commands: state.commands }, null, 2); }
+  function deserialize(json) {
+    if (typeof json !== 'string' || json.length > 2e6) throw new Error('存档过大，或格式无效。');
+    let data; try { data = JSON.parse(json); } catch { throw new Error('无法读取这个 JSON 存档。'); }
+    if (!data || data.format !== 'civilization-lab' || data.version !== VERSION || typeof data.seed !== 'string' || data.seed.length > 100 || !Object.hasOwn(SCENARIOS, data.scenario) || !Number.isSafeInteger(data.year) || data.year < 0 || data.year > 50000 || !Array.isArray(data.commands) || data.commands.length > 10000) throw new Error('存档版本或内容不受支持。');
+    let prev = -1;
+    for (const entry of data.commands) {
+      if (!entry || !Number.isSafeInteger(entry.year) || entry.year < 0 || entry.year < prev || entry.year > data.year || !entry.action) throw new Error('存档中的时间线无效。');
+      prev = entry.year;
+    }
+    return replay(data, data.year);
+  }
+  function summary(state) {
+    const alive = activeCivs(state);
+    return { year: state.year, population: alive.reduce((s, c) => s + c.population, 0), cities: state.cities.length, civilizations: alive.length, wars: Object.values(state.relations).filter(r => r.war).length, treaties: Object.values(state.relations).filter(r => r.treaty).length, maxTech: Math.max(...alive.map(c => c.tech), 0), land: state.tiles.filter(isLand).length, claimed: state.tiles.filter(t => t.owner >= 0).length };
+  }
+  return { VERSION, WIDTH, HEIGHT, TERRAIN, CIVS, POLICIES, TECHS, SCENARIOS, createWorld, tick, command, replay, serialize, deserialize, summary, neighbors, distance, capacities, isLand, pairKey };
+});
+</script>
+  <script id="engine-source">(function (root, factory) {
+  const api = factory(typeof module === 'object' && module.exports ? require('./content.js') : root.CivContent, typeof module === 'object' && module.exports ? require('./legacy-engine.js') : root.CivLabV1);
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.CivLab = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (Content, Legacy) {
+  'use strict';
+
+  const VERSION = 2;
+  const { BRANCHES, RESEARCH, BUILDINGS, SITES, DECISIONS, GOALS, RESOURCE_NAMES } = Content;
+  const WIDTH = 64, HEIGHT = 40;
+  const TERRAIN = {
+    ocean: { name: '海洋', food: 0, wood: 0, ore: 0, capacity: 0 },
+    coast: { name: '浅海', food: 0, wood: 0, ore: 0, capacity: 0 },
+    plain: { name: '草原', food: 1.65, wood: 0.14, ore: 0.10, capacity: 34 },
+    forest: { name: '森林', food: 0.9, wood: 1.2, ore: 0.12, capacity: 22 },
+    hill: { name: '丘陵', food: 0.8, wood: 0.25, ore: 0.7, capacity: 24 },
+    mountain: { name: '山地', food: 0.28, wood: 0.12, ore: 1.5, capacity: 10 },
+    desert: { name: '荒漠', food: 0.36, wood: 0.06, ore: 0.45, capacity: 12 }
+  };
+  const CIVS = [
+    { name: '晨曦联邦', short: '晨曦', color: '#e4b760', policy: 'balanced', capital: '曙光城', names: ['金穗港', '望日台', '新原', '长明', '日落湾'] },
+    { name: '苍林议会', short: '苍林', color: '#66c5a1', policy: 'scholar', capital: '常青城', names: ['橡木谷', '雨歌', '青石', '森语', '溪岸'] },
+    { name: '潮汐同盟', short: '潮汐', color: '#66b3e8', policy: 'merchant', capital: '海镜城', names: ['白帆港', '风鸣', '远汐', '银沙', '海岬'] },
+    { name: '赤岩王国', short: '赤岩', color: '#e58279', policy: 'conquest', capital: '赤堡', names: ['铁门', '烽火台', '玄石', '红河', '铜山'] },
+    { name: '星辉学邦', short: '星辉', color: '#b49bdf', policy: 'scholar', capital: '观星城', names: ['月井', '长夜', '银环', '星原', '天穹'] },
+    { name: '琥珀公社', short: '琥珀', color: '#d6a27c', policy: 'expansion', capital: '麦田城', names: ['暖丘', '秋原', '蜜河', '丰谷', '琥珀湾'] }
+  ];
+  const POLICIES = {
+    balanced: { name: '均衡发展', description: '兼顾粮食、贸易与科技。', farm: 0.43, craft: 0.27, research: 0.14, military: 0.16, trade: 1, expansion: 1 },
+    scholar: { name: '学术优先', description: '增加研究投入，较少征兵。', farm: 0.39, craft: 0.23, research: 0.28, military: 0.10, trade: 1, expansion: 0.85 },
+    merchant: { name: '通商优先', description: '贸易收益提高，工商业更活跃。', farm: 0.39, craft: 0.34, research: 0.16, military: 0.11, trade: 1.65, expansion: 0.9 },
+    expansion: { name: '开拓优先', description: '重视粮食与新城建设。', farm: 0.49, craft: 0.26, research: 0.12, military: 0.13, trade: 0.95, expansion: 1.7 },
+    conquest: { name: '军事优先', description: '增加兵员与军备，战争倾向提高。', farm: 0.40, craft: 0.23, research: 0.09, military: 0.28, trade: 0.75, expansion: 1.1 }
+  };
+  const TECHS = [
+    { name: '定居时代', cost: 180 },
+    { name: '灌溉技术', cost: 430 },
+    { name: '青铜冶炼', cost: 760 },
+    { name: '文字与学校', cost: 1200 },
+    { name: '商路网络', cost: 1750 },
+    { name: '机械工坊', cost: 2500 },
+    { name: '科学方法', cost: 3400 },
+    { name: '启蒙时代', cost: 4700 },
+    { name: '工业时代', cost: 6400 },
+    { name: '电气时代', cost: 8600 },
+    { name: '信息时代', cost: 11500 },
+    { name: '星际前夜', cost: Infinity }
+  ];
+  const SCENARIOS = {
+    balanced: { name: '新世界', description: '六个文明从不同的河谷出发。', land: 0.51, fertility: 1, disasters: 0.35, aggression: 0.45 },
+    islands: { name: '群岛纪元', description: '海洋分隔大陆，贸易连接彼此。', land: 0.58, fertility: 1.1, disasters: 0.25, aggression: 0.25 },
+    frontier: { name: '丰饶大陆', description: '广阔陆地，适合观察城市扩张。', land: 0.44, fertility: 1.4, disasters: 0.15, aggression: 0.3 },
+    scarcity: { name: '漫长旱季', description: '资源紧张，合作与冲突更加重要。', land: 0.49, fertility: 0.72, disasters: 0.7, aggression: 0.7 }
+  };
+
+  const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
+  const round = n => Math.round(n * 1000) / 1000;
+  const pairKey = (a, b) => a < b ? `${a}:${b}` : `${b}:${a}`;
+  const hash = s => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };
+  const rand = state => { state.rng = (state.rng + 0x6D2B79F5) >>> 0; let t = state.rng; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const coordNoise = (x, y, seed) => { let h = Math.imul(x, 374761393) ^ Math.imul(y, 668265263) ^ seed; h = Math.imul(h ^ (h >>> 13), 1274126177); return ((h ^ (h >>> 16)) >>> 0) / 4294967295; };
+  const smooth = t => t * t * (3 - 2 * t);
+  function noise(x, y, seed) {
+    const ix = Math.floor(x), iy = Math.floor(y), fx = smooth(x - ix), fy = smooth(y - iy);
+    const a = coordNoise(ix, iy, seed), b = coordNoise(ix + 1, iy, seed), c = coordNoise(ix, iy + 1, seed), d = coordNoise(ix + 1, iy + 1, seed);
+    return (a + (b - a) * fx) * (1 - fy) + (c + (d - c) * fx) * fy;
+  }
+  function neighbors(state, index) {
+    const x = index % state.width, y = Math.floor(index / state.width), result = [];
+    if (x > 0) result.push(index - 1);
+    if (x + 1 < state.width) result.push(index + 1);
+    if (y > 0) result.push(index - state.width);
+    if (y + 1 < state.height) result.push(index + state.width);
+    return result;
+  }
+  const isLand = tile => TERRAIN[tile.type].capacity > 0;
+  const distance = (state, a, b) => Math.hypot(a % state.width - b % state.width, Math.floor(a / state.width) - Math.floor(b / state.width));
+  const activeCivs = state => state.civs.filter(c => c.alive);
+  const owned = (state, id) => state.tiles.filter(t => t.owner === id);
+  function log(state, kind, text, civId = null) {
+    state.events.push({ id: state.nextEvent++, year: state.year, kind, text, civId });
+    if (state.events.length > 260) state.events.shift();
+  }
+  function cityName(civ) { const def = CIVS[civ.id]; return civ.founded === 0 ? def.capital : def.names[(civ.founded - 1) % def.names.length] + (civ.founded > def.names.length ? String(Math.floor((civ.founded - 1) / def.names.length) + 1) : ''); }
+  function foundCity(state, civ, tileIndex, initial = false) {
+    const city = { id: state.nextCity++, name: cityName(civ), civId: civ.id, tile: tileIndex, founded: state.year, capital: initial, buildings: {}, queue: [] };
+    civ.founded++;
+    state.cities.push(city);
+    state.tiles[tileIndex].owner = civ.id;
+    for (const n of neighbors(state, tileIndex)) if (isLand(state.tiles[n]) && state.tiles[n].owner === -1) state.tiles[n].owner = civ.id;
+    if (!initial) { civ.wood -= 38; civ.wealth -= 45; civ.food -= 26; log(state, 'city', `${civ.name}建立了${city.name}。`, civ.id); }
+    return city;
+  }
+
+  function createWorld(options = {}) {
+    const scenario = Object.hasOwn(SCENARIOS, options.scenario) ? options.scenario : 'balanced';
+    const settings = SCENARIOS[scenario];
+    const seed = String(options.seed ?? '远方来信').slice(0, 100);
+    const seedHash = hash(seed);
+    const state = {
+      version: VERSION, seed, scenario, width: WIDTH, height: HEIGHT, year: 0, rng: seedHash,
+      config: { fertility: settings.fertility, disasters: settings.disasters, aggression: settings.aggression },
+      tiles: [], civs: [], cities: [], relations: {}, events: [], history: [],
+      nextCity: 1, nextEvent: 1, commands: [], climate: { drought: 0, bumper: 0 },
+      stats: { battles: 0, trades: 0, disasters: 0 }
+    };
+    for (let y = 0; y < HEIGHT; y++) for (let x = 0; x < WIDTH; x++) {
+      const edge = Math.min(x, WIDTH - 1 - x, y, HEIGHT - 1 - y);
+      const elevation = noise(x / 13, y / 11, seedHash) * 0.58 + noise(x / 5, y / 5, seedHash ^ 8913) * 0.27 + noise(x / 2, y / 2, seedHash ^ 333) * 0.15 - Math.max(0, 4 - edge) * 0.105;
+      const moisture = noise(x / 8, y / 8, seedHash ^ 938294);
+      let type = elevation < settings.land - 0.09 ? 'ocean' : elevation < settings.land ? 'coast' : elevation > 0.77 ? 'mountain' : elevation > 0.67 ? 'hill' : moisture < 0.25 ? 'desert' : moisture > 0.56 ? 'forest' : 'plain';
+      state.tiles.push({ index: y * WIDTH + x, type, elevation: round(elevation), moisture: round(moisture), owner: -1 });
+    }
+    // Stable fallback guarantees six viable starting positions even on extreme seeds.
+    const anchors = [[10, 10], [30, 8], [51, 10], [12, 29], [33, 28], [53, 29]];
+    const starts = [];
+    for (let id = 0; id < CIVS.length; id++) {
+      let best = -1, bestScore = -Infinity;
+      for (const t of state.tiles) {
+        if (!isLand(t) || t.type === 'mountain' || t.type === 'desert') continue;
+        const nearest = starts.length ? Math.min(...starts.map(s => distance(state, s, t.index))) : 30;
+        if (nearest < 12) continue;
+        const fertile = neighbors(state, t.index).reduce((sum, n) => sum + TERRAIN[state.tiles[n].type].food, 0);
+        const anchorDist = Math.hypot(t.index % WIDTH - anchors[id][0], Math.floor(t.index / WIDTH) - anchors[id][1]);
+        const score = fertile + nearest * 0.06 - anchorDist * 0.16 + coordNoise(t.index, id, seedHash) * 0.3;
+        if (score > bestScore) { best = t.index; bestScore = score; }
+      }
+      if (best < 0) {
+        const candidates = state.tiles.filter(t => t.owner === -1 && t.index % WIDTH > 3 && t.index % WIDTH < WIDTH - 4 && Math.floor(t.index / WIDTH) > 3 && Math.floor(t.index / WIDTH) < HEIGHT - 4);
+        candidates.sort((a, b) => Math.min(...starts.map(s => distance(state, s, b.index))) - Math.min(...starts.map(s => distance(state, s, a.index))));
+        best = candidates[0].index;
+        state.tiles[best].type = 'plain';
+        for (const n of neighbors(state, best)) if (state.tiles[n].owner === -1) state.tiles[n].type = 'plain';
+      }
+      starts.push(best);
+      const civ = { id, name: CIVS[id].name, policy: CIVS[id].policy, alive: true, population: 88 + Math.floor(rand(state) * 16), food: 105, wood: 52, ore: 18, wealth: 80, science: 0, tech: 0, military: 10, happiness: 72, founded: 0, lastCity: 0, lastExpansion: 0, foodDelta: 0, populationDelta: 0, tradeIncome: 0, shortage: false, territory: 0 };
+      state.civs.push(civ);
+      foundCity(state, civ, best, true);
+      log(state, 'city', `${civ.name}在${CIVS[id].capital}点燃第一簇炉火。`, id);
+    }
+    for (let a = 0; a < CIVS.length; a++) for (let b = a + 1; b < CIVS.length; b++) state.relations[pairKey(a, b)] = { a, b, value: 10 + Math.floor(rand(state) * 26), war: false, treaty: false, since: 0, cooldown: 0, trade: 0 };
+    initializeExpansion(state);
+    updateCounts(state);
+    recordHistory(state);
+    return state;
+  }
+
+  function updateCounts(state) { for (const c of state.civs) c.territory = state.tiles.reduce((s, t) => s + (t.owner === c.id ? 1 : 0), 0); }
+  function capacities(state, civ) {
+    const tiles = owned(state, civ.id);
+    const sums = tiles.reduce((s, t) => { const r = TERRAIN[t.type]; s.food += r.food; s.wood += r.wood; s.ore += r.ore; s.capacity += r.capacity; return s; }, { food: 0, wood: 0, ore: 0, capacity: 0 });
+    const count = Math.max(1, tiles.length);
+    return { food: sums.food / count, wood: sums.wood / count, ore: sums.ore / count, capacity: sums.capacity * (1 + civ.tech * 0.11) * (1 + bonuses(state, civ).capacity) };
+  }
+  function produce(state, civ) {
+    const p = POLICIES[civ.policy], cap = capacities(state, civ), oldPopulation = civ.population, oldFood = civ.food, bonus = bonuses(state, civ);
+    const productivity = (1 + civ.tech * 0.115) * (0.72 + civ.happiness / 250);
+    const weather = (state.climate.drought ? 0.58 : 1) * (state.climate.bumper ? 1.25 : 1);
+    const harvest = civ.population * p.farm * cap.food * 0.73 * productivity * state.config.fertility * weather * (1 + bonus.food);
+    const consumption = civ.population * 0.33 + civ.military * 0.05;
+    civ.food += harvest - consumption;
+    civ.shortage = civ.food < 0;
+    const starvation = civ.shortage ? Math.min(0.075, (-civ.food / Math.max(consumption, 1)) * 0.08) : 0;
+    civ.food = clamp(civ.food, 0, Math.max(140, civ.population * 4) * (1 + bonus.storage));
+    civ.wood = clamp(civ.wood + civ.population * p.craft * (0.05 + cap.wood * 0.24) * productivity * (1 + bonus.wood) - civ.population * 0.007, 0, 1e7);
+    civ.ore = clamp(civ.ore + civ.population * p.craft * cap.ore * 0.18 * productivity * (1 + bonus.ore), 0, 1e7);
+    const revenue = civ.population * 0.035 * (1 + civ.tech * 0.04) * (1 + bonus.revenue);
+    civ.wealth = clamp(civ.wealth + revenue - civ.military * 0.13, 0, 1e7);
+    const desiredMilitary = civ.population * p.military * 0.6;
+    const recruitment = Math.min(Math.max(0, desiredMilitary - civ.military) * 0.2, civ.ore / 1.3, civ.wealth / 1.8);
+    civ.military = Math.max(0, civ.military * (civ.shortage ? 0.96 : 0.985) + recruitment);
+    civ.ore -= recruitment * 1.3; civ.wealth -= recruitment * 1.8;
+    const researchOutput = civ.population * p.research * 0.19 * productivity * (civ.shortage ? 0.65 : 1) * (1 + bonus.research);
+    civ.science += researchOutput * .8;
+    civ.insight = Math.min(1e7, civ.insight + researchOutput * .38);
+    civ.insightDelta = researchOutput * .38;
+    if (civ.tech < TECHS.length - 1 && civ.science >= TECHS[civ.tech].cost) {
+      civ.science -= TECHS[civ.tech].cost; civ.tech++;
+      log(state, 'tech', `${civ.name}掌握了「${TECHS[civ.tech].name}」。`, civ.id);
+    }
+    const crowding = civ.population / Math.max(1, cap.capacity);
+    const growth = 0.021 * (1 - crowding) * (civ.happiness / 80) - starvation;
+    civ.population = Math.max(8, civ.population * (1 + clamp(growth, -0.1, 0.025)));
+    const wars = Object.values(state.relations).filter(r => r.war && (r.a === civ.id || r.b === civ.id)).length;
+    const targetHappiness = clamp(75 + Math.min(12, civ.food / civ.population * 4) + civ.tech * 1.3 + bonus.happiness - (civ.shortage ? 35 : 0) - wars * 10 - Math.max(0, crowding - 0.85) * 22, 15, 98);
+    civ.happiness += (targetHappiness - civ.happiness) * 0.13;
+    civ.populationDelta = civ.population - oldPopulation;
+    civ.foodDelta = civ.food - oldFood;
+    civ.tradeIncome = 0;
+  }
+
+  function expand(state, civ) {
+    const p = POLICIES[civ.policy];
+    if (state.year - civ.lastExpansion < Math.max(2, 7 / p.expansion) || civ.wood < 4 || civ.food < 8) return;
+    const cities = state.cities.filter(c => c.civId === civ.id);
+    if (!cities.length) return;
+    const candidates = new Set();
+    for (const t of owned(state, civ.id)) for (const n of neighbors(state, t.index)) {
+      if (state.tiles[n].owner !== -1 || !isLand(state.tiles[n])) continue;
+      if (Math.min(...cities.map(c => distance(state, c.tile, n))) <= 4.5 + civ.tech * 0.5) candidates.add(n);
+    }
+    // A mature civilization can establish a coastal bridgehead across water.
+    if (!candidates.size && civ.tech >= 2 && civ.wood >= 28 && state.year % 6 === 0) {
+      for (const t of state.tiles) if (t.owner === -1 && isLand(t) && neighbors(state, t.index).some(n => !isLand(state.tiles[n]))) {
+        if (Math.min(...cities.map(c => distance(state, c.tile, t.index))) < 11 + civ.tech) candidates.add(t.index);
+      }
+    }
+    if (!candidates.size) return;
+    const ranked = [...candidates].map(n => {
+      const terrain = TERRAIN[state.tiles[n].type];
+      return { n, score: terrain.food * (civ.food < civ.population ? 2 : 1) + terrain.wood * (civ.wood < 40 ? 1.8 : 0.4) + terrain.ore * 0.6 - Math.min(...cities.map(c => distance(state, c.tile, n))) * 0.12 + rand(state) * 0.8 };
+    }).sort((a, b) => b.score - a.score);
+    state.tiles[ranked[0].n].owner = civ.id;
+    civ.wood -= 4; civ.food -= 6; civ.lastExpansion = state.year;
+  }
+
+  function developCities(state, civ) {
+    const cities = state.cities.filter(c => c.civId === civ.id);
+    const p = POLICIES[civ.policy];
+    if (cities.length >= 12 || civ.population < cities.length * 100 || civ.wood < 38 || civ.wealth < 45 || civ.food < 40 || state.year - civ.lastCity < 22 / p.expansion) return;
+    const candidates = owned(state, civ.id).filter(t => t.type !== 'mountain' && Math.min(...cities.map(c => distance(state, c.tile, t.index))) >= 3.8);
+    if (!candidates.length) return;
+    const scored = candidates.map(t => ({ tile: t.index, score: TERRAIN[t.type].food + neighbors(state, t.index).filter(n => state.tiles[n].owner === -1 && isLand(state.tiles[n])).length * 0.8 + rand(state) }));
+    scored.sort((a, b) => b.score - a.score);
+    foundCity(state, civ, scored[0].tile); civ.lastCity = state.year;
+  }
+
+  function borders(state) {
+    const result = new Map();
+    for (const t of state.tiles) if (t.owner >= 0) for (const n of neighbors(state, t.index)) {
+      const other = state.tiles[n];
+      if (other.owner < 0 || other.owner === t.owner) continue;
+      const key = pairKey(t.owner, other.owner);
+      if (!result.has(key)) result.set(key, []);
+      result.get(key).push({ from: t.index, to: n, attacker: t.owner });
+    }
+    return result;
+  }
+  function eliminate(state, civ, victor) {
+    civ.alive = false; civ.military = 0;
+    civ.decision = null;
+    victor.population += civ.population * 0.65;
+    victor.food += civ.food * 0.5; victor.wood += civ.wood * 0.5; victor.wealth += civ.wealth * 0.5;
+    civ.population = 0;
+    for (const t of state.tiles) if (t.owner === civ.id) t.owner = victor.id;
+    for (const r of Object.values(state.relations)) if (r.a === civ.id || r.b === civ.id) { r.war = false; r.treaty = false; r.trade = 0; }
+    log(state, 'war', `${civ.name}失去最后一座城市，余民加入${victor.name}。`, victor.id);
+  }
+  function battle(state, relation, borderTiles) {
+    if (!borderTiles.length || state.year % 3 !== 0) return;
+    const a = state.civs[relation.a], b = state.civs[relation.b];
+    const powerA = Math.max(0.1, a.military) * (1 + a.tech * 0.13) * (0.8 + rand(state) * 0.4);
+    const powerB = Math.max(0.1, b.military) * (1 + b.tech * 0.13) * (0.8 + rand(state) * 0.4);
+    const winner = powerA > powerB ? a : b, loser = winner === a ? b : a;
+    const targets = borderTiles.filter(t => t.attacker === winner.id && state.tiles[t.to].owner === loser.id);
+    if (!targets.length) return;
+    const target = targets[Math.floor(rand(state) * targets.length)].to;
+    const defenderCity = state.cities.find(c => c.tile === target);
+    const defense = (state.tiles[target].type === 'mountain' ? 1.5 : 1) * (1 + (defenderCity?.buildings.walls || 0) * .35);
+    if (defenderCity && Math.max(powerA, powerB) < Math.min(powerA, powerB) * 1.18 * defense) {
+      a.military *= 0.96; b.military *= 0.96; return;
+    }
+    state.tiles[target].owner = winner.id;
+    winner.military *= 0.95; loser.military *= 0.91;
+    winner.happiness = clamp(winner.happiness - 1, 0, 100); loser.happiness = clamp(loser.happiness - 2, 0, 100);
+    winner.population *= 0.997; loser.population *= 0.993;
+    state.stats.battles++;
+    if (defenderCity) {
+      defenderCity.civId = winner.id; defenderCity.capital = false;
+      const transfer = Math.min(loser.population * 0.2, 80);
+      loser.population -= transfer; winner.population += transfer;
+      log(state, 'war', `${winner.name}占领了${defenderCity.name}。`, winner.id);
+      if (!state.cities.some(c => c.civId === loser.id)) eliminate(state, loser, winner);
+    } else if (state.year % 12 === 0) log(state, 'war', `${winner.name}在与${loser.name}的边境冲突中推进了一格。`, winner.id);
+  }
+  function diplomacy(state) {
+    const borderMap = borders(state);
+    for (const r of Object.values(state.relations)) {
+      const a = state.civs[r.a], b = state.civs[r.b];
+      r.trade = 0;
+      if (!a.alive || !b.alive) continue;
+      const border = borderMap.get(pairKey(a.id, b.id)) || [];
+      const aCities = state.cities.filter(c => c.civId === a.id), bCities = state.cities.filter(c => c.civId === b.id);
+      const cityDistance = Math.min(...aCities.flatMap(ac => bCities.map(bc => distance(state, ac.tile, bc.tile))));
+      const contact = border.length > 0 || cityDistance < 14 + Math.min(a.tech, b.tech) * 2.5;
+      if (!contact) continue;
+      const tension = border.length ? (state.config.aggression * 0.55 + (a.policy === 'conquest' || b.policy === 'conquest' ? 0.42 : 0) + (a.shortage || b.shortage ? 0.22 : 0)) : 0;
+      if (!r.war) {
+        r.value = clamp(r.value + 0.24 + (r.treaty ? 0.18 : 0) - tension + (rand(state) - 0.5) * 0.7, -100, 100);
+        if (r.value > 38 && !r.treaty) { r.treaty = true; log(state, 'trade', `${a.name}与${b.name}签署通商条约。`); }
+        if (r.value < 5) r.treaty = false;
+        if (r.value > -15) {
+          const income = Math.min(a.population, b.population) * 0.016 * (r.treaty ? 1.6 : 0.65) * (1 + (a.tech + b.tech) * 0.06);
+          const aIncome = income * POLICIES[a.policy].trade * (1 + bonuses(state, a).trade), bIncome = income * POLICIES[b.policy].trade * (1 + bonuses(state, b).trade);
+          a.wealth = Math.min(1e7, a.wealth + aIncome); b.wealth = Math.min(1e7, b.wealth + bIncome); a.tradeIncome += aIncome; b.tradeIncome += bIncome;
+          r.trade = income; state.stats.trades++;
+          // Conservative food exchange: purchased food is deducted from the seller.
+          for (const [buyer, seller] of [[a, b], [b, a]]) if (buyer.food < buyer.population * 0.55 && seller.food > seller.population * 1.15) {
+            const amount = Math.min(seller.food - seller.population * 1.15, buyer.population * 0.08, buyer.wealth / 0.6);
+            buyer.food += amount; seller.food -= amount; buyer.wealth -= amount * 0.6; seller.wealth += amount * 0.6;
+          }
+        }
+        if (border.length && state.year >= r.cooldown && r.value < -8 && rand(state) < state.config.aggression * 0.045) {
+          r.war = true; r.treaty = false; r.since = state.year;
+          log(state, 'war', `${a.name}与${b.name}爆发战争。`);
+        }
+      } else {
+        battle(state, r, border);
+        if (!a.alive || !b.alive) continue;
+        if (state.year - r.since > 32 || (state.year - r.since > 10 && (a.military < 2 || b.military < 2 || !border.length || rand(state) < 0.025))) {
+          r.war = false; r.value = 8; r.cooldown = state.year + 25;
+          log(state, 'peace', `${a.name}与${b.name}停战，边境进入休整期。`);
+        }
+      }
+    }
+  }
+  function naturalEvents(state) {
+    if (state.year % 5 !== 0 || rand(state) >= state.config.disasters * 0.13) return;
+    const alive = activeCivs(state); if (!alive.length) return;
+    const civ = alive[Math.floor(rand(state) * alive.length)];
+    const roll = rand(state);
+    if (roll < 0.38 && !state.climate.drought) {
+      state.climate.drought = 4 + Math.floor(rand(state) * 4); state.stats.disasters++;
+      log(state, 'climate', `大地进入持续${state.climate.drought}年的旱季。`);
+    } else if (roll < 0.7) {
+      const loss = civ.population * (0.025 + rand(state) * 0.025) / (1 + civ.tech * 0.12) * (1 - Math.min(.8, bonuses(state, civ).health));
+      civ.population -= loss; civ.happiness = Math.max(10, civ.happiness - 6); state.stats.disasters++;
+      log(state, 'climate', `${civ.name}遭遇疫病，约${Math.round(loss)}人逝去。`, civ.id);
+    } else { state.climate.bumper = 4; log(state, 'climate', '温和的风雨带来丰收，粮食产出暂时提高。'); }
+  }
+  function recordHistory(state) {
+    const living = activeCivs(state);
+    state.history.push({ year: state.year, population: round(living.reduce((s, c) => s + c.population, 0)), wars: Object.values(state.relations).filter(r => r.war).length, civs: state.civs.map(c => ({ population: round(c.population), territory: c.territory, tech: c.tech, wealth: round(c.wealth) })) });
+    if (state.history.length > 601) state.history.shift();
+  }
+  function tick(state, years = 1) {
+    if (!Number.isSafeInteger(years) || years < 0 || years > 10000) throw new Error('推进年数必须是 0 到 10000 的整数。');
+    for (let i = 0; i < years; i++) {
+      state.year++;
+      naturalEvents(state);
+      for (const c of state.civs) if (c.alive) { produce(state, c); expand(state, c); if (c.id !== state.playerId) developCities(state, c); }
+      diplomacy(state); updateCounts(state); advanceExpansion(state); recordHistory(state);
+      if (state.climate.drought > 0 && --state.climate.drought === 0) log(state, 'climate', '旱季结束，雨水重新浸润大地。');
+      if (state.climate.bumper > 0) state.climate.bumper--;
+    }
+    return state;
+  }
+
+  function command(state, action, record = true) {
+    if (!action || typeof action !== 'object' || Array.isArray(action)) throw new Error('无效的干预指令。');
+    if (record && state.commands.length >= 10000) throw new Error('单个世界最多记录10,000次干预。请生成新世界继续实验。');
+    const civ = state.civs[action.civId];
+    let normalized;
+    if (action.type === 'policy') {
+      if (!civ?.alive || !Object.hasOwn(POLICIES, action.policy)) throw new Error('无法改变该文明的政策。');
+      civ.policy = action.policy;
+      log(state, 'intervention', `${civ.name}转向「${POLICIES[action.policy].name}」。`, civ.id);
+      normalized = { type: 'policy', civId: civ.id, policy: action.policy };
+    } else if (action.type === 'aid') {
+      if (!civ?.alive) throw new Error('该文明已经退出历史。');
+      civ.food += 80; civ.wood += 35; civ.wealth += 50;
+      log(state, 'intervention', `${civ.name}获得援助：粮食 +80，木材 +35，财富 +50。`, civ.id);
+      normalized = { type: 'aid', civId: civ.id };
+    } else if (action.type === 'peace') {
+      let count = 0;
+      for (const r of Object.values(state.relations)) if (r.war) { r.war = false; r.value = 20; r.cooldown = state.year + 35; count++; }
+      log(state, 'intervention', count ? `调停生效，${count}场战争结束，停战保护持续35年。` : '和平倡议发布，各文明维持当前关系。');
+      normalized = { type: 'peace' };
+    } else if (action.type === 'rain') {
+      state.climate.drought = 0; state.climate.bumper = 5;
+      log(state, 'intervention', '降雨干预生效，接下来5年进入丰收期。'); normalized = { type: 'rain' };
+    } else if (action.type === 'config') {
+      const config = {};
+      for (const key of ['fertility', 'disasters', 'aggression']) if (Object.hasOwn(action, key)) {
+        const value = action[key], min = key === 'fertility' ? 0.4 : 0, max = key === 'fertility' ? 1.8 : 1;
+        if (typeof value !== 'number' || !Number.isFinite(value) || value < min || value > max) throw new Error('环境参数超出允许范围。');
+        config[key] = value;
+      }
+      if (!Object.keys(config).length) throw new Error('缺少环境参数。');
+      Object.assign(state.config, config); normalized = { type: 'config', ...config };
+      log(state, 'intervention', '世界环境参数已调整。');
+    } else normalized = expansionCommand(state, action);
+    if (['aid', 'rain', 'peace', 'config'].includes(action.type) || (action.type === 'policy' && action.civId !== state.playerId)) state.sandboxUse++;
+    if (record) state.commands.push({ year: state.year, action: normalized });
+    updateVictory(state);
+    return state;
+  }
+  function replay(state, targetYear = state.year) {
+    if (!Number.isSafeInteger(targetYear) || targetYear < 0 || targetYear > 50000) throw new Error('回放年份超出范围。');
+    const startYear = state.origin?.year || 0;
+    if (targetYear < startYear) throw new Error(`这个升级存档从第${startYear}年开始，请用经典版读取更早的历史。`);
+    const result = state.origin ? upgradeLegacy(Legacy.deserialize(JSON.stringify(state.origin)), state.origin) : createWorld({ seed: state.seed, scenario: state.scenario });
+    let cursor = 0;
+    for (let year = startYear; year <= targetYear; year++) {
+      while (cursor < state.commands.length && state.commands[cursor].year === year) command(result, state.commands[cursor++].action);
+      if (year < targetYear) tick(result);
+    }
+    return result;
+  }
+  // Store the seed and ordered actions. Rebuilding validates all imported data;
+  // no imported object is merged into live state or trusted as engine state.
+  function serialize(state) { return JSON.stringify({ format: 'civilization-lab', version: VERSION, seed: state.seed, scenario: state.scenario, year: state.year, origin: state.origin || null, commands: state.commands }, null, 2); }
+  function deserialize(json) {
+    if (typeof json !== 'string' || json.length > 2e6) throw new Error('存档过大，或格式无效。');
+    let data; try { data = JSON.parse(json); } catch { throw new Error('无法读取这个 JSON 存档。'); }
+    if (data?.version === 1) return upgradeLegacy(Legacy.deserialize(json), data);
+    if (!data || data.format !== 'civilization-lab' || data.version !== VERSION || typeof data.seed !== 'string' || data.seed.length > 100 || !Object.hasOwn(SCENARIOS, data.scenario) || !Number.isSafeInteger(data.year) || data.year < 0 || data.year > 50000 || !Array.isArray(data.commands) || data.commands.length > 10000) throw new Error('存档版本或内容不受支持。');
+    if (data.origin && (data.origin.version !== 1 || data.origin.seed !== data.seed || data.origin.scenario !== data.scenario || !Number.isSafeInteger(data.origin.year) || data.origin.year > data.year || data.origin.year < 0)) throw new Error('升级存档的起点无效。');
+    let prev = -1;
+    for (const entry of data.commands) {
+      if (!entry || !Number.isSafeInteger(entry.year) || entry.year < (data.origin?.year || 0) || entry.year < prev || entry.year > data.year || !entry.action) throw new Error('存档中的时间线无效。');
+      prev = entry.year;
+    }
+    return replay(data, data.year);
+  }
+  function initializeExpansion(state) {
+    state.origin = null;
+    state.playerId = 0;
+    state.goal = 'prosperity';
+    state.victory = null;
+    state.sandboxUse = 0;
+    state.nextDecision = 1;
+    state.sites = [];
+    state.expeditions = [];
+    for (const city of state.cities) { city.buildings = {}; city.queue = []; }
+    for (const c of state.civs) {
+      Object.assign(c, { insight: 40, insightDelta: 0, research: [], buffs: [], relics: 0, peaceYears: 0, decisions: [], nextCouncil: state.year + 18, decision: null });
+    }
+    const types = Object.keys(SITES), seedHash = hash(state.seed + ':ruins');
+    // Spread sites locally first, so every capital has something to explore.
+    for (let id = 0; id < state.civs.length; id++) {
+      const capital = state.cities.find(c => c.civId === id);
+      if (!capital) continue;
+      const candidates = state.tiles.filter(t => isLand(t) && t.owner < 0 && distance(state, capital.tile, t.index) >= 3 && distance(state, capital.tile, t.index) <= 9 && !state.sites.some(s => distance(state, s.tile, t.index) < 3));
+      candidates.sort((a, b) => coordNoise(a.index, id, seedHash) - coordNoise(b.index, id, seedHash));
+      for (const t of candidates.slice(0, 2)) if (!state.sites.some(s => distance(state, s.tile, t.index) < 2)) state.sites.push({ id: state.sites.length, tile: t.index, type: types[state.sites.length % types.length], claimedBy: -1, explorerId: -1, cooldown: 0 });
+    }
+    const candidates = state.tiles.filter(t => isLand(t) && t.owner < 0).sort((a, b) => coordNoise(a.index, 8, seedHash) - coordNoise(b.index, 8, seedHash));
+    for (const t of candidates) {
+      if (state.sites.length >= 20) break;
+      if (state.sites.some(s => distance(state, s.tile, t.index) < 5)) continue;
+      state.sites.push({ id: state.sites.length, tile: t.index, type: types[state.sites.length % types.length], claimedBy: -1, explorerId: -1, cooldown: 0 });
+    }
+    for (const c of state.civs) if (c.alive) createDecision(state, c, 'harvest');
+  }
+  function upgradeLegacy(legacyState, origin) {
+    const state = legacyState;
+    initializeExpansion(state);
+    state.version = VERSION;
+    state.origin = JSON.parse(JSON.stringify(origin));
+    state.commands = [];
+    state.playerId = state.civs.find(c => c.alive).id;
+    log(state, 'intervention', `世界在第${state.year}年进入执政者版本，旧历史保持原样。`);
+    return state;
+  }
+  function bonuses(state, civ) {
+    const result = { food: 0, wood: 0, ore: 0, storage: 0, research: 0, construction: 0, capacity: 0, happiness: 0, health: 0, trade: 0, revenue: 0, exploration: 0, travel: 0, diplomacy: 0 };
+    const add = (effects, scale = 1) => { for (const [key, value] of Object.entries(effects)) result[key] += value * scale; };
+    for (const id of civ.research || []) add(RESEARCH[id].effects);
+    const cities = state.cities.filter(c => c.civId === civ.id);
+    for (const city of cities) for (const [id, level] of Object.entries(city.buildings || {})) add(BUILDINGS[id].effects, level / (BUILDINGS[id].unique ? 1 : Math.max(1, cities.length)));
+    for (const buff of civ.buffs || []) if (buff.until > state.year) result[buff.key] += buff.value;
+    return result;
+  }
+  function afford(civ, cost = {}) { return Object.entries(cost).every(([key, amount]) => civ[key] >= amount); }
+  function pay(civ, cost) { for (const [key, amount] of Object.entries(cost)) civ[key] = Math.max(0, civ[key] - amount); }
+  function costText(cost = {}) { return Object.entries(cost).map(([key, amount]) => `${RESOURCE_NAMES[key]} ${Math.round(amount)}`).join(' · '); }
+  function buildingStatus(state, civId, cityId, building) {
+    const civ = state.civs[civId], city = state.cities.find(c => c.id === cityId), def = BUILDINGS[building];
+    if (!civ?.alive || !city || city.civId !== civId || !Object.hasOwn(BUILDINGS, building)) return { available: false, reason: '城市或建筑无效', cost: {} };
+    const level = (city.buildings[building] || 0) + city.queue.filter(q => q.building === building).length;
+    const cost = Object.fromEntries(Object.entries(def.cost).map(([key, n]) => [key, Math.ceil(n * (1 + level * .7))]));
+    let reason = '';
+    if (level >= def.max) reason = '已达到最高等级';
+    else if (def.requires && !civ.research.includes(def.requires)) reason = `需要研究「${RESEARCH[def.requires].name}」`;
+    else if (city.queue.length >= 3) reason = '建设队列已满（3项）';
+    else if (def.unique && state.cities.some(c => c.buildings[building] || c.queue.some(q => q.building === building))) reason = '奇观已建成或正在其他城市建造';
+    else if (!afford(civ, cost)) reason = '资源不足';
+    return { available: !reason, reason, cost, level: level + 1, work: Math.ceil(def.work * (1 + level * .4)) };
+  }
+  function queueBuilding(state, civId, cityId, building) {
+    const status = buildingStatus(state, civId, cityId, building);
+    if (!status.available) throw new Error(status.reason);
+    const civ = state.civs[civId], city = state.cities.find(c => c.id === cityId);
+    pay(civ, status.cost);
+    city.queue.push({ building, level: status.level, progress: 0, work: status.work, cost: status.cost });
+    log(state, 'build', `${city.name}开始建设${BUILDINGS[building].name}${status.level}级。`, civ.id);
+  }
+  function researchStatus(state, civId, id) {
+    const civ = state.civs[civId];
+    if (!civ?.alive || !Object.hasOwn(RESEARCH, id)) return { available: false, reason: '研究无效' };
+    const def = RESEARCH[id];
+    let reason = '';
+    if (civ.research.includes(id)) reason = '已掌握';
+    else if (def.requires.some(r => !civ.research.includes(r))) reason = `前置：${def.requires.map(r => RESEARCH[r].name).join('、')}`;
+    else if (civ.tech < def.era) reason = `需要时代科技${def.era}级`;
+    else if (civ.insight < def.cost) reason = `还需${Math.ceil(def.cost - civ.insight)}研究点`;
+    return { available: !reason, reason };
+  }
+  function study(state, civId, id) {
+    const status = researchStatus(state, civId, id);
+    if (!status.available) throw new Error(status.reason);
+    const civ = state.civs[civId]; civ.insight -= RESEARCH[id].cost; civ.research.push(id);
+    log(state, 'tech', `${civ.name}完成专项研究「${RESEARCH[id].name}」。`, civId);
+  }
+  function explorationStatus(state, civId, siteId) {
+    const civ = state.civs[civId], site = state.sites.find(s => s.id === siteId), cost = { food: 30, wealth: 25 };
+    if (!civ?.alive || !site) return { available: false, reason: '远征目标无效', cost };
+    const cities = state.cities.filter(c => c.civId === civId), bonus = bonuses(state, civ);
+    const distanceTo = Math.min(...cities.map(c => distance(state, c.tile, site.tile)));
+    const range = 11 + civ.tech * 1.5 + bonus.exploration;
+    const duration = Math.max(3, Math.ceil(distanceTo / 1.8 * (1 - bonus.travel)));
+    let reason = '';
+    if (site.claimedBy >= 0) reason = `已由${CIVS[site.claimedBy].short}发掘`;
+    else if (site.explorerId >= 0) reason = '已有远征队前往';
+    else if (site.cooldown > state.year) reason = `修整至第${site.cooldown}年`;
+    else if (state.expeditions.some(e => e.civId === civId)) reason = '已有一支远征队在外';
+    else if (distanceTo > range) reason = `超出探索范围（${Math.floor(range)}格）`;
+    else if (!afford(civ, cost)) reason = '资源不足';
+    return { available: !reason, reason, cost, distance: distanceTo, duration, risk: SITES[site.type].risk, range };
+  }
+  function sendExpedition(state, civId, siteId) {
+    const status = explorationStatus(state, civId, siteId); if (!status.available) throw new Error(status.reason);
+    const civ = state.civs[civId], site = state.sites.find(s => s.id === siteId);
+    const origin = [...state.cities].filter(c => c.civId === civId).sort((a, b) => distance(state, a.tile, site.tile) - distance(state, b.tile, site.tile))[0].tile;
+    pay(civ, status.cost); site.explorerId = civId;
+    state.expeditions.push({ civId, siteId, from: origin, started: state.year, arrives: state.year + status.duration });
+    log(state, 'explore', `${civ.name}派出远征队探索${SITES[site.type].name}，预计${status.duration}年后归来。`, civId);
+  }
+  function effect(state, civ, values) {
+    for (const [key, value] of Object.entries(values)) {
+      if (key === 'relations') { for (const r of Object.values(state.relations)) if (r.a === civ.id || r.b === civ.id) r.value = clamp(r.value + value, -100, 100); }
+      else civ[key] = clamp(civ[key] + value, 0, key === 'happiness' ? 100 : 1e7);
+    }
+  }
+  function createDecision(state, civ, kind) {
+    civ.decision = { id: state.nextDecision++, kind, created: state.year, expires: state.year + 12 };
+  }
+  function resolveDecision(state, civ, choiceId, automatic = false) {
+    const decision = civ.decision;
+    if (!decision) throw new Error('没有待处理的议事。');
+    const def = DECISIONS[decision.kind], choice = def.options.find(o => o.id === choiceId);
+    if (!choice || !afford(civ, choice.cost)) throw new Error('此选项无效或资源不足。');
+    pay(civ, choice.cost || {}); effect(state, civ, choice.effect);
+    if (choice.buff) civ.buffs.push({ ...choice.buff, until: state.year + choice.buff.duration, label: choice.name });
+    civ.decisions.push({ id: decision.id, year: state.year, kind: decision.kind, choice: choiceId });
+    if (civ.decisions.length > 100) civ.decisions.shift();
+    civ.decision = null;
+    log(state, 'council', `${civ.name}${automatic ? '的议会决定' : '决定'}：${choice.name}。`, civ.id);
+  }
+  function constructionRate(state, civId) { return (1 + state.civs[civId].tech * .14) * (1 + bonuses(state, state.civs[civId]).construction); }
+  function advanceExpansion(state) {
+    for (const city of state.cities) {
+      if (!city.queue.length || !state.civs[city.civId].alive) continue;
+      const project = city.queue[0];
+      project.progress += constructionRate(state, city.civId);
+      if (project.progress >= project.work) {
+        city.buildings[project.building] = project.level; city.queue.shift();
+        log(state, 'build', `${city.name}建成${BUILDINGS[project.building].name}${project.level}级。`, city.civId);
+      }
+    }
+    for (const expedition of [...state.expeditions]) {
+      const civ = state.civs[expedition.civId], site = state.sites.find(s => s.id === expedition.siteId);
+      if (!civ.alive) { site.explorerId = -1; state.expeditions = state.expeditions.filter(e => e !== expedition); continue; }
+      if (state.year < expedition.arrives) continue;
+      site.explorerId = -1;
+      if (rand(state) < SITES[site.type].risk) {
+        site.cooldown = state.year + 8; civ.happiness = Math.max(0, civ.happiness - 2);
+        log(state, 'explore', `${civ.name}的远征队遭遇险阻，未能发掘${SITES[site.type].name}，8年后可重试。`, civ.id);
+      } else {
+        site.claimedBy = civ.id; civ.relics++; effect(state, civ, SITES[site.type].reward);
+        log(state, 'explore', `${civ.name}成功发掘${SITES[site.type].name}，带回${costText(SITES[site.type].reward)}。`, civ.id);
+      }
+      state.expeditions = state.expeditions.filter(e => e !== expedition);
+    }
+    for (const civ of state.civs) if (civ.alive) {
+      civ.buffs = civ.buffs.filter(b => b.until > state.year);
+      civ.peaceYears = Object.values(state.relations).some(r => r.war && (r.a === civ.id || r.b === civ.id)) ? 0 : civ.peaceYears + 1;
+      if (civ.decision && (state.year >= civ.decision.expires || civ.id !== state.playerId)) {
+        const choices = DECISIONS[civ.decision.kind].options.filter(o => afford(civ, o.cost));
+        const chosen = choices[civ.id === state.playerId ? 0 : Math.floor(rand(state) * choices.length)];
+        if (chosen) resolveDecision(state, civ, chosen.id, true);
+      }
+      if (!civ.decision && state.year >= civ.nextCouncil) {
+        const keys = Object.keys(DECISIONS); createDecision(state, civ, keys[Math.floor(rand(state) * keys.length)]); civ.nextCouncil = state.year + 22;
+      }
+      if (civ.id === state.playerId || state.year % 8 !== civ.id) continue;
+      const researchOrder = civ.policy === 'scholar' ? ['writing','astronomy','printing','agronomy','tools','medicine','coinage','sailing','masonry','governance','engineering','charter'] : civ.policy === 'merchant' ? ['coinage','sailing','charter','agronomy','writing','tools','medicine','masonry','astronomy','engineering','printing','governance'] : ['agronomy','tools','writing','coinage','medicine','masonry','sailing','astronomy','governance','engineering','printing','charter'];
+      const next = researchOrder.find(id => researchStatus(state, civ.id, id).available);
+      if (next) study(state, civ.id, next);
+      for (const city of state.cities.filter(c => c.civId === civ.id && c.queue.length === 0)) {
+        const priorities = civ.policy === 'scholar' ? ['library','granary','lumbermill','observatory','academy','farm','workshop','market','hospital','walls'] : ['granary','lumbermill','farm','market','workshop','library','walls','hospital','academy','observatory'];
+        const build = priorities.find(id => {
+          const status = buildingStatus(state, civ.id, city.id, id);
+          return status.available && Object.entries(status.cost).every(([key, amount]) => civ[key] >= amount * 1.7);
+        });
+        if (build) queueBuilding(state, civ.id, city.id, build);
+      }
+      if (state.year > 25 && !state.expeditions.some(e => e.civId === civ.id)) {
+        const target = state.sites.filter(s => explorationStatus(state, civ.id, s.id).available).sort((a, b) => explorationStatus(state, civ.id, a.id).distance - explorationStatus(state, civ.id, b.id).distance)[0];
+        if (target) sendExpedition(state, civ.id, target.id);
+      }
+    }
+    updateVictory(state);
+  }
+  function settlementStatus(state, civId, tileIndex) {
+    const civ = state.civs[civId], tile = state.tiles[tileIndex], cost = { food: 80, wood: 90, wealth: 120 };
+    let reason = '';
+    if (!civ?.alive || !Number.isSafeInteger(tileIndex) || !tile || !isLand(tile)) reason = '需要选择陆地';
+    else if (tile.owner >= 0 && tile.owner !== civId) reason = '不能在其他文明的领土上建城';
+    else if (tile.type === 'mountain') reason = '山地无法建立城市';
+    else if (state.cities.some(c => distance(state, c.tile, tileIndex) < 3.8)) reason = '与现有城市至少相隔4格';
+    else if (tile.owner !== civId && !neighbors(state, tileIndex).some(n => state.tiles[n].owner === civId)) reason = '需要在本国领土或相邻陆地建立';
+    else if (state.cities.filter(c => c.civId === civId).length >= 12) reason = '最多拥有12座城市';
+    else if (civ.population < 160) reason = '需要至少160人口';
+    else if (!afford(civ, cost)) reason = '资源不足';
+    return { available: !reason, reason, cost };
+  }
+  function diplomacyStatus(state, civId, targetId, action) {
+    const civ = state.civs[civId], target = state.civs[targetId], r = state.relations[pairKey(civId, targetId)];
+    const cost = { wealth: action === 'ceasefire' ? 100 : action === 'declare' ? 40 : 35 };
+    let reason = '';
+    if (!civ?.alive || !target?.alive || !r || !['envoy','ceasefire','declare'].includes(action)) reason = '外交对象无效';
+    else if (action === 'ceasefire' && !r.war) reason = '当前没有交战';
+    else if (action !== 'ceasefire' && r.war) reason = '当前处于战争状态';
+    else if (action === 'envoy' && (r.envoyUntil?.[civId] || 0) > state.year) reason = `使节第${r.envoyUntil[civId]}年后可再次出发`;
+    else if (action === 'declare' && state.year < r.cooldown) reason = `停战协议持续至第${r.cooldown}年`;
+    else if (action === 'declare' && !borders(state).has(pairKey(civId, targetId))) reason = '双方尚未接壤';
+    else if (!afford(civ, cost)) reason = '财富不足';
+    return { available: !reason, reason, cost };
+  }
+  function expansionCommand(state, action) {
+    const civ = state.civs[action.civId];
+    if (action.type === 'reign') {
+      if (!civ?.alive || !Object.hasOwn(GOALS, action.goal)) throw new Error('执政文明或目标无效。');
+    if (state.year !== (state.origin?.year || 0) || state.commands.some(c => ['build','research','choice','explore','diplomacy','settle'].includes(c.action.type))) throw new Error('只能在开始游戏时选择执政文明和目标。');
+      state.playerId = civ.id; state.goal = action.goal; state.victory = null;
+      return { type: 'reign', civId: civ.id, goal: action.goal };
+    }
+    if (!civ?.alive || civ.id !== state.playerId) throw new Error('请对你的执政文明执行此操作。');
+    if (action.type === 'build') {
+      queueBuilding(state, civ.id, action.cityId, action.building);
+      return { type: 'build', civId: civ.id, cityId: action.cityId, building: action.building };
+    }
+    if (action.type === 'cancelBuild') {
+      const city = state.cities.find(c => c.id === action.cityId);
+      if (!city || city.civId !== civ.id || !Number.isSafeInteger(action.index) || !city.queue[action.index]) throw new Error('建设队列已变化。');
+      // Removing dependent upgrades also removes subsequent levels of the same building.
+      const project = city.queue[action.index], removing = city.queue.filter((q, i) => i >= action.index && q.building === project.building);
+      for (const q of removing) { const fraction = .8 * (1 - Math.min(1, q.progress / q.work)); for (const [key, amount] of Object.entries(q.cost)) civ[key] += Math.floor(amount * fraction); }
+      city.queue = city.queue.filter(q => !removing.includes(q));
+      log(state, 'build', `${city.name}取消${BUILDINGS[project.building].name}工程，返还未施工部分80%的资源。`, civ.id);
+      return { type: 'cancelBuild', civId: civ.id, cityId: city.id, index: action.index };
+    }
+    if (action.type === 'research') { study(state, civ.id, action.research); return { type: 'research', civId: civ.id, research: action.research }; }
+    if (action.type === 'choice') {
+      if (!civ.decision || civ.decision.id !== action.decisionId) throw new Error('这次议事已经结束。');
+      resolveDecision(state, civ, action.choice);
+      return { type: 'choice', civId: civ.id, decisionId: action.decisionId, choice: action.choice };
+    }
+    if (action.type === 'explore') { sendExpedition(state, civ.id, action.siteId); return { type: 'explore', civId: civ.id, siteId: action.siteId }; }
+    if (action.type === 'settle') {
+      const status = settlementStatus(state, civ.id, action.tile); if (!status.available) throw new Error(status.reason);
+      pay(civ, status.cost); const city = foundCity(state, civ, action.tile, true); city.capital = false; civ.lastCity = state.year;
+      updateCounts(state); log(state, 'city', `${civ.name}派出开拓者，建立${city.name}。`, civ.id);
+      return { type: 'settle', civId: civ.id, tile: action.tile };
+    }
+    if (action.type === 'diplomacy') {
+      const status = diplomacyStatus(state, civ.id, action.targetId, action.action); if (!status.available) throw new Error(status.reason);
+      const r = state.relations[pairKey(civ.id, action.targetId)], target = state.civs[action.targetId]; pay(civ, status.cost);
+      if (action.action === 'envoy') { r.value = clamp(r.value + 22 + bonuses(state, civ).diplomacy, -100, 100); r.envoyUntil ||= {}; r.envoyUntil[civ.id] = state.year + 12; if (r.value > 38) r.treaty = true; log(state, 'trade', `${civ.name}向${target.name}派出使节，双方关系改善。`, civ.id); }
+      if (action.action === 'ceasefire') { r.war = false; r.value = 15; r.cooldown = state.year + 30; log(state, 'peace', `${civ.name}与${target.name}签署30年停战协议。`, civ.id); }
+      if (action.action === 'declare') { r.war = true; r.treaty = false; r.trade = 0; r.since = state.year; r.value = -60; civ.peaceYears = 0; target.peaceYears = 0; log(state, 'war', `${civ.name}向${target.name}宣战。`, civ.id); }
+      return { type: 'diplomacy', civId: civ.id, targetId: target.id, action: action.action };
+    }
+    throw new Error('未知的干预指令。');
+  }
+  function goalProgress(state) {
+    const civ = state.civs[state.playerId], cities = state.cities.filter(c => c.civId === civ.id);
+    const values = { population: civ.population, cities: cities.length, buildings: cities.reduce((sum, c) => sum + Object.values(c.buildings).reduce((a, b) => a + b, 0), 0), happiness: civ.happiness, research: civ.research.length, tech: civ.tech, relics: civ.relics, wonder: cities.some(c => c.buildings.observatory) ? 1 : 0, treaties: Object.values(state.relations).filter(r => r.treaty && (r.a === civ.id || r.b === civ.id)).length, wealth: civ.wealth, peaceYears: civ.peaceYears };
+    return GOALS[state.goal].targets.map(([key, label, target]) => ({ key, label, target, value: values[key], progress: clamp(values[key] / target, 0, 1), complete: values[key] >= target }));
+  }
+  function updateVictory(state) {
+    if (state.victory || !state.civs[state.playerId].alive) return;
+    if (goalProgress(state).every(g => g.complete)) { state.victory = { year: state.year, civId: state.playerId, goal: state.goal, assisted: state.sandboxUse > 0 }; log(state, 'victory', `${state.civs[state.playerId].name}达成「${GOALS[state.goal].name}」！文明的故事仍将继续。`, state.playerId); }
+  }
+  function summary(state) {
+    const alive = activeCivs(state);
+    return { year: state.year, population: alive.reduce((s, c) => s + c.population, 0), cities: state.cities.length, civilizations: alive.length, wars: Object.values(state.relations).filter(r => r.war).length, treaties: Object.values(state.relations).filter(r => r.treaty).length, maxTech: Math.max(...alive.map(c => c.tech), 0), land: state.tiles.filter(isLand).length, claimed: state.tiles.filter(t => t.owner >= 0).length };
+  }
+  return { VERSION, WIDTH, HEIGHT, TERRAIN, CIVS, POLICIES, TECHS, SCENARIOS, BRANCHES, RESEARCH, BUILDINGS, SITES, DECISIONS, GOALS, RESOURCE_NAMES, createWorld, tick, command, replay, serialize, deserialize, summary, neighbors, distance, capacities, isLand, pairKey, bonuses, afford, costText, buildingStatus, researchStatus, explorationStatus, constructionRate, settlementStatus, diplomacyStatus, goalProgress };
+});
+</script>
+  <script>(function () {
+  'use strict';
+  const E = window.CivLab;
+  const $ = id => document.getElementById(id);
+  const fmt = new Intl.NumberFormat('zh-CN', { maximumFractionDigits: 0 });
+  const compact = n => n >= 10000 ? `${(n / 10000).toFixed(1)}万` : fmt.format(Math.round(n));
+  const escape = s => String(s).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  const COLORS = {
+    ocean: '#172d33', coast: '#23464c', plain: '#59775b', forest: '#355d49', hill: '#787958', mountain: '#929080', desert: '#9b8860'
+  };
+  const STORAGE = 'civilization-lab-v2';
+  const MAX_YEAR = 50000;
+  let state = E.createWorld(), selected = 0, layer = 'territory', running = false, lastFrame = 0, carry = 0;
+  let toastTimer, work = null, hoverTile = -1, keyboardTile = state.cities[0].tile, chartMetric = 'population';
+  let terrainCache = null, terrainCacheLayer = '', currentSeed = '', lastEvents = '', lastLegend = '', chartHover = null;
+  let panel = 'cities', selectedCity = state.cities[0].id, selectedSite = null, selectedTile = null, lastCommand = '', lastDecision = '', lastVictory = '';
+  let camera = { zoom: 1, x: .5, y: .5 }, drag = null, dragged = false;
+  const map = $('world-map'), mapContext = map.getContext('2d'), chart = $('history-chart'), chartContext = chart.getContext('2d');
+
+  function toast(message, error = false) {
+    clearTimeout(toastTimer); const el = $('toast'); el.textContent = message; el.classList.toggle('error', error); el.hidden = false;
+    toastTimer = setTimeout(() => { el.hidden = true; }, error ? 6500 : 3500);
+  }
+  function setRunning(value) {
+    if (value && state.civs[state.playerId].decision) { toast('议事厅有待决定的事项，请先作出选择。'); value = false; }
+    running = value && state.year < MAX_YEAR; carry = 0; lastFrame = 0;
+    $('play-icon').textContent = running ? 'Ⅱ' : '▶'; $('play-label').textContent = running ? '暂停演化' : '开始演化';
+    $('run-status').textContent = state.year >= MAX_YEAR ? '已到时间上限' : running ? '历史正在发生' : '时间已暂停';
+    $('run-status').classList.toggle('running', running);
+    $('play').setAttribute('aria-pressed', String(running));
+  }
+  function advance(years) {
+    if (work) return;
+    const amount = Math.min(years, MAX_YEAR - state.year);
+    if (amount <= 0) { setRunning(false); toast('已到50,000年上限。可以回到过去继续实验。'); return; }
+    if (state.civs[state.playerId].decision) { setRunning(false); toast('请先处理议事，再推进时间。'); return; }
+    for (let i = 0; i < amount; i++) {
+      E.tick(state, 1);
+      if (state.civs[state.playerId].decision || state.victory?.year === state.year || !state.civs[state.playerId].alive) { setRunning(false); break; }
+    }
+    if (state.year >= MAX_YEAR) setRunning(false);
+    render();
+  }
+  function selectCiv(id) {
+    if (!Number.isInteger(id) || id < 0 || id >= state.civs.length) return;
+    selected = id;
+    const city = state.cities.find(c => c.civId === id); if (city) keyboardTile = city.tile;
+    renderProfile(); renderLegend(); renderEvents(); drawMap(); drawChart();
+  }
+  function apply(action, message) {
+    if (work) return;
+    setRunning(false);
+    try { E.command(state, action); render(); if (message) toast(message); } catch (err) { toast(err.message, true); }
+  }
+  function syncSettings() {
+    $('scenario').value = state.scenario; $('seed').value = state.seed;
+    for (const name of ['fertility', 'aggression', 'disasters']) { $(name).value = state.config[name]; updateSlider(name); }
+  }
+  function updateSlider(name) { const value = Number($(name).value); $(`${name}-value`).textContent = name === 'fertility' ? `${value.toFixed(2)}×` : `${Math.round(value * 100)}%`; }
+  function replaceWorld(next, message) {
+    state = next; setRunning(false); terrainCache = null; lastEvents = ''; hoverTile = -1; chartHover = null;
+    selected = state.playerId; selectedCity = state.cities.find(c => c.civId === state.playerId)?.id;
+    selectedTile = null; selectedSite = null; lastCommand = ''; lastDecision = ''; lastVictory = ''; camera = { zoom: 1, x: .5, y: .5 };
+    keyboardTile = state.cities.find(c => c.civId === selected)?.tile ?? 0;
+    syncSettings(); render(); if (message) toast(message);
+  }
+  function rebuild(kind, payload, message) {
+    if (work) return;
+    setRunning(false); $('busy').hidden = false;
+    $('busy-text').textContent = kind === 'import' ? '正在验证存档并重建每一次干预……' : `正在重建至世界历${payload.year}年……`;
+    const engineSource = ['content-source','legacy-source','engine-source'].map(id => $(id).textContent).join('\n');
+    const workerCode = engineSource + '\nself.onmessage = function (event) { try { const p = event.data; const result = p.kind === "import" ? CivLab.deserialize(p.payload) : CivLab.replay(p.payload.state, p.payload.year); self.postMessage({ ok: true, state: result }); } catch(error) { self.postMessage({ ok: false, message: error.message }); } };';
+    let url;
+    try {
+      url = URL.createObjectURL(new Blob([workerCode], { type: 'application/javascript' }));
+      const worker = new Worker(url); work = { worker, url };
+      worker.onmessage = event => {
+        finishWork();
+        if (event.data.ok) { safeguard(); replaceWorld(event.data.state, message); }
+        else toast(event.data.message, true);
+      };
+      worker.onerror = () => { finishWork(); toast('无法在此浏览器中重建历史。请使用较新的 Chrome、Edge 或 Firefox。', true); };
+      worker.postMessage({ kind, payload });
+    } catch (err) { if (url) URL.revokeObjectURL(url); finishWork(); toast(`重建未开始：${err.message}`, true); }
+  }
+  function finishWork() { if (work) { work.worker.terminate(); URL.revokeObjectURL(work.url); work = null; } $('busy').hidden = true; }
+
+  function renderLegend() {
+    const signature = `${selected}:${state.civs.map(c => c.alive).join(',')}`;
+    if (signature === lastLegend) return;
+    lastLegend = signature;
+    const fragment = document.createDocumentFragment();
+    for (const c of state.civs) {
+      const button = document.createElement('button'); button.className = `civ-chip${c.alive ? '' : ' is-gone'}`; button.type = 'button';
+      button.setAttribute('aria-pressed', String(c.id === selected)); button.setAttribute('aria-label', `观察${c.name}${c.alive ? '' : '（已退出历史）'}`);
+      const swatch = document.createElement('span'); swatch.className = 'swatch'; swatch.style.background = E.CIVS[c.id].color; swatch.setAttribute('aria-hidden', 'true');
+      button.append(swatch, document.createTextNode(E.CIVS[c.id].short)); button.addEventListener('click', () => selectCiv(c.id)); fragment.append(button);
+    }
+    $('civ-legend').replaceChildren(fragment);
+  }
+  function renderProfile() {
+    const c = state.civs[selected], cities = state.cities.filter(city => city.civId === selected), cap = E.capacities(state, c), tech = E.TECHS[c.tech];
+    const progress = c.tech === E.TECHS.length - 1 ? 100 : Math.min(100, c.science / tech.cost * 100);
+    const delta = c.populationDelta;
+    const resource = (label, value, unit, detail = '') => `<div class="resource-cell"><span>${label}</span><div class="resource-value">${compact(value)}<small>${unit}</small></div><div class="resource-detail">${detail || '&nbsp;'}</div></div>`;
+    $('profile').innerHTML = `<div class="profile-title"><div class="profile-name"><span class="swatch" style="background:${E.CIVS[c.id].color}"></span>${escape(E.CIVS[c.id].short)}</div><span class="profile-tag">${c.alive ? (c.shortage ? '粮食短缺' : '文明延续中') : '已退出历史'}</span></div><div class="profile-caption">${escape(c.name)} · ${cities.length}座城市 · ${c.territory}格领土</div><div class="resource-grid">${resource('人口', c.population, '人', `<span class="${delta >= 0 ? 'positive' : 'negative'}">${delta >= 0 ? '+' : ''}${delta.toFixed(1)}</span> / 年`)}${resource('粮食', c.food, '', `${c.foodDelta >= 0 ? '+' : ''}${c.foodDelta.toFixed(1)} / 年`)}${resource('木材', c.wood, '', `土地容量 ${compact(cap.capacity)}`)}${resource('财富', c.wealth, '', `贸易 +${c.tradeIncome.toFixed(1)} / 年`)}${resource('军事', c.military, '', `矿石 ${compact(c.ore)}`)}${resource('幸福度', c.happiness, '%', E.POLICIES[c.policy].name)}</div><div class="tech-line"><span>${escape(tech.name)}</span><span>Lv.${c.tech} / ${E.TECHS.length - 1}</span></div><div class="tech-track" role="progressbar" aria-label="下一项科技研究进度" aria-valuenow="${Math.round(progress)}" aria-valuemin="0" aria-valuemax="100"><div class="tech-fill" style="width:${progress}%"></div></div><div class="tech-caption">${c.tech === E.TECHS.length - 1 ? '已完成全部科技研究' : `下一时代：${escape(E.TECHS[c.tech + 1].name)} · ${Math.round(progress)}%`}</div>`;
+    $('civ-number').textContent = `0${selected + 1} / 06`; $('policy').value = c.policy;
+    $('policy').disabled = !c.alive || selected !== state.playerId; $('aid').disabled = !c.alive;
+    $('policy-description').textContent = E.POLICIES[c.policy].description;
+    const advice = !c.alive ? '这个文明已失去所有城市。可以生成新世界，尝试另一条道路。' : c.shortage ? '粮食告急。优先修建粮仓和农庄，或转向开拓政策。' : c.id !== state.playerId ? '正在观察其他文明。执政大厅始终管理你的文明。' : c.research.length === 0 ? '你有40点初始研究点。选择一项研究，开启新的建筑。' : !state.cities.some(city => city.civId === c.id && (city.queue.length || Object.keys(city.buildings).length)) ? '城市还没有工程。粮仓能改善粮食，伐木场能支持后续建设。' : c.population > 170 && cities.length < 4 ? '人口正在增长。点击本国边境的陆地，可以派遣开拓者建立新城。' : '拓展研究与建筑，派出使节建立商路。留意远征队的消息。';
+    $('advisor').innerHTML = `<span class="eyebrow">顾问建议</span><p>${advice}</p>`;
+    $('return-player').hidden = selected === state.playerId;
+  }
+  function renderEvents() {
+    const filter = $('event-filter').value;
+    const entries = state.events.filter(e => filter === 'all' || (filter === 'selected' ? e.civId === selected : filter === 'war' ? e.kind === 'war' || e.kind === 'peace' : e.kind === filter)).slice(-40).reverse();
+    const signature = `${filter}:${selected}:${entries.map(e => e.id).join(',')}`;
+    if (signature === lastEvents) return; lastEvents = signature;
+    const marks = { city: '◇', tech: '✧', war: '×', peace: '≈', trade: '⇄', climate: '◌', intervention: '＋', build: '▣', explore: '⌖', council: '◇', victory: '★' };
+    const fragment = document.createDocumentFragment();
+    for (const e of entries) {
+      const item = document.createElement('li'); item.className = `event ${e.kind}`;
+      const year = document.createElement('span'); year.className = 'event-year'; year.textContent = `${e.year} 年`;
+      const mark = document.createElement('span'); mark.className = 'event-mark'; mark.textContent = marks[e.kind] || '·'; mark.setAttribute('aria-hidden', 'true');
+      const text = document.createElement('span'); text.className = 'event-text'; text.textContent = e.text;
+      item.append(year, mark, text); fragment.append(item);
+    }
+    $('events').replaceChildren(fragment); $('empty-events').hidden = entries.length > 0;
+  }
+  function render() {
+    const sum = E.summary(state);
+    $('year').textContent = String(state.year).padStart(4, '0'); $('era-label').textContent = E.TECHS[sum.maxTech].name;
+    $('total-pop').textContent = compact(sum.population); $('total-cities').textContent = sum.cities;
+    $('total-civs').textContent = sum.civilizations; $('total-treaties').textContent = sum.treaties; $('total-wars').textContent = sum.wars;
+    $('total-land').textContent = Math.round(sum.claimed / Math.max(1, sum.land) * 100);
+    $('world-name').textContent = E.SCENARIOS[state.scenario].name;
+    $('weather').textContent = state.climate.drought ? `旱季 · 剩余${state.climate.drought}年` : state.climate.bumper ? `丰收期 · 剩余${state.climate.bumper}年` : '风调雨顺';
+    $('replay-year').max = state.year;
+    $('replay-year').min = state.origin?.year || 0;
+    if (Number($('replay-year').value) < (state.origin?.year || 0)) $('replay-year').value = state.origin.year;
+    if (Number($('replay-year').value) > state.year) $('replay-year').value = state.year;
+    renderProfile(); renderLegend(); renderEvents(); renderCampaign(); renderCommands(); drawMap(); drawChart();
+  }
+
+  function player() { return state.civs[state.playerId]; }
+  function button(label, data, disabled = false, primary = false) { return `<button class="button ${primary ? 'primary' : 'secondary'}" ${data} ${disabled ? 'disabled' : ''}>${label}</button>`; }
+  function progressBar(value, label) { return `<div class="mini-track" role="progressbar" aria-label="${escape(label)}" aria-valuenow="${Math.round(value * 100)}" aria-valuemin="0" aria-valuemax="100"><span style="width:${Math.max(0, Math.min(100, value * 100))}%"></span></div>`; }
+  function renderCampaign() {
+    const c = player(), goals = E.goalProgress(state);
+    $('reign-name').textContent = c.name; $('reign-name').style.color = E.CIVS[c.id].color;
+    $('reign-goal').textContent = `${E.GOALS[state.goal].name}${state.sandboxUse ? ' · 辅助模式' : ''}`;
+    $('goal-track').innerHTML = goals.map(g => `<div class="goal-pip ${g.complete ? 'complete' : ''}" title="${escape(g.label)}"><span>${g.complete ? '✓' : Math.round(g.progress * 100) + '%'}</span>${progressBar(g.progress, g.label)}</div>`).join('');
+    $('campaign-settings').disabled = state.year !== (state.origin?.year || 0) || state.commands.some(e => ['build','research','choice','explore','diplomacy','settle'].includes(e.action.type));
+    const decision = c.decision;
+    const signature = decision ? `${decision.id}:${state.year}:${E.DECISIONS[decision.kind].options.map(o => E.afford(c, o.cost)).join()}` : 'none';
+    if (signature !== lastDecision) {
+      lastDecision = signature;
+      $('decision-banner').hidden = !decision;
+      if (decision) {
+        const def = E.DECISIONS[decision.kind];
+        $('decision-banner').innerHTML = `<div class="decision-intro"><span class="decision-symbol" aria-hidden="true">◇</span><div><span class="eyebrow">议事厅 · 等待你的决定</span><h2>${def.title}</h2><p>${def.text}</p></div></div><div class="decision-options">${def.options.map(o => `<button class="decision-choice" data-choice="${o.id}" ${!E.afford(c, o.cost) ? 'disabled' : ''}><strong>${o.name} <span>↗</span></strong><span>${o.detail}</span>${!E.afford(c, o.cost) ? '<small>资源不足</small>' : ''}</button>`).join('')}</div>`;
+      }
+    }
+    const victorySignature = `${state.victory?.year ?? 'none'}:${c.alive}`;
+    if (lastVictory !== victorySignature) {
+      lastVictory = victorySignature;
+      $('victory-banner').hidden = !state.victory && c.alive;
+      if (state.victory) $('victory-banner').innerHTML = `<span class="victory-star">✦</span><div><span class="eyebrow">${state.victory.assisted ? '辅助通关' : '目标达成'} · 世界历${state.victory.year}年</span><h2>${c.name}，${E.GOALS[state.goal].name}的缔造者。</h2><p>你可以继续演化，或生成新世界挑战另一条路线。</p></div>`;
+      else if (!c.alive) $('victory-banner').innerHTML = '<div><h2>你的文明已落幕。</h2><p>历史仍会继续。可以继续观察，或生成新世界再出发。</p></div>';
+    }
+  }
+  function setPanel(next) {
+    panel = next; lastCommand = ''; setRunning(false);
+    document.querySelectorAll('[data-panel]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.panel === panel)));
+    $('command-body').setAttribute('aria-labelledby', `tab-${panel}`);
+    renderCommands();
+  }
+  function renderCommands() {
+    const c = player();
+    $('command-resources').textContent = `木材 ${compact(c.wood)} · 矿石 ${compact(c.ore)} · 财富 ${compact(c.wealth)} · 研究 ${compact(c.insight)}`;
+    const signature = `${panel}:${state.year}:${state.commands.length}:${selectedCity}:${selectedSite}:${selectedTile}:${c.alive}`;
+    if (signature === lastCommand) return; lastCommand = signature;
+    if (!c.alive) { $('command-body').innerHTML = '<p class="panel-note">你的文明已退出历史。生成新世界可以重新开始。</p>'; return; }
+    let html = '';
+    if (panel === 'cities') {
+      const cities = state.cities.filter(city => city.civId === c.id);
+      let city = cities.find(city => city.id === selectedCity) || cities[0]; selectedCity = city.id;
+      const rate = E.constructionRate(state, c.id);
+      html += `<div class="city-picker"><label for="city-picker">管理城市</label><select id="city-picker">${cities.map(city => `<option value="${city.id}" ${city.id === selectedCity ? 'selected' : ''}>${escape(city.name)}${city.capital ? ' · 首都' : ''}</option>`).join('')}</select><span>建设速度 ${rate.toFixed(1)} / 年</span></div>`;
+      if (selectedTile !== null) {
+        const status = E.settlementStatus(state, c.id, selectedTile);
+        html += `<div class="settle-strip"><div><strong>开拓者 · 坐标 ${selectedTile % state.width + 1}, ${Math.floor(selectedTile / state.width) + 1}</strong><p>${status.available ? E.costText(status.cost) : status.reason}</p></div>${button('在此建城', 'data-action="settle"', !status.available)}</div>`;
+      }
+      html += `<div class="queue-heading"><h3>建设队列 <span>${city.queue.length} / 3</span></h3><span>取消返还未施工部分80%的资源</span></div><div class="build-queue">${city.queue.length ? city.queue.map((q, i) => `<div class="queue-item"><div><strong>${E.BUILDINGS[q.building].name} Lv.${q.level}</strong><span>${i === 0 ? '约' + Math.ceil((q.work - q.progress) / rate) + '年完成' : '等待施工'}</span>${progressBar(q.progress / q.work, E.BUILDINGS[q.building].name)}</div><button class="queue-cancel" data-cancel="${i}" aria-label="取消${E.BUILDINGS[q.building].name}工程">×</button></div>`).join('') : '<p class="queue-empty">选择一项工程，让城市开始生长。</p>'}</div>`;
+      html += '<div class="building-grid">';
+      for (const [id, def] of Object.entries(E.BUILDINGS)) {
+        const status = E.buildingStatus(state, c.id, city.id, id), built = city.buildings[id] || 0;
+        html += `<article class="building-card ${def.unique ? 'wonder-card' : ''}"><div class="building-top"><span class="building-mark">${def.mark}</span><div><h3>${def.name}</h3><span>${def.category} · ${built ? 'Lv.' + built : '尚未建造'}</span></div></div><p>${def.description}</p><div class="cost-label">${E.costText(status.cost)}</div>${button(status.available ? `${built ? '升级' : '建造'} · 约${Math.ceil(status.work / rate)}年` : status.reason, `data-build="${id}"`, !status.available)}</article>`;
+      }
+      html += '</div><p class="panel-note">普通建筑加成取本国各城平均；研究与奇观加成作用于整个文明。扩张领土会自动进行，新城市由你选址建立。</p>';
+    } else if (panel === 'research') {
+      html += `<div class="research-summary"><strong>${compact(c.insight)} <span>研究点</span></strong><span>每年 +${c.insightDelta.toFixed(1)} · 已掌握 ${c.research.length} / 12</span></div><div class="research-branches">`;
+      for (const [branch, branchDef] of Object.entries(E.BRANCHES)) {
+        html += `<section class="research-branch"><h3><span style="color:${branchDef.color}">${branchDef.mark}</span>${branchDef.name}</h3>`;
+        for (const [id, def] of Object.entries(E.RESEARCH).filter(([, def]) => def.branch === branch)) {
+          const status = E.researchStatus(state, c.id, id), complete = c.research.includes(id);
+          html += `<article class="research-node ${complete ? 'complete' : ''}"><span class="research-tier">${complete ? '✓ 已掌握' : def.cost + ' 研究点'}</span><h4>${def.name}</h4><p>${def.description}</p>${button(complete ? '已掌握' : status.available ? '完成研究 ↗' : status.reason, `data-research="${id}"`, !status.available, status.available)}</article>`;
+        }
+        html += '</section>';
+      }
+      html += '</div><p class="panel-note">时代研究会自动进行。专项研究需要你选择；所有路线都可以学习，先后顺序决定早期优势。</p>';
+    } else if (panel === 'explore') {
+      const expedition = state.expeditions.find(e => e.civId === c.id);
+      if (expedition) {
+        const site = state.sites.find(s => s.id === expedition.siteId);
+        html += `<div class="expedition-status"><strong>远征队正在前往${E.SITES[site.type].name}</strong><span>还有${expedition.arrives - state.year}年归来</span>${progressBar((state.year - expedition.started) / (expedition.arrives - expedition.started), '远征进度')}</div>`;
+      }
+      html += `<div class="explore-heading"><p>每次派遣消耗30粮食、25财富。每个文明同时可派出一支远征队。</p><span>已成功探索 ${c.relics} 处</span></div><div class="site-grid">`;
+      const sites = [...state.sites].sort((a, b) => (a.id === selectedSite ? -1000 : E.explorationStatus(state, c.id, a.id).distance) - (b.id === selectedSite ? -1000 : E.explorationStatus(state, c.id, b.id).distance));
+      for (const site of sites) {
+        const def = E.SITES[site.type], status = E.explorationStatus(state, c.id, site.id);
+        html += `<article class="site-card ${site.claimedBy >= 0 ? 'claimed' : ''} ${site.id === selectedSite ? 'selected-site' : ''}"><div class="site-card-heading"><span class="site-mark">${def.mark}</span><div><h3>${def.name} <small>#${site.id + 1}</small></h3><span>${Math.ceil(status.distance)}格外 · ${status.duration}年行程 · 失败率 ${Math.round(status.risk * 100)}%</span></div><button class="text-button" data-locate="${site.id}" aria-label="定位遗迹${site.id + 1}">⌖</button></div><p>${def.description}</p><div class="cost-label">回报：${E.costText(def.reward)}</div>${button(status.available ? '派遣远征队 ↗' : status.reason, `data-explore="${site.id}"`, !status.available)}</article>`;
+      }
+      html += '</div>';
+    } else if (panel === 'diplomacy') {
+      html += '<p class="panel-note">使节提高关系；关系超过38后签署通商条约。宣战需要接壤，战斗每3年在边境发生一次。</p><div class="diplomacy-list">';
+      for (const other of state.civs.filter(o => o.id !== c.id)) {
+        const r = state.relations[E.pairKey(c.id, other.id)], status = !other.alive ? '已退出历史' : r.war ? '战争中' : r.treaty ? '通商伙伴' : r.value < 0 ? '关系紧张' : '和平往来';
+        html += `<article class="diplomacy-row"><div class="diplomacy-identity"><span class="swatch" style="background:${E.CIVS[other.id].color}"></span><strong>${other.name}</strong><span class="${r.war ? 'negative' : 'muted'}">${status}</span></div><div class="relation-details"><span>关系 ${Math.round(r.value)}</span><span>军事 ${compact(other.military)}</span><span>年贸易 ${r.trade.toFixed(1)}</span></div><div class="relation-actions">`;
+        for (const [action, label] of [['envoy', '派遣使节'], [r.war ? 'ceasefire' : 'declare', r.war ? '谈判停战' : '宣战']]) {
+          const available = E.diplomacyStatus(state, c.id, other.id, action);
+          html += `<div>${button(`${label} · ${available.cost.wealth}财富`, `data-diplomacy="${action}" data-target="${other.id}"`, !available.available)}${available.reason ? `<small>${available.reason}</small>` : ''}</div>`;
+        }
+        html += '</div></article>';
+      }
+      html += '</div>';
+    } else {
+      const def = E.GOALS[state.goal];
+      html += `<div class="goal-intro"><span class="eyebrow">${state.sandboxUse ? '辅助模式' : '自主执政'}</span><h3>${def.name}</h3><p>${def.description} 所有条件同时满足即可达成目标，之后仍可继续游玩。</p></div><div class="objective-grid">`;
+      for (const g of E.goalProgress(state)) html += `<div class="objective ${g.complete ? 'complete' : ''}"><div><span>${g.complete ? '✓' : '○'} ${g.label}</span><strong>${compact(g.value)} / ${compact(g.target)}</strong></div>${progressBar(g.progress, g.label)}</div>`;
+      html += `</div><p class="panel-note">${state.sandboxUse ? `已使用${state.sandboxUse}次沙盒干预，达成目标时会记录为辅助通关。` : '援助、天气和全局参数位于沙盒干预中；使用后会标记辅助通关。正常建设、研究和外交不受影响。'}</p>`;
+    }
+    $('command-body').innerHTML = html;
+  }
+
+  function setupCanvas(canvas, context) {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const width = Math.max(1, rect.width), height = Math.max(1, rect.height);
+    const pixelsW = Math.round(width * dpr), pixelsH = Math.round(height * dpr);
+    if (canvas.width !== pixelsW || canvas.height !== pixelsH) { canvas.width = pixelsW; canvas.height = pixelsH; }
+    context.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { width, height, dpr };
+  }
+  function mix(a, b, ratio) {
+    const ai = parseInt(a.slice(1), 16), bi = parseInt(b.slice(1), 16);
+    const channel = shift => Math.round(((ai >> shift) & 255) * (1 - ratio) + ((bi >> shift) & 255) * ratio);
+    return `rgb(${channel(16)},${channel(8)},${channel(0)})`;
+  }
+  function buildTerrain(width, height, dpr) {
+    const cache = document.createElement('canvas'); cache.width = Math.round(width * dpr); cache.height = Math.round(height * dpr);
+    const context = cache.getContext('2d'); context.scale(dpr, dpr);
+    const tw = width / state.width, th = height / state.height;
+    for (const t of state.tiles) {
+      const x = t.index % state.width * tw, y = Math.floor(t.index / state.width) * th;
+      let color = COLORS[t.type];
+      if (layer === 'resources' && E.isLand(t)) {
+        const resource = E.TERRAIN[t.type];
+        color = resource.ore > 0.6 ? '#a496a8' : resource.wood > 0.5 ? '#3c8b64' : resource.food > 1 ? '#bdab69' : '#686751';
+      }
+      const jitter = ((t.index * 73) % 17 - 8) / 250;
+      context.fillStyle = mix(color, jitter > 0 ? '#c6d3ba' : '#0c2923', Math.abs(jitter));
+      context.fillRect(Math.floor(x), Math.floor(y), Math.ceil(tw) + 1, Math.ceil(th) + 1);
+      if (t.type === 'mountain') {
+        context.beginPath(); context.moveTo(x + tw * .22, y + th * .77); context.lineTo(x + tw * .52, y + th * .2); context.lineTo(x + tw * .82, y + th * .77); context.strokeStyle = '#c2c1a955'; context.lineWidth = .8; context.stroke();
+      } else if (t.type === 'forest' && (t.index % 3 === 0)) {
+        context.fillStyle = '#1b463c60'; context.beginPath(); context.arc(x + tw * .6, y + th * .45, Math.max(1, tw * .22), 0, Math.PI * 2); context.fill();
+      } else if (t.type === 'ocean' && t.index % 29 === 0) {
+        context.strokeStyle = '#537b8029'; context.lineWidth = .8; context.beginPath(); context.moveTo(x + tw * .12, y + th * .5); context.lineTo(x + tw * .7, y + th * .5); context.stroke();
+      }
+    }
+    terrainCache = cache; terrainCacheLayer = layer; currentSeed = `${state.seed}:${state.scenario}`;
+  }
+  function drawMap() {
+    const { width, height, dpr } = setupCanvas(map, mapContext), ctx = mapContext;
+    ctx.save(); ctx.beginPath(); ctx.rect(0, 0, width, height); ctx.clip();
+    const offset = cameraOffset(width, height);
+    ctx.translate(offset.x, offset.y); ctx.scale(camera.zoom, camera.zoom);
+    if (!terrainCache || terrainCache.width !== map.width || terrainCache.height !== map.height || terrainCacheLayer !== layer || currentSeed !== `${state.seed}:${state.scenario}`) buildTerrain(width, height, dpr);
+    ctx.drawImage(terrainCache, 0, 0, width, height);
+    const tw = width / state.width, th = height / state.height;
+    if (layer === 'territory') {
+      for (const t of state.tiles) if (t.owner >= 0) {
+        const x = t.index % state.width * tw, y = Math.floor(t.index / state.width) * th;
+        ctx.fillStyle = E.CIVS[t.owner].color; ctx.globalAlpha = t.owner === selected ? .45 : .25;
+        ctx.fillRect(x, y, tw + .3, th + .3);
+      }
+      ctx.globalAlpha = 1;
+      for (const t of state.tiles) if (t.owner >= 0) {
+        const x = t.index % state.width, y = Math.floor(t.index / state.width);
+        const same = n => n >= 0 && n < state.tiles.length && state.tiles[n].owner === t.owner;
+        ctx.beginPath();
+        if (x === 0 || !same(t.index - 1)) { ctx.moveTo(x * tw, y * th); ctx.lineTo(x * tw, (y + 1) * th); }
+        if (x === state.width - 1 || !same(t.index + 1)) { ctx.moveTo((x + 1) * tw, y * th); ctx.lineTo((x + 1) * tw, (y + 1) * th); }
+        if (y === 0 || !same(t.index - state.width)) { ctx.moveTo(x * tw, y * th); ctx.lineTo((x + 1) * tw, y * th); }
+        if (y === state.height - 1 || !same(t.index + state.width)) { ctx.moveTo(x * tw, (y + 1) * th); ctx.lineTo((x + 1) * tw, (y + 1) * th); }
+        ctx.strokeStyle = E.CIVS[t.owner].color; ctx.lineWidth = t.owner === selected ? 1.5 : .8; ctx.globalAlpha = t.owner === selected ? .9 : .65; ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+    // Trade routes connect the closest pair of cities, rather than arbitrary capitals.
+    for (const r of Object.values(state.relations)) if (r.treaty && r.trade > 0) {
+      const aCities = state.cities.filter(c => c.civId === r.a), bCities = state.cities.filter(c => c.civId === r.b);
+      let closest = null, distance = Infinity;
+      for (const a of aCities) for (const b of bCities) { const d = E.distance(state, a.tile, b.tile); if (d < distance) { distance = d; closest = [a, b]; } }
+      if (!closest) continue;
+      const [a, b] = closest, ax = (a.tile % state.width + .5) * tw, ay = (Math.floor(a.tile / state.width) + .5) * th, bx = (b.tile % state.width + .5) * tw, by = (Math.floor(b.tile / state.width) + .5) * th;
+      ctx.beginPath(); ctx.moveTo(ax, ay); ctx.quadraticCurveTo((ax + bx) / 2, (ay + by) / 2 - Math.min(20, distance), bx, by); ctx.setLineDash([3, 5]); ctx.strokeStyle = '#e4d2a652'; ctx.lineWidth = 1; ctx.stroke(); ctx.setLineDash([]);
+    }
+    for (const site of state.sites) {
+      const x = (site.tile % state.width + .5) * tw, y = (Math.floor(site.tile / state.width) + .5) * th, radius = 3.5 / Math.sqrt(camera.zoom);
+      ctx.beginPath(); ctx.moveTo(x, y - radius); ctx.lineTo(x + radius, y); ctx.lineTo(x, y + radius); ctx.lineTo(x - radius, y); ctx.closePath();
+      ctx.fillStyle = site.claimedBy >= 0 ? E.CIVS[site.claimedBy].color : '#243837'; ctx.fill(); ctx.lineWidth = 1 / camera.zoom; ctx.strokeStyle = site.claimedBy >= 0 ? E.CIVS[site.claimedBy].color : '#ead6a0'; ctx.globalAlpha = site.claimedBy >= 0 ? .45 : .95; ctx.stroke(); ctx.globalAlpha = 1;
+      if (site.id === selectedSite) { ctx.beginPath(); ctx.arc(x, y, radius + 4 / camera.zoom, 0, Math.PI * 2); ctx.strokeStyle = '#f8dc96'; ctx.stroke(); }
+    }
+    for (const expedition of state.expeditions) {
+      const site = state.sites.find(s => s.id === expedition.siteId), ratio = Math.max(0, Math.min(1, (state.year - expedition.started) / (expedition.arrives - expedition.started)));
+      const ax = (expedition.from % state.width + .5) * tw, ay = (Math.floor(expedition.from / state.width) + .5) * th;
+      const bx = (site.tile % state.width + .5) * tw, by = (Math.floor(site.tile / state.width) + .5) * th;
+      ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.setLineDash([3 / camera.zoom, 4 / camera.zoom]); ctx.lineWidth = 1 / camera.zoom; ctx.strokeStyle = E.CIVS[expedition.civId].color; ctx.stroke(); ctx.setLineDash([]);
+      ctx.beginPath(); ctx.arc(ax + (bx - ax) * ratio, ay + (by - ay) * ratio, 3 / camera.zoom, 0, Math.PI * 2); ctx.fillStyle = '#fff3cd'; ctx.fill();
+    }
+    const placed = [], cityRadius = (width < 500 ? 2.7 : 3.4) / Math.sqrt(camera.zoom);
+    const orderedCities = [...state.cities].sort((a, b) => (b.civId === selected ? 2 : 0) + (b.capital ? 1 : 0) - ((a.civId === selected ? 2 : 0) + (a.capital ? 1 : 0)));
+    for (const city of orderedCities) {
+      const x = (city.tile % state.width + .5) * tw, y = (Math.floor(city.tile / state.width) + .5) * th;
+      ctx.fillStyle = E.CIVS[city.civId].color; ctx.strokeStyle = '#142522'; ctx.lineWidth = 1.6;
+      ctx.beginPath(); ctx.arc(x, y, cityRadius, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      if (city.capital) { ctx.beginPath(); ctx.arc(x, y, cityRadius + 2.4, 0, Math.PI * 2); ctx.strokeStyle = E.CIVS[city.civId].color; ctx.lineWidth = .8; ctx.stroke(); }
+      if (width < 450 && !city.capital && city.civId !== selected) continue;
+      ctx.font = `${(width < 450 ? 10 : 11) / Math.sqrt(camera.zoom)}px "Microsoft YaHei",sans-serif`;
+      const labelWidth = ctx.measureText(city.name).width, labelX = Math.max(4, Math.min(width - labelWidth - 5, x + 8)), labelY = Math.max(30, y - 4);
+      const box = { x: labelX - 3, y: labelY - 11, w: labelWidth + 6, h: 16 };
+      if (placed.some(p => !(box.x > p.x + p.w + 3 || box.x + box.w < p.x - 3 || box.y > p.y + p.h + 2 || box.y + box.h < p.y - 2))) continue;
+      placed.push(box); ctx.fillStyle = '#15282bd4'; ctx.fillRect(box.x, box.y, box.w, box.h); ctx.fillStyle = '#ecebdd'; ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left'; ctx.fillText(city.name, labelX, labelY + 1);
+    }
+    const focusTile = document.activeElement === map ? keyboardTile : hoverTile;
+    if (focusTile >= 0) { ctx.strokeStyle = '#f6e5b9'; ctx.lineWidth = 1.5; ctx.strokeRect(focusTile % state.width * tw + 1, Math.floor(focusTile / state.width) * th + 1, tw - 2, th - 2); }
+    ctx.restore();
+    if (layer === 'resources') {
+      ctx.font = '11px "Microsoft YaHei",sans-serif'; ctx.fillStyle = '#112a2cd9'; ctx.fillRect(10, height - 28, 208, 21); ctx.fillStyle = '#e2e7dc'; ctx.fillText('金黄：粮食   绿：木材   灰紫：矿石', 17, height - 13);
+    }
+  }
+  function cameraOffset(width, height) { return { x: width / 2 - camera.x * width * camera.zoom, y: height / 2 - camera.y * height * camera.zoom }; }
+  function clampCamera() { const inset = .5 / camera.zoom; camera.x = Math.max(inset, Math.min(1 - inset, camera.x)); camera.y = Math.max(inset, Math.min(1 - inset, camera.y)); }
+  function zoomMap(factor) { camera.zoom = Math.max(1, Math.min(4, camera.zoom * factor)); clampCamera(); drawMap(); }
+  function tileAt(event) {
+    const rect = map.getBoundingClientRect();
+    const offset = cameraOffset(rect.width, rect.height);
+    const x = Math.min(state.width - 1, Math.max(0, Math.floor((event.clientX - rect.left - offset.x) / camera.zoom / rect.width * state.width)));
+    const y = Math.min(state.height - 1, Math.max(0, Math.floor((event.clientY - rect.top - offset.y) / camera.zoom / rect.height * state.height)));
+    return y * state.width + x;
+  }
+  function tileText(index) {
+    const tile = state.tiles[index], city = state.cities.find(c => c.tile === index), site = state.sites.find(s => s.tile === index);
+    return `${city ? `${city.name} · ` : ''}${site ? E.SITES[site.type].name + ' #' + (site.id + 1) + ' · ' : ''}${E.TERRAIN[tile.type].name} · ${tile.owner >= 0 ? state.civs[tile.owner].name : E.isLand(tile) ? '未开发土地' : '公共海域'}`;
+  }
+  function selectTile(index) {
+    const tile = state.tiles[index]; keyboardTile = index;
+    if (tile.owner >= 0) selectCiv(tile.owner);
+    keyboardTile = index;
+    const city = state.cities.find(c => c.tile === index), site = state.sites.find(s => s.tile === index);
+    if (site) { selectedSite = site.id; setPanel('explore'); }
+    else if (city?.civId === state.playerId) { selectedCity = city.id; selectedTile = null; setPanel('cities'); }
+    else if (E.isLand(tile) && (tile.owner === state.playerId || tile.owner < 0)) { selectedTile = index; setPanel('cities'); }
+    $('tile-info').textContent = tileText(index);
+    drawMap();
+  }
+
+  let chartLayout = null;
+  function drawChart() {
+    const { width, height } = setupCanvas(chart, chartContext), ctx = chartContext;
+    ctx.clearRect(0, 0, width, height);
+    const margin = { left: 48, right: 16, top: 26, bottom: 30 }, plotWidth = Math.max(1, width - margin.left - margin.right), plotHeight = height - margin.top - margin.bottom;
+    const history = state.history;
+    const maximum = Math.max(1, ...history.flatMap(h => h.civs.map(c => c[chartMetric])));
+    const step = niceStep(maximum / 3), topValue = Math.ceil(maximum / step) * step;
+    const firstYear = history[0].year, lastYear = Math.max(firstYear + 1, state.year);
+    const x = year => margin.left + (year - firstYear) / (lastYear - firstYear) * plotWidth;
+    const y = value => margin.top + (1 - value / topValue) * plotHeight;
+    chartLayout = { margin, plotWidth, plotHeight, firstYear, lastYear, topValue, x, y };
+    ctx.font = '10px "Microsoft YaHei",sans-serif'; ctx.textBaseline = 'middle';
+    for (let value = 0; value <= topValue + step * .01; value += step) {
+      const py = y(value); ctx.beginPath(); ctx.moveTo(margin.left, py); ctx.lineTo(width - margin.right, py); ctx.strokeStyle = '#2a3b3d'; ctx.lineWidth = .7; ctx.stroke();
+      ctx.fillStyle = '#849a96'; ctx.textAlign = 'right'; ctx.fillText(compact(value), margin.left - 9, py);
+    }
+    const units = { population: '人口 / 人', territory: '领土 / 格', tech: '科技 / 级', wealth: '财富 / 单位' };
+    ctx.textAlign = 'left'; ctx.fillStyle = '#91a3a1'; ctx.fillText(units[chartMetric], 0, 10);
+    const tickCount = width < 400 ? 3 : 4;
+    for (let i = 0; i < tickCount; i++) {
+      const year = Math.round(firstYear + (lastYear - firstYear) * i / (tickCount - 1));
+      ctx.textAlign = i === 0 ? 'left' : i === tickCount - 1 ? 'right' : 'center';
+      if (i === 0 || year !== Math.round(firstYear + (lastYear - firstYear) * (i - 1) / (tickCount - 1))) ctx.fillText(`${year}年`, x(year), height - 12);
+    }
+    ctx.save(); ctx.beginPath(); ctx.rect(margin.left, margin.top, plotWidth, plotHeight); ctx.clip();
+    for (const c of state.civs) {
+      ctx.beginPath(); history.forEach((h, i) => { const px = x(h.year), py = y(h.civs[c.id][chartMetric]); if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py); });
+      ctx.strokeStyle = E.CIVS[c.id].color; ctx.lineWidth = c.id === selected ? 2.2 : 1.2; ctx.globalAlpha = c.id === selected ? 1 : .55; ctx.stroke();
+      if (history.length === 1) { ctx.beginPath(); ctx.arc(x(0) + 2, y(history[0].civs[c.id][chartMetric]), 2.5, 0, Math.PI * 2); ctx.fillStyle = E.CIVS[c.id].color; ctx.fill(); }
+    }
+    ctx.globalAlpha = 1; ctx.restore();
+    const last = history[history.length - 1];
+    const accessible = state.civs.map(c => `${c.name}${compact(last.civs[c.id][chartMetric])}`).join('，');
+    chart.setAttribute('aria-label', `世界历${firstYear}至${state.year}年的${units[chartMetric]}历史折线图。当前：${accessible}。`);
+    if (chartHover !== null) {
+      const year = Math.round(Math.max(firstYear, Math.min(state.year, chartHover))), item = history.find(h => h.year === year);
+      if (item) {
+        const px = x(year); ctx.beginPath(); ctx.moveTo(px, margin.top); ctx.lineTo(px, height - margin.bottom); ctx.strokeStyle = '#9fb2a577'; ctx.setLineDash([3, 3]); ctx.stroke(); ctx.setLineDash([]);
+        const label = `${year}年 · ${E.CIVS[selected].short} ${compact(item.civs[selected][chartMetric])}`;
+        ctx.font = '11px "Microsoft YaHei",sans-serif'; const labelWidth = ctx.measureText(label).width;
+        const labelX = Math.max(margin.left + 4, Math.min(width - labelWidth - 12, px - labelWidth / 2));
+        ctx.fillStyle = '#1a2b2a'; ctx.fillRect(labelX - 5, margin.top + 3, labelWidth + 10, 23); ctx.fillStyle = '#e4e8da'; ctx.textAlign = 'left'; ctx.fillText(label, labelX, margin.top + 15);
+        ctx.beginPath(); ctx.arc(px, y(item.civs[selected][chartMetric]), 3.3, 0, Math.PI * 2); ctx.fillStyle = E.CIVS[selected].color; ctx.fill();
+      }
+    }
+  }
+  function niceStep(value) { const magnitude = Math.pow(10, Math.floor(Math.log10(Math.max(value, 1)))); const normalized = value / magnitude; return (normalized <= 1 ? 1 : normalized <= 2 ? 2 : normalized <= 5 ? 5 : 10) * magnitude; }
+
+  for (const [id, policy] of Object.entries(E.POLICIES)) { const option = document.createElement('option'); option.value = id; option.textContent = policy.name; $('policy').append(option); }
+  $('play').addEventListener('click', () => setRunning(!running));
+  $('step').addEventListener('click', () => { setRunning(false); advance(1); });
+  $('advance').addEventListener('click', () => { setRunning(false); advance(10); });
+  function safeguard() { try { localStorage.setItem('civilization-lab-recovery', E.serialize(state)); } catch {} }
+  $('generate').addEventListener('click', () => { setRunning(false); safeguard(); replaceWorld(E.createWorld({ seed: $('seed').value.trim() || '远方来信', scenario: $('scenario').value }), '新世界已经诞生。'); openCampaign(); });
+  $('seed').addEventListener('keydown', event => { if (event.key === 'Enter') $('generate').click(); });
+  document.querySelectorAll('[data-layer]').forEach(button => button.addEventListener('click', () => { layer = button.dataset.layer; document.querySelectorAll('[data-layer]').forEach(b => b.setAttribute('aria-pressed', String(b === button))); drawMap(); }));
+  $('policy').addEventListener('change', () => apply({ type: 'policy', civId: selected, policy: $('policy').value }, '发展方向已改变。'));
+  $('aid').addEventListener('click', () => apply({ type: 'aid', civId: selected }, '资源援助已送达。'));
+  $('rain').addEventListener('click', () => apply({ type: 'rain' }, '雨水带来五年的丰收。'));
+  $('peace').addEventListener('click', () => apply({ type: 'peace' }, '和平倡议已发布。'));
+  for (const name of ['fertility', 'aggression', 'disasters']) {
+    $(name).addEventListener('input', () => updateSlider(name));
+    $(name).addEventListener('change', () => apply({ type: 'config', [name]: Number($(name).value) }));
+  }
+  $('chart-metric').addEventListener('change', () => { chartMetric = $('chart-metric').value; drawChart(); });
+  $('event-filter').addEventListener('change', renderEvents);
+  $('replay').addEventListener('click', () => {
+    const year = Number($('replay-year').value);
+    if (!Number.isSafeInteger(year) || year < (state.origin?.year || 0) || year > state.year) { toast(`请输入${state.origin?.year || 0}到${state.year}之间的整数年份。`, true); return; }
+    rebuild('replay', { state: { seed: state.seed, scenario: state.scenario, commands: state.commands, origin: state.origin }, year }, `已回到世界历${year}年。`);
+  });
+  $('cancel-work').addEventListener('click', () => { finishWork(); toast('已取消，当前世界保持原样。'); });
+  $('save').addEventListener('click', () => { try { localStorage.setItem(STORAGE, E.serialize(state)); toast(`已保存世界历${state.year}年的进度。`); } catch { toast('浏览器未允许本地保存，请使用“导出”。', true); } });
+  $('load').addEventListener('click', () => {
+    try { const saved = localStorage.getItem(STORAGE) || localStorage.getItem('civilization-lab-v1'); if (!saved) { toast('还没有本地存档。'); return; } rebuild('import', saved, '存档已读取。旧版世界会从保存年份升级。'); } catch { toast('无法访问本地存档，请使用“导入”。', true); }
+  });
+  $('recover').addEventListener('click', () => { try { const previous = localStorage.getItem('civilization-lab-recovery'); if (!previous) { toast('还没有可恢复的世界。生成、读取或回退时会保留上一份进度。'); return; } rebuild('import', previous, '已恢复之前的世界。'); } catch { toast('无法读取恢复记录。', true); } });
+  $('export').addEventListener('click', () => {
+    const url = URL.createObjectURL(new Blob([E.serialize(state)], { type: 'application/json' }));
+    const link = document.createElement('a'); link.href = url; link.download = `civilization-${state.year}.json`; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 30000);
+    toast('存档已导出。');
+  });
+  $('import').addEventListener('click', () => $('import-file').click());
+  $('import-file').addEventListener('change', async event => {
+    const file = event.target.files[0]; event.target.value = ''; if (!file) return;
+    if (file.size > 2e6) { toast('存档不能超过2 MB。', true); return; }
+    try { rebuild('import', await file.text(), '存档已导入。'); } catch (err) { toast(`无法读取存档：${err.message}`, true); }
+  });
+  $('help-button').addEventListener('click', () => $('help-dialog').showModal());
+  $('close-help').addEventListener('click', () => $('help-dialog').close());
+  $('help-dialog').addEventListener('click', event => { if (event.target === $('help-dialog')) { const rect = $('help-dialog').getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) $('help-dialog').close(); } });
+  map.addEventListener('click', event => { if (!dragged) selectTile(tileAt(event)); dragged = false; });
+  $('zoom-in').addEventListener('click', () => zoomMap(1.5)); $('zoom-out').addEventListener('click', () => zoomMap(1 / 1.5));
+  $('zoom-reset').addEventListener('click', () => { camera = { zoom: 1, x: .5, y: .5 }; drawMap(); });
+  map.addEventListener('pointerdown', event => { if (event.pointerType !== 'mouse' || event.button !== 0 || camera.zoom <= 1) return; drag = { x: event.clientX, y: event.clientY, cx: camera.x, cy: camera.y }; dragged = false; map.setPointerCapture(event.pointerId); });
+  map.addEventListener('pointermove', event => { if (!drag) return; const rect = map.getBoundingClientRect(), dx = event.clientX - drag.x, dy = event.clientY - drag.y; if (Math.hypot(dx, dy) > 4) dragged = true; if (dragged) { camera.x = drag.cx - dx / rect.width / camera.zoom; camera.y = drag.cy - dy / rect.height / camera.zoom; clampCamera(); drawMap(); } });
+  map.addEventListener('pointerup', () => { drag = null; }); map.addEventListener('pointercancel', () => { drag = null; });
+  map.addEventListener('mousemove', event => {
+    if (dragged && drag) return;
+    const tile = tileAt(event); hoverTile = tile;
+    const tooltip = $('map-tooltip'); tooltip.textContent = tileText(tile); tooltip.hidden = false;
+    const rect = map.getBoundingClientRect();
+    tooltip.style.left = `${Math.max(8, Math.min(rect.width - tooltip.offsetWidth - 8, event.clientX - rect.left + 14))}px`;
+    tooltip.style.top = `${Math.max(8, Math.min(rect.height - tooltip.offsetHeight - 8, event.clientY - rect.top - 35))}px`;
+    drawMap();
+  });
+  map.addEventListener('mouseleave', () => { hoverTile = -1; $('map-tooltip').hidden = true; drawMap(); });
+  map.addEventListener('focus', drawMap); map.addEventListener('blur', drawMap);
+  map.addEventListener('keydown', event => {
+    const offsets = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -state.width, ArrowDown: state.width };
+    if (event.key in offsets) {
+      event.preventDefault(); const x = keyboardTile % state.width;
+      if ((event.key === 'ArrowLeft' && x === 0) || (event.key === 'ArrowRight' && x === state.width - 1)) return;
+      keyboardTile = Math.max(0, Math.min(state.tiles.length - 1, keyboardTile + offsets[event.key])); $('tile-info').textContent = tileText(keyboardTile); if (camera.zoom > 1) { camera.x = (keyboardTile % state.width + .5) / state.width; camera.y = (Math.floor(keyboardTile / state.width) + .5) / state.height; clampCamera(); } drawMap();
+    } else if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); selectTile(keyboardTile); }
+  });
+  chart.addEventListener('pointermove', event => {
+    if (!chartLayout) return; const rect = chart.getBoundingClientRect(), { margin, plotWidth, firstYear, lastYear } = chartLayout;
+    chartHover = firstYear + (event.clientX - rect.left - margin.left) / plotWidth * (lastYear - firstYear); drawChart();
+  });
+  chart.addEventListener('pointerleave', () => { chartHover = null; drawChart(); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) setRunning(false); });
+  new ResizeObserver(() => { drawMap(); drawChart(); }).observe(document.querySelector('.main-grid'));
+  window.addEventListener('resize', drawChart);
+  $('return-player').addEventListener('click', () => selectCiv(state.playerId));
+  document.querySelectorAll('[data-panel]').forEach(tab => {
+    tab.addEventListener('click', () => setPanel(tab.dataset.panel));
+    tab.addEventListener('keydown', event => { const tabs = [...document.querySelectorAll('[data-panel]')], i = tabs.indexOf(tab); if (['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) { event.preventDefault(); const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (i + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length; tabs[next].focus(); setPanel(tabs[next].dataset.panel); } });
+  });
+  $('command-body').addEventListener('change', event => { if (event.target.id === 'city-picker') { selectedCity = Number(event.target.value); selectedTile = null; lastCommand = ''; renderCommands(); const city = state.cities.find(c => c.id === selectedCity); keyboardTile = city.tile; drawMap(); } });
+  $('command-body').addEventListener('click', event => {
+    const b = event.target.closest('button'); if (!b || b.disabled) return;
+    const d = b.dataset, civId = state.playerId;
+    if (d.build) apply({ type: 'build', civId, cityId: selectedCity, building: d.build }, '工程已进入建设队列。');
+    else if (d.cancel !== undefined) apply({ type: 'cancelBuild', civId, cityId: selectedCity, index: Number(d.cancel) }, '工程已取消，部分资源已返还。');
+    else if (d.research) apply({ type: 'research', civId, research: d.research }, '新知识已转化为文明的力量。');
+    else if (d.explore !== undefined) apply({ type: 'explore', civId, siteId: Number(d.explore) }, '远征队出发了。');
+    else if (d.locate !== undefined) { const site = state.sites.find(s => s.id === Number(d.locate)); selectedSite = site.id; camera = { zoom: 2, x: (site.tile % state.width + .5) / state.width, y: (Math.floor(site.tile / state.width) + .5) / state.height }; clampCamera(); drawMap(); map.scrollIntoView({ block: 'center', behavior: 'auto' }); }
+    else if (d.diplomacy) apply({ type: 'diplomacy', civId, targetId: Number(d.target), action: d.diplomacy }, '外交指令已执行。');
+    else if (d.action === 'settle') { apply({ type: 'settle', civId, tile: selectedTile }, '开拓者建立了新城市。'); const city = state.cities.find(c => c.tile === selectedTile && c.civId === civId); if (city) { selectedCity = city.id; selectedTile = null; lastCommand = ''; renderCommands(); } }
+  });
+  $('decision-banner').addEventListener('click', event => { const b = event.target.closest('[data-choice]'); if (b && !b.disabled && player().decision) apply({ type: 'choice', civId: state.playerId, decisionId: player().decision.id, choice: b.dataset.choice }, '你的决定已载入编年史。'); });
+  E.CIVS.forEach((c, id) => { const option = document.createElement('option'); option.value = id; option.textContent = c.name + ' · ' + E.POLICIES[c.policy].name; $('player-choice').append(option); });
+  for (const [id, def] of Object.entries(E.GOALS)) { const option = document.createElement('option'); option.value = id; option.textContent = def.name; $('goal-choice').append(option); }
+  function goalDescription() { const goal = E.GOALS[$('goal-choice').value]; $('goal-description').textContent = goal.targets.map(t => t[1]).join('；') + '。'; }
+  function openCampaign() { setRunning(false); $('player-choice').value = state.playerId; $('goal-choice').value = state.goal; goalDescription(); $('campaign-dialog').showModal(); }
+  $('goal-choice').addEventListener('change', goalDescription);
+  $('campaign-settings').addEventListener('click', openCampaign); $('close-campaign').addEventListener('click', () => $('campaign-dialog').close());
+  $('begin-reign').addEventListener('click', () => { apply({ type: 'reign', civId: Number($('player-choice').value), goal: $('goal-choice').value }); selectedCity = state.cities.find(c => c.civId === state.playerId)?.id; selectCiv(state.playerId); lastCommand = ''; renderCommands(); $('campaign-dialog').close(); });
+  function frame(time) {
+    if (running && !work) {
+      if (lastFrame) {
+        carry += Math.min(300, time - lastFrame) * Number($('speed').value) / 1000;
+        const count = Math.min(8, Math.floor(carry));
+        if (count > 0) { carry -= count; advance(count); }
+      }
+      lastFrame = time;
+    }
+    requestAnimationFrame(frame);
+  }
+  syncSettings(); render(); setRunning(false); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
